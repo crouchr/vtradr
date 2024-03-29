@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "vtradr"
+  config.vm.box_check_update = true
+  config.vm.hostname = "vtradr"
+
+  config.vm.network "forwarded_port", guest: 3000, host: 7000, host_ip: "127.0.0.1"  # Grafana
+  config.vm.network "forwarded_port", guest: 80, host: 7080, host_ip: "127.0.0.1"    # Web Front-end
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = true
+    vb.memory = "2048"
+  end
+
+  config.vm.provision "shell", path: "setup-vtradr.sh"
+
+end
