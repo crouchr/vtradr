@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
 
   # All my TRADR application code is on here - node subject to lots of change
   # This is the node the user interacts with - the 'iceberg' terminal
+  # Docker, Jython etc.
   config.vm.define "tradr0" do |tradr0|
     tradr0.vm.box = "tradr7"
     # tradr0.vm.box_check_update = true
