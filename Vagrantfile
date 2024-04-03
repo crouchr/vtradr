@@ -4,8 +4,8 @@
 Vagrant.configure("2") do |config|
 
   #config.vm.box = "vtradr"
-  config.vm.box = "rch-docker-centos7"
-  config.vm.box_check_update = true
+  config.vm.box = "tradr7"
+  # config.vm.box_check_update = true
   config.vm.hostname = "vtradr"
 
   # config.vm.network "forwarded_port", guest: 3000, host: 7000, host_ip: "127.0.0.1"  # Grafana
