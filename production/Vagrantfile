@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# STAGING
+# PRODUCTION
 
 # smarter way to do multi-machine is here : https://manski.net/articles/vagrant/multi-machine-tutorial
 
@@ -10,11 +10,11 @@ Vagrant.configure("2") do |config|
   # All my TRADR application code is on here - node subject to lots of change
   # This is the node the user interacts with - the 'iceberg' terminal
   # Docker, Jython etc.
-  config.vm.define "itg_iceberg" do |iceberg|
+  config.vm.define "iceberg" do |iceberg|
     iceberg.vm.box = "tradr7"
     # tradr0.vm.box_check_update = true
-    iceberg.vm.hostname = "itg-iceberg"
-    iceberg.vm.network :public_network, ip: "192.168.1.190", bridge: "eth0"
+    iceberg.vm.hostname = "iceberg"
+    iceberg.vm.network :public_network, ip: "192.168.1.200", bridge: "eth0"
     #tradr0.vm.network "forwarded_port", guest: 3000, host: 7000, host_ip: "127.0.0.1"  # Grafana
     #tradr0.vm.network "forwarded_port", guest: 80, host: 7080, host_ip: "127.0.0.1"    # Web Front-end
     iceberg.vm.provider "virtualbox" do |vb0|
@@ -25,11 +25,11 @@ Vagrant.configure("2") do |config|
     end
 
   # Grafana node - dashboards subject to changes
-  config.vm.define "itg_tradr_grafana" do |tradr_grafana|
+  config.vm.define "tradr_grafana" do |tradr_grafana|
     tradr_grafana.vm.box = "tradr7"
     # tradr1.vm.box_check_update = true
-    tradr_grafana.vm.hostname = "itg-tradr-grafana"
-    tradr_grafana.vm.network :public_network, ip: "192.168.1.191", bridge: "eth0"
+    tradr_grafana.vm.hostname = "tradr-grafana"
+    tradr_grafana.vm.network :public_network, ip: "192.168.1.201", bridge: "eth0"
     #tradr1.vm.network "forwarded_port", guest: 3000, host: 8000, host_ip: "127.0.0.1"  # Grafana
     #tradr1.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"    # Web Front-end
     tradr_grafana.vm.provider "virtualbox" do |vb1|
@@ -40,11 +40,11 @@ Vagrant.configure("2") do |config|
     end
 
   # TRADR - services - MariaDB, ELK, Protonmail bridge etc.
-  config.vm.define "itg_tradr_services" do |tradr_services|
+  config.vm.define "tradr_services" do |tradr_services|
     tradr_services.vm.box = "tradr7"
     # tradr2.vm.box_check_update = true
-    tradr_services.vm.hostname = "itg-tradr-services"
-    tradr_services.vm.network :public_network, ip: "192.168.1.192", bridge: "eth0"
+    tradr_services.vm.hostname = "tradr-services"
+    tradr_services.vm.network :public_network, ip: "192.168.1.202", bridge: "eth0"
     #tradr2.vm.network "forwarded_port", guest: 3000, host: 8000, host_ip: "127.0.0.1"  # Grafana
     #tradr2.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"    # Web Front-end
     tradr_services.vm.provider "virtualbox" do |vb1|
