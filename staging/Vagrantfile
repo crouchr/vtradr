@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
         vb0.memory = "4096"
     end
     # tradr0.vm.provision "shell", path: "setup-tradr0.sh"
-      tradr0.vm.provision "file", source: "start_tradr_cli.sh", destination: "start_tradr_cli.sh"
+      iceberg.vm.provision "file", source: "start_tradr_cli.sh", destination: "start_tradr_cli.sh"
     end
 
   # Grafana node - dashboards subject to changes
