@@ -21,38 +21,15 @@ Vagrant.configure("2") do |config|
         vb0.gui = true
         vb0.memory = "4096"
     end
-    # tradr0.vm.provision "shell", path: "setup-tradr0.sh"
       iceberg.vm.provision "file", source: "start_tradr_cli.sh", destination: "start_tradr_cli.sh"
-    end
-
-  # Grafana node - dashboards subject to changes
-  #config.vm.define "itg_tradr_grafana" do |tradr_grafana|
-  #  tradr_grafana.vm.box = "tradr7"
-  #  # tradr1.vm.box_check_update = true
-  #  tradr_grafana.vm.hostname = "itg-tradr-grafana"
-  #  tradr_grafana.vm.network :public_network, ip: "192.168.1.191", bridge: "eth0"
-  #  #tradr1.vm.network "forwarded_port", guest: 3000, host: 8000, host_ip: "127.0.0.1"  # Grafana
-  #  #tradr1.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"    # Web Front-end
-  #  tradr_grafana.vm.provider "virtualbox" do |vb1|
-  #      vb1.gui = false
-  #      vb1.memory = "2048"
-  #  end
-  #  # tradr1.vm.provision "shell", path: "setup-tradr1.sh"
-  #  end
-
-  # TRADR - services - MariaDB, ELK, Protonmail bridge etc.
-  #config.vm.define "itg_tradr_services" do |tradr_services|
-  #  tradr_services.vm.box = "tradr7"
-  #  # tradr2.vm.box_check_update = true
-  #  tradr_services.vm.hostname = "itg-tradr-services"
-  #  tradr_services.vm.network :public_network, ip: "192.168.1.192", bridge: "eth0"
-  #  #tradr2.vm.network "forwarded_port", guest: 3000, host: 8000, host_ip: "127.0.0.1"  # Grafana
-  #  #tradr2.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"    # Web Front-end
-  #  tradr_services.vm.provider "virtualbox" do |vb1|
-  #      vb1.gui = false
-  #      vb1.memory = "2048"
-  #  end
-  #  # tradr2.vm.provision "shell", path: "setup-tradr2.sh"
-  #  end
-
+      iceberg.vm.provision "shell", env: {
+                                        'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
+                                        'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
+                                        'FMP_FREE_API_KEY' => ENV[ 'FMP_FREE_API_KEY'],
+                                        'PROTONMAIL_PLUS_BRIDGE_KEY' => ENV['PROTONMAIL_PLUS_BRIDGE_KEY'],
+                                        'ALPHAVANTAGE_BASIC_API_KEY' => ENV['ALPHAVANTAGE_BASIC_API_KEY'],
+                                        'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY']
+                                         },
+                                         path: './setup-profile.sh'
+  end
 end
