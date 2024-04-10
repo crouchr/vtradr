@@ -6,6 +6,6 @@
 # - vagrant
 # - virtualbox
 # - check for environment variable settings
-# upload summary to mothership
+# upload summary (including versions) to mothership
 
 
