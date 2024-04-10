@@ -5,5 +5,7 @@
 # check that pre-reqs are installed
 # - vagrant
 # - virtualbox
+# - check for environment variable settings
+# upload summary to mothership
 
 
