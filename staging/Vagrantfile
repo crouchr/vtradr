@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
         vb0.memory = "4096"
     end
       iceberg.vm.provision "file", source: "start_admin_cli.sh", destination: "start_admin_cli.sh"
+      iceberg.vm.provision "file", source: "start_stocks_scanner.sh", destination: "start_stocks_scanner.sh"
       iceberg.vm.provision "shell", env: {
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
