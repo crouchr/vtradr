@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# FIXME : this doesn't seem tp be possible in the Packer run - to be invesigated
+# FIXME : this doesn't seem tp be possible in the Packer run - to be investigated
 
 echo "Entered disable-firewall.sh..."
 
