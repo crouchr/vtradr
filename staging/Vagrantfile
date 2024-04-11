@@ -22,9 +22,10 @@ Vagrant.configure("2") do |config|
         vb0.memory = "4096"
     end
       iceberg.vm.provision "file", source: "start_cli.sh", destination: "start_cli.sh"
+      iceberg.vm.provision "file", source: "clean_up.sh", destination: "clean_up.sh"
       iceberg.vm.provision "file", source: "start_stocks_scanner.sh", destination: "start_stocks_scanner.sh"
-      iceberg.vm.provision "file", source: "disable-firewall.sh", destination: "disable-firewall.sh"
-      iceberg.vm.provision "shell", path:  "./disable-firewall.sh"
+      iceberg.vm.provision "file", source: "disable_firewall.sh", destination: "disable_firewall.sh"
+      iceberg.vm.provision "shell", path:  "./disable_firewall.sh"
       iceberg.vm.provision "shell", env: {
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
@@ -33,6 +34,7 @@ Vagrant.configure("2") do |config|
                                         'ALPHAVANTAGE_BASIC_API_KEY' => ENV['ALPHAVANTAGE_BASIC_API_KEY'],
                                         'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY']
                                          },
-                                         path: './setup-profile.sh'
+                                         path: './setup_env_vars.sh'
+    iceberg.vm.provision "shell", path:  "./clean_up.sh"
   end
 end
