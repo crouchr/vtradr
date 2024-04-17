@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run from /home/vagrant to run stocks scanner (for troubleshooting) docker container
+# Run automatically from /home/vagrant to run stocks scanner (for troubleshooting) docker container
 docker pull registry:5000/tradr-scanner
 docker run --root --network host \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
