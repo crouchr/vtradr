@@ -7,6 +7,25 @@
 
 Vagrant.configure("2") do |config|
 
+  # Services VBOX
+  # =============
+  # Start first as it is the logging server node
+  config.vm.define "itg_services" do |itg_services|
+    itg_services.vm.box = "tradr7-services"
+    itg_services.vm.hostname = "itg-services"
+    itg_services.vm.network :public_network, ip: "192.168.1.191", bridge: "eth0"
+
+    itg_services.vm.provider "virtualbox" do |vb0|
+        vb0.gui = true
+        vb0.memory = "3072"
+    end
+    itg_services.vm.provision "file", source: "disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
+    itg_services.vm.provision "file", source: "start_elasticsearch_patch.sh", destination: "start_elasticsearch_patch.sh"
+    itg_services.vm.provision "shell", path:  "./disable_firewall_patch.sh"
+    itg_services.vm.provision "shell", path:  "./start_elasticsearch_patch.sh"
+    itg_services.vm.provision "shell", path:  "./clean_up.sh"
+  end       # of itg_services
+
   # Application VBOX
   # ================
   # All my TRADR application code is on here - node subject to lots of change
@@ -39,28 +58,7 @@ Vagrant.configure("2") do |config|
                                          path: './setup_env_vars.sh'
     iceberg.vm.provision "shell", path:  "./set_symlinks.sh"
     iceberg.vm.provision "shell", path:  "./clean_up.sh"
-  end
-
-  # Services VBOX
-  # =============
-  config.vm.define "itg_services" do |itg_services|
-    itg_services.vm.box = "tradr7-services"
-    itg_services.vm.hostname = "itg-services"
-    itg_services.vm.network :public_network, ip: "192.168.1.191", bridge: "eth0"
-
-    itg_services.vm.provider "virtualbox" do |vb0|
-        vb0.gui = true
-        vb0.memory = "3072"
-    end
-    itg_services.vm.provision "file", source: "disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
-    itg_services.vm.provision "file", source: "start_elasticsearch_patch.sh", destination: "start_elasticsearch_patch.sh"
-    itg_services.vm.provision "shell", path:  "./disable_firewall_patch.sh"
-    itg_services.vm.provision "shell", path:  "./start_elasticsearch_patch.sh"
-    itg_services.vm.provision "shell", path:  "./clean_up.sh"
-  end
-
-
-
+  end       # of iceberg
 
 
 
