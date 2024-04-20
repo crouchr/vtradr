@@ -22,6 +22,8 @@ Vagrant.configure("2") do |config|
     itg_services.vm.provision "file", source: "disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
     itg_services.vm.provision "file", source: "start_elasticsearch_patch.sh", destination: "start_elasticsearch_patch.sh"
     itg_services.vm.provision "file", source: "start_filebeat_patch.sh", destination: "start_filebeat_patch.sh"
+    itg_services.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
+    itg_services.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
     itg_services.vm.provision "shell", path:  "./disable_firewall_patch.sh"
     itg_services.vm.provision "shell", path:  "./start_elasticsearch_patch.sh"
     itg_services.vm.provision "shell", path:  "./start_filebeat_patch.sh"
@@ -49,6 +51,8 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "file", source: "start_stocks_scanner.sh", destination: "start_stocks_scanner.sh"
       iceberg.vm.provision "file", source: "disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
       iceberg.vm.provision "shell", path:  "./disable_firewall_patch.sh"
+      iceberg.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
+      iceberg.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
       iceberg.vm.provision "shell", env: {
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
