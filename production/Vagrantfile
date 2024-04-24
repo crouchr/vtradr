@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   # Services VBOX
   # =============
   # Start first as it is the logging server node
-  config.vm.define "prd_services" do |prd_services|
+  config.vm.define "tradr_services" do |prd_services|
     prd_services.vm.box = "tradr7-services"
     prd_services.vm.hostname = "prd-services"
     prd_services.vm.network :public_network, ip: "192.168.1.56", bridge: "eth0"
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
   # All my TRADR application code is on here - node subject to lots of change
   # This is the node the user interacts with - the 'iceberg' terminal
   # Docker, Jython etc.
-  config.vm.define "prd_iceberg" do |iceberg|
+  config.vm.define "iceberg" do |iceberg|
     iceberg.vm.box = "tradr7"
   #  # tradr0.vm.box_check_update = true
     iceberg.vm.hostname = "prd-iceberg"
