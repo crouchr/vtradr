@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# STAGING
+# STAGING (xw6600)
 
 # smarter way to do multi-machine is here : https://manski.net/articles/vagrant/multi-machine-tutorial
 
@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "itg_services" do |itg_services|
     itg_services.vm.box = "tradr7-services"
     itg_services.vm.hostname = "itg-services"
-    itg_services.vm.network :public_network, ip: "192.168.1.191", bridge: "eth0"
+    itg_services.vm.network :public_network, ip: "192.168.1.51", bridge: "eth0"
 
     itg_services.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
@@ -24,6 +24,7 @@ Vagrant.configure("2") do |config|
     itg_services.vm.provision "file", source: "start_filebeat_patch.sh", destination: "start_filebeat_patch.sh"
     itg_services.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
     itg_services.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
+    # itg_services.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.254"
     itg_services.vm.provision "shell", path:  "./disable_firewall_patch.sh"
     itg_services.vm.provision "shell", path:  "./start_elasticsearch_patch.sh"
     itg_services.vm.provision "shell", path:  "./start_filebeat_patch.sh"
@@ -39,9 +40,7 @@ Vagrant.configure("2") do |config|
     iceberg.vm.box = "tradr7"
   #  # tradr0.vm.box_check_update = true
     iceberg.vm.hostname = "itg-iceberg"
-    iceberg.vm.network :public_network, ip: "192.168.1.190", bridge: "eth0"
-    # iceberg.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "192.168.1.190"   # Grafana
-    # iceberg.vm.network "forwarded_port", guest: 5601, host: 5601, host_ip: "192.168.1.190"   # ELK (Kibana)
+    iceberg.vm.network :public_network, ip: "192.168.1.50", bridge: "eth0"
     iceberg.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
         vb0.memory = "4096"
@@ -53,6 +52,7 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "shell", path:  "./disable_firewall_patch.sh"
       iceberg.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
       iceberg.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
+      # iceberg.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.254"
       iceberg.vm.provision "shell", env: {
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
@@ -65,7 +65,5 @@ Vagrant.configure("2") do |config|
     iceberg.vm.provision "shell", path:  "./set_symlinks.sh"
     iceberg.vm.provision "shell", path:  "./clean_up.sh"
   end       # of iceberg
-
-
 
 end

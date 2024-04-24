@@ -12,8 +12,8 @@
 - export x=y
 
 # Install VBOXES - initial solution prior to boxes being published on Vagrant Cloud
-$ vagrant box add --force --name tradr7.box
-$ vagrant box add --force --name tradr7-services.box
+$ vagrant box add --force --name tradr7 tradr7.box
+$ vagrant box add --force --name tradr7-services tradr7-services.box
 
 
 # First time installation of TRADR
