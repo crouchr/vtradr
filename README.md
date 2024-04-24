@@ -1,7 +1,7 @@
 ## Vtradr Installation instructions ##
 
 # MacOS - Ventura 13.6.6 : Install the following pre-requisites
-- VirtualBox v6.1.50 - go to virtualbox.org
+- VirtualBox v7 - go to virtualbox.org
 - Vagrant (Community) version v2.4.1 - binary download AMD64
 - Install Xcode to get git installed
 - Install Homebrew
