@@ -4,6 +4,9 @@
 docker pull registry:5000/tradr-cli
 docker run -u root --quiet \
 --network host \
+--log-driver=json-file \
+--log-opt max-size=10m \
+--log-opt max-file=10 \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
 --env "FMP_FREE_API_KEY=$FMP_FREE_API_KEY" \
 --env "VONAGE_API_SECRET=$VONAGE_API_SECRET" \
