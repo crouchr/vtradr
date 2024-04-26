@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# PRODUCTION (MacBook)
+# PRODUCTION (MacBook) in Ermin setup
 
 # smarter way to do multi-machine is here : https://manski.net/articles/vagrant/multi-machine-tutorial
 

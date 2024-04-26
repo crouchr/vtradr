@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# STAGING (xw6600)
+# STAGING (xw6600) in Ermin setup
 
 # smarter way to do multi-machine is here : https://manski.net/articles/vagrant/multi-machine-tutorial
 
