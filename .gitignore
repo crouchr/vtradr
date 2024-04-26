@@ -1,1 +1,4 @@
 /.vagrant/
+/staging/.vagrant/
+/production/.vagrant/
+/adrian/.vagrant/
