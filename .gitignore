@@ -1,4 +1,5 @@
 /.vagrant/
-/staging/.vagrant/
-/production/.vagrant/
-/adrian/.vagrant/
+/env_staging/.vagrant/
+/env_production/.vagrant/
+/env_adrian/.vagrant/
+/.idea/

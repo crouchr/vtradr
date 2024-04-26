@@ -20,7 +20,7 @@ $ vagrant box add --force --name tradr7-services tradr7-services.box
 $ cd ~          # e.g. /Users/crouchr
 $ git clone --depth 1 https://github.com/crouchr/vtradr.git
 $ cd vtradr
-$ cd production
+$ cd env_production
 $ vagrant up
 
 
