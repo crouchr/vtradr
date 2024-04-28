@@ -3,6 +3,7 @@
 docker pull registry:5000/tradr-scanner
 docker run -u root --network host \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
+--env "SQL_DB_HOSTNAME=$SQL_DB_HOSTNAME" \
 --env "FMP_FREE_API_KEY=$FMP_FREE_API_KEY" \
 --env "VONAGE_API_SECRET=$VONAGE_API_SECRET" \
 --env "VONAGE_API_KEY=$VONAGE_API_KEY" \
