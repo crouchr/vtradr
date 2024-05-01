@@ -1,6 +1,5 @@
 #!/bin/bash
 # Run automatically from /home/vagrant to run stocks scanner (for troubleshooting) docker container
-docker pull registry:5000/tradr-scanner
 docker run -u root --network host \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
 --env "SQL_DB_HOSTNAME=$SQL_DB_HOSTNAME" \
