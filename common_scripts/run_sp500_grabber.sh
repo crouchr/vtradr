@@ -10,4 +10,4 @@ docker run -u root --network host \
 --env "ALPHAVANTAGE_BASIC_API_KEY=$ALPHAVANTAGE_BASIC_API_KEY" \
 --env "ALPHAVANTAGE_FREE_API_KEY=$ALPHAVANTAGE_FREE_API_KEY" \
 --env "YAHOO_FREE_API_KEY=NONE_REQUIRED" \
--it registry:5000/sp500-grabber
+-it registry:5000/tradr-sp500-grabber
