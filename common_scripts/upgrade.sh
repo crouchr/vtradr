@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pull latest TRADR code
+# Pull latest TRADR docker images
 
 echo ' '
 echo "Installing latest TRADR CLI..."
