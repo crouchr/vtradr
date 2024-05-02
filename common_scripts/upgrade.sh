@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pull latest tradr code
+# Pull latest TRADR code
 
 echo "Installing latest TRADR CLI..."
 docker pull registry:5000/tradr-cli
