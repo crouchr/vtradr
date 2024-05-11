@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4fa3c118-da4d-4868-a7f0-a0f11f9234f8" name="Changes" comment="Moved Grafana dashboards into vtradr">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vtradr.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/clean_up.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/clean_up.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/disable_firewall_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/disable_firewall_patch.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/set_symlinks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/set_symlinks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/setup_env_vars.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/setup_env_vars.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/start_elasticsearch_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/start_elasticsearch_patch.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/start_filebeat_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/start_filebeat_patch.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/clean_up.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/clean_up.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/disable_firewall_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/disable_firewall_patch.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/set_symlinks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/set_symlinks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/setup_env_vars.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/setup_env_vars.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/start_elasticsearch_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/start_elasticsearch_patch.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/start_filebeat_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/start_filebeat_patch.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/start_stocks_scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/start_stocks_scanner.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2eMeALspWqKbJdHBSvSxIqQTwxT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/crouchr/PycharmProjects/vtradr/vtradr/env_development/grafana"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/env_development/grafana" />
+      <recent name="$PROJECT_DIR$/env_staging/grafana" />
+      <recent name="$PROJECT_DIR$/staging" />
+      <recent name="$PROJECT_DIR$/experiments" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/experiments/simple" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="vtradr" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4fa3c118-da4d-4868-a7f0-a0f11f9234f8" name="Changes" comment="" />
+      <created>1711718729860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711718729860</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial version">
+      <option name="closed" value="true" />
+      <created>1711719740419</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711719740419</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modified to three box solution">
+      <option name="closed" value="true" />
+      <created>1712122658918</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712122658918</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modified to three box solution">
+      <option name="closed" value="true" />
+      <created>1712122697616</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712122697616</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Moved Grafana dashboards into vtradr">
+      <option name="closed" value="true" />
+      <created>1715460125976</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715460125976</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial version" />
+    <MESSAGE value="Modified to three box solution" />
+    <MESSAGE value="Moved Grafana dashboards into vtradr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved Grafana dashboards into vtradr" />
+  </component>
+</project>
