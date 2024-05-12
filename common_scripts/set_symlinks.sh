@@ -26,7 +26,7 @@ sudo mv /home/vagrant/restore_database.sh /usr/local/bin/restore_database.sh
 sudo chmod +x /usr/local/bin/restore_database.sh
 ln -sf /usr/local/bin/restore_database.sh /usr/local/bin/restore
 
-sudo mv /home/vagrant/info_tradr.sh /usr/local/bin/version_tradr.sh
+sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh
 ln -sf /usr/local/bin/version_tradr.sh /usr/local/bin/version
 
