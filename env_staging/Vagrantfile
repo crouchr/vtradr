@@ -88,10 +88,10 @@ Vagrant.configure("2") do |config|
     iceberg.vm.provision "shell", path:  "../common_scripts/start_filebeat_patch.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/set_symlinks.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/upgrade.sh"
-    iceberg.vm.provision "shell", path:  "../common_scripts/run_bitcoin_grabber.sh"
-    iceberg.vm.provision "shell", path:  "../common_scripts/run_sp500_grabber.sh"
-    iceberg.vm.provision "shell", path:  "../common_scripts/run_ibit_grabber.sh"
-    iceberg.vm.provision "shell", path:  "../common_scripts/run_usdxy_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_bitcoin_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_sp500_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_ibit_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_usdxy_grabber.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
   end       # of iceberg
 
