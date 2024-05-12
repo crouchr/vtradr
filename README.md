@@ -18,6 +18,7 @@ $ vagrant box add --force --name tradr7-services tradr7-services.box
 
 # First time installation of TRADR
 $ cd ~          # e.g. /Users/crouchr
+$ vagrant plugin install vagrant-hostmanager
 $ git clone --depth 1 https://github.com/crouchr/vtradr.git
 $ cd vtradr
 $ cd env_production

@@ -10,12 +10,24 @@ sudo mv /home/vagrant/upgrade.sh /usr/local/bin/upgrade.sh
 sudo chmod +x /usr/local/bin/upgrade.sh
 ln -sf /usr/local/bin/upgrade.sh /usr/local/bin/upgrade
 
-sudo mv /home/vagrant/help.sh /usr/local/bin/help.sh
-sudo chmod +x /usr/local/bin/help.sh
-ln -sf /usr/local/bin/help.sh /usr/local/bin/help
+sudo mv /home/vagrant/help_tradr.sh /usr/local/bin/help_tradr.sh
+sudo chmod +x /usr/local/bin/help_tradr.sh
+ln -sf /usr/local/bin/help_tradr.sh /usr/local/bin/help_tradr
 
 sudo mv /home/vagrant/run_tradr.sh /usr/local/bin/run_tradr.sh
 sudo chmod +x /usr/local/bin/run_tradr.sh
 ln -sf /usr/local/bin/run_tradr.sh /usr/local/bin/run_tradr
+
+sudo mv /home/vagrant/backup_database.sh /usr/local/bin/backup_database.sh
+sudo chmod +x /usr/local/bin/backup_database.sh
+ln -sf /usr/local/bin/backup_database.sh /usr/local/bin/backup
+
+sudo mv /home/vagrant/restore_database.sh /usr/local/bin/restore_database.sh
+sudo chmod +x /usr/local/bin/restore_database.sh
+ln -sf /usr/local/bin/restore_database.sh /usr/local/bin/restore
+
+sudo mv /home/vagrant/info_tradr.sh /usr/local/bin/version_tradr.sh
+sudo chmod +x /usr/local/bin/version_tradr.sh
+ln -sf /usr/local/bin/version_tradr.sh /usr/local/bin/version
 
 echo "Exited set_symlinks.sh..."

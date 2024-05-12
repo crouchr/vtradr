@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fa3c118-da4d-4868-a7f0-a0f11f9234f8" name="Changes" comment="Moved Grafana dashboards into vtradr">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vtradr.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/clean_up.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/clean_up.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/disable_firewall_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/disable_firewall_patch.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/set_symlinks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/set_symlinks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/setup_env_vars.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/setup_env_vars.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/start_elasticsearch_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/start_elasticsearch_patch.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/start_filebeat_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/production/start_filebeat_patch.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/clean_up.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/clean_up.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/disable_firewall_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/disable_firewall_patch.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/set_symlinks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/set_symlinks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/setup_env_vars.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/setup_env_vars.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/start_elasticsearch_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/start_elasticsearch_patch.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/start_filebeat_patch.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/start_filebeat_patch.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/start_stocks_scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/staging/start_stocks_scanner.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common_scripts/backup_database.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common_scripts/fix_hosts_local_system.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common_scripts/restore_database.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common_scripts/run_usdxy_grabber.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common_scripts/version_tradr.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common_scripts/help.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/help_tradr.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common_scripts/run_tradr.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/run_tradr.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common_scripts/set_symlinks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/set_symlinks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common_scripts/upgrade.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/upgrade.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env_staging/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/env_staging/Vagrantfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/staging/start_stocks_scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/run_ibit_grabber.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging/start_stocks_scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/staging/start_stocks_scanner.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +47,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/crouchr/PycharmProjects/vtradr/vtradr/env_development/grafana"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/crouchr/PycharmProjects/vtradr/vtradr/env_development/grafana&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/env_development/grafana" />
@@ -151,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial version" />
     <MESSAGE value="Modified to three box solution" />
+    <MESSAGE value="Changes relating to cleaner installation" />
     <MESSAGE value="Moved Grafana dashboards into vtradr" />
     <option name="LAST_COMMIT_MESSAGE" value="Moved Grafana dashboards into vtradr" />
   </component>
