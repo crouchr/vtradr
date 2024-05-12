@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 # Run automatically from /home/vagrant to run stocks scanner (for troubleshooting) docker container
 docker run -d -u root --network host \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \

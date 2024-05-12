@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 # This only runs on Ermin nodes
 
 logger 'entered fix_hosts_local_system.sh'

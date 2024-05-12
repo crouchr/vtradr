@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 # backup the tradrdb database
 
 logger 'entered backup_database.sh'

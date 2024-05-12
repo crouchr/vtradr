@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 # restore the tradrdb database
 
 logger 'entered restore_database.sh'

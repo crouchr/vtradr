@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 docker run -d -u root --network host \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \

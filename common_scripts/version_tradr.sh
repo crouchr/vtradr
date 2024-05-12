@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/bash -eu
 # Display info about the installation for troubleshooting etc.
 echo ' '
 echo 'TRADR info'
