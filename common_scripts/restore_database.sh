@@ -5,7 +5,8 @@ logger 'entered restore_database.sh'
 
 echo "Restoring 'tradrdb' databases from backup in /home/vagrant/dbase_backups/tradrdb-backup.sql on this node..."
 
-mariadb <<MYSQL_SCRIPT
+mariadb -u root -psecretsql <<MYSQL_SCRIPT
+DROP DATABASE tradrdb;
 CREATE DATABASE tradrdb;
 MYSQL_SCRIPT
 
