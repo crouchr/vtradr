@@ -34,4 +34,9 @@ echo "--------------------------------------"
 docker pull registry:5000/tradr-usdxy-grabber
 echo ' '
 
+echo "Installing latest TRADR Treasuries Grabber"
+echo "------------------------------------------"
+docker pull registry:5000/tradr-treasuries-grabber
+echo ' '
+
 logger 'exited upgrade.sh'
