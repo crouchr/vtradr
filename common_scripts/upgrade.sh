@@ -30,7 +30,7 @@ docker pull registry:5000/tradr-ibit-grabber
 echo ' '
 
 echo "Installing latest TRADR Indices Grabber"
-echo "--------------------------------------"
+echo "---------------------------------------"
 docker pull registry:5000/tradr-indices-grabber
 echo ' '
 
