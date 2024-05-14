@@ -10,4 +10,4 @@ docker run -d -u root --network host \
 --env "ALPHAVANTAGE_BASIC_API_KEY=$ALPHAVANTAGE_BASIC_API_KEY" \
 --env "ALPHAVANTAGE_FREE_API_KEY=$ALPHAVANTAGE_FREE_API_KEY" \
 --env "YAHOO_FREE_API_KEY=NONE_REQUIRED" \
-registry:5000/tradr-usdxy-grabber
+registry:5000/tradr-indices-grabber

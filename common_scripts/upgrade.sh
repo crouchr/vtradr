@@ -29,9 +29,9 @@ echo "------------------------------------"
 docker pull registry:5000/tradr-ibit-grabber
 echo ' '
 
-echo "Installing latest TRADR US DXY Grabber"
+echo "Installing latest TRADR Indices Grabber"
 echo "--------------------------------------"
-docker pull registry:5000/tradr-usdxy-grabber
+docker pull registry:5000/tradr-indices-grabber
 echo ' '
 
 echo "Installing latest TRADR Treasuries Grabber"
