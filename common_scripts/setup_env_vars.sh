@@ -7,6 +7,7 @@ function set_in_profile() {
 }
 
 set_in_profile "export VONAGE_API_SECRET=$VONAGE_API_SECRET"
+set_in_profile "export VONAGE_API_KEY=$VONAGE_API_KEY"
 set_in_profile "export FMP_FREE_API_KEY=$FMP_FREE_API_KEY"
 set_in_profile "export PROTONMAIL_PLUS_BRIDGE_KEY=$PROTONMAIL_PLUS_BRIDGE_KEY"
 set_in_profile "export ALPHAVANTAGE_BASIC_API_KEY=$ALPHAVANTAGE_BASIC_API_KEY"
