@@ -8,6 +8,9 @@ services:
       driver: "syslog"
       options:
         tag: "tradr-bitcoin-grabber"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql:sock:/mysql:sock
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
@@ -25,6 +28,9 @@ services:
       driver: "syslog"
       options:
         tag: "tradr-ibit-grabber"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql:sock:/mysql:sock
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
@@ -42,6 +48,9 @@ services:
       driver: "syslog"
       options:
         tag: "tradr-commodities-grabber"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql:sock:/mysql:sock
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
@@ -59,6 +68,9 @@ services:
       driver: "syslog"
       options:
         tag: "tradr-indices-grabber"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql:sock:/mysql:sock
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
@@ -76,6 +88,9 @@ services:
       driver: "syslog"
       options:
         tag: "tradr-treasuries-grabber"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql:sock:/mysql:sock
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
