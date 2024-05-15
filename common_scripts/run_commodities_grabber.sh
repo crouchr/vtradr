@@ -1,5 +1,5 @@
 #!/bin/bash -eu
-# Run automatically from /home/vagrant to run stocks scanner (for troubleshooting) docker container
+
 docker run -d -u root --network host \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
 --env "SQL_DB_HOSTNAME=$SQL_DB_HOSTNAME" \
@@ -10,4 +10,4 @@ docker run -d -u root --network host \
 --env "ALPHAVANTAGE_BASIC_API_KEY=$ALPHAVANTAGE_BASIC_API_KEY" \
 --env "ALPHAVANTAGE_FREE_API_KEY=$ALPHAVANTAGE_FREE_API_KEY" \
 --env "YAHOO_FREE_API_KEY=NONE_REQUIRED" \
-registry:5000/tradr-sp500-grabber
+registry:5000/tradr-commodities-grabber
