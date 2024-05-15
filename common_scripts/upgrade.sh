@@ -19,11 +19,6 @@ echo "---------------------------------------"
 docker pull registry:5000/tradr-bitcoin-grabber
 echo ' '
 
-echo "Installing latest TRADR SP500 Grabber"
-echo "-------------------------------------"
-docker pull registry:5000/tradr-sp500-grabber
-echo ' '
-
 echo "Installing latest TRADR Ibit Grabber"
 echo "------------------------------------"
 docker pull registry:5000/tradr-ibit-grabber
