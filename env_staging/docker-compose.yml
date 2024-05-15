@@ -1,0 +1,87 @@
+version: '3'
+
+services:
+  bitcoin_grabber:
+    container_name: tradr-bitcoin-grabber
+    image: registry:5000/tradr-bitcoin-grabber
+    logging:
+      driver: "syslog"
+      options:
+        tag: "tradr-bitcoin-grabber"
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  ibit_grabber:
+    container_name: tradr-ibit-grabber
+    image: registry:5000/tradr-ibit-grabber
+    logging:
+      driver: "syslog"
+      options:
+        tag: "tradr-ibit-grabber"
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  commodities_grabber:
+    container_name: tradr-commodities-grabber
+    image: registry:5000/tradr-commodities-grabber
+    logging:
+      driver: "syslog"
+      options:
+        tag: "tradr-commodities-grabber"
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  indices_grabber:
+    container_name: tradr-indices-grabber
+    image: registry:5000/tradr-indices-grabber
+    logging:
+      driver: "syslog"
+      options:
+        tag: "tradr-indices-grabber"
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  treasuries_grabber:
+    container_name: tradr-treasuries-grabber
+    image: registry:5000/tradr-treasuries-grabber
+    logging:
+      driver: "syslog"
+      options:
+        tag: "tradr-treasuries-grabber"
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
