@@ -1,7 +1,8 @@
 #!/bin/bash
 # Run commands in Docker containers
-# FIXME : WIP
+logger "Entered run_tradr_daemons..."
 
-echo "Run bitcoin_grabber..."
-docker exec -it my_container sh -c "echo a && echo b"
+echo "Run Grabbers..."
+docker-compose -f docker-compose.yml up
 
+logger "Exited run_tradr_daemons..."
