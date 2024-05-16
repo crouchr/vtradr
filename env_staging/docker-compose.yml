@@ -4,6 +4,11 @@ services:
   bitcoin_grabber:
     container_name: tradr-bitcoin-grabber
     image: registry:5000/tradr-bitcoin-grabber
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-bitcoin-grabber"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
@@ -20,10 +25,11 @@ services:
   ibit_grabber:
     container_name: tradr-ibit-grabber
     image: registry:5000/tradr-ibit-grabber
-#    logging:
-#      driver: "syslog"
-#      options:
-#        tag: "tradr-ibit-grabber"
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ibit-grabber"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
@@ -40,10 +46,11 @@ services:
   commodities_grabber:
     container_name: tradr-commodities-grabber
     image: registry:5000/tradr-commodities-grabber
-#    logging:
-#      driver: "syslog"
-#      options:
-#        tag: "tradr-commodities-grabber"
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-commodities-grabber"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
@@ -60,10 +67,11 @@ services:
   indices_grabber:
     container_name: tradr-indices-grabber
     image: registry:5000/tradr-indices-grabber
-#    logging:
-#      driver: "syslog"
-#      options:
-#        tag: "tradr-indices-grabber"
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-indices-grabber"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
@@ -80,10 +88,11 @@ services:
   treasuries_grabber:
     container_name: tradr-treasuries-grabber
     image: registry:5000/tradr-treasuries-grabber
-#    logging:
-#      driver: "syslog"
-#      options:
-#        tag: "tradr-treasuries-grabber"
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-treasuries-grabber"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
