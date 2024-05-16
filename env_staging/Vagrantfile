@@ -49,6 +49,9 @@ Vagrant.configure("2") do |config|
         vb0.gui = true
         vb0.memory = "4096"
     end
+      iceberg.vm.provision "file", source: "../common_files/wazuh.conf", destination: "/var/ossec/etc/wazuh.conf"
+      iceberg.vm.provision "file", source: "../common_files/motd-tradr", destination: "/etc/motd"
+      iceberg.vm.provision "file", source: "../common_files/syslog-ng.conf", destination: "/etc/syslog-ng/syslog-ng.conf"
       iceberg.vm.provision "file", source: "docker-compose.yml", destination: "docker-compose.yml"
       iceberg.vm.provision "file", source: "../common_scripts/fix_hosts_local_system.sh", destination: "fix_hosts_local_system.sh"
       iceberg.vm.provision "file", source: "../common_scripts/cli.sh", destination: "cli.sh"

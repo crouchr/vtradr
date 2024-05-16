@@ -1,0 +1,38 @@
+
+
+  _____         _
+ |_   _|       | |
+   | |  ___ ___| |__   ___ _ __ __ _
+   | | / __/ _ \ '_ \ / _ \ '__/ _` |
+  _| || (_|  __/ |_) |  __/ | | (_| |
+ |_____\___\___|_.__/ \___|_|  \__, |
+                                __/ |
+                               |___/
+ Infrastructure Build v1.0.1
+ ===========================
+ Base OS : CentOS7
+
+ This node runs :
+ - Docker
+ - Filebeat
+ - Syslog NG
+ - MariaDB Server
+ - Wazuh HIDS
+ - TRADR Application (in Docker)
+
+ For X windows forwarding from another workstation use :
+ $ vagrant ssh -- -Y
+ $ xterm
+
+ You are currently logged into the TRADR VirtualBox.
+
+ Instructions
+ ============
+ Type 'cli' to access the TRADR command-line interface (admin_cli and user_cli modes)
+ Type 'help_tradr' to display instructions
+ Type 'upgrade' to upgrade the TRADR applications
+ Type 'backup' to backup your TRADR configuration and data
+ Type 'restore' to restore your TRADR configuration and data
+ Type 'version_tradr' to display version information
+
+
