@@ -39,4 +39,14 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-commodities-grabber
 echo ' '
 
+echo "Installing latest TRADR Tepper Indicators"
+echo "-----------------------------------------"
+docker pull registry:5000/tradr-tepper-indicators
+echo ' '
+
+echo "Installing latest TRADR Core Ratios"
+echo "-----------------------------------"
+docker pull registry:5000/tradr-core-ratios
+echo ' '
+
 logger 'exited upgrade.sh'
