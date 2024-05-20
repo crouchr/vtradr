@@ -1,5 +1,6 @@
 #!/bin/bash -eu
 # Pull latest TRADR docker images
+# Move to a per-environment basis
 
 logger 'entered upgrade.sh'
 
