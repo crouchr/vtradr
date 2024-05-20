@@ -1,6 +1,27 @@
 version: '3'
 
 services:
+  indices_grabber:
+    container_name: tradr-indices-grabber
+    image: registry:5000/tradr-indices-grabber
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-indices-grabber"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
   bitcoin_grabber:
     container_name: tradr-bitcoin-grabber
     image: registry:5000/tradr-bitcoin-grabber
@@ -64,14 +85,14 @@ services:
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
 
-  indices_grabber:
-    container_name: tradr-indices-grabber
-    image: registry:5000/tradr-indices-grabber
+  treasuries_grabber:
+    container_name: tradr-treasuries-grabber
+    image: registry:5000/tradr-treasuries-grabber
     logging:
       driver: "syslog"
       options:
         syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-indices-grabber"
+        tag: "tradr-treasuries-grabber"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
@@ -85,14 +106,35 @@ services:
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
 
-  treasuries_grabber:
-    container_name: tradr-treasuries-grabber
-    image: registry:5000/tradr-treasuries-grabber
+  teppen_indicators:
+    container_name: tradr-teppen-indicators
+    image: registry:5000/tradr-teppen-indicators
     logging:
       driver: "syslog"
       options:
         syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-treasuries-grabber"
+        tag: "tradr-teppen-indicators"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  core_ratios:
+    container_name: tradr-core-ratios
+    image: registry:5000/tradr-core-ratios
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-core-ratios"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
