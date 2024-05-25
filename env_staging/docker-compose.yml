@@ -106,9 +106,9 @@ services:
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
 
-  teppen_indicators:
-    container_name: tradr-teppen-indicators
-    image: registry:5000/tradr-teppen-indicators
+  tepper_indicators:
+    container_name: tradr-tepper-indicators
+    image: registry:5000/tradr-tepper-indicators
     logging:
       driver: "syslog"
       options:
