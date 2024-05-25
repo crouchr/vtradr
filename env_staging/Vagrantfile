@@ -49,12 +49,14 @@ Vagrant.configure("2") do |config|
         vb0.gui = true
         vb0.memory = "4096"
     end
-      iceberg.vm.provision "file", source: "../common_files/wazuh.conf", destination: "/tmp/wazuh.conf"
-      iceberg.vm.provision "file", source: "../common_files/motd-tradr", destination: "/tmp/etc/motd"
-      iceberg.vm.provision "file", source: "../common_files/syslog-ng.conf", destination: "/tmp/syslog-ng.conf"
-      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/wazuh.conf /var/ossec/etc/wazuh.conf"
-      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/etc/motd /etc/motd"
-      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf"
+      # start : use these versions during rapid development and then copy to Packer
+      #iceberg.vm.provision "file", source: "../common_files/wazuh.conf", destination: "/tmp/wazuh.conf"
+      #iceberg.vm.provision "file", source: "../common_files/motd-tradr", destination: "/tmp/etc/motd"
+      #iceberg.vm.provision "file", source: "../common_files/syslog-ng.conf", destination: "/tmp/syslog-ng.conf"
+      #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/wazuh.conf /var/ossec/etc/wazuh.conf"
+      #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/etc/motd /etc/motd"
+      #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf"
+      # end : use these versions during rapid development and then copy to Packer
       iceberg.vm.provision "file", source: "docker-compose.yml", destination: "docker-compose.yml"
       iceberg.vm.provision "file", source: "../common_scripts/fix_hosts_local_system.sh", destination: "fix_hosts_local_system.sh"
       iceberg.vm.provision "file", source: "../common_scripts/cli.sh", destination: "cli.sh"
