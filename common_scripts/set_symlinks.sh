@@ -34,4 +34,8 @@ sudo mv /home/vagrant/run_stocks_scanner.sh /usr/local/bin/run_stocks_scanner.sh
 sudo chmod +x /usr/local/bin/run_stocks_scanner.sh
 ln -sf /usr/local/bin/run_stocks_scanner.sh /usr/local/bin/run_stocks_scanner
 
+sudo mv /home/vagrant/run_tradr_daemons.sh /usr/local/bin/run_tradr_daemons.sh
+sudo chmod +x /usr/local/bin/run_tradr_daemons.sh
+ln -sf /usr/local/bin/run_tradr_daemons.sh /usr/local/bin/run_tradr_daemons
+
 echo "Exited set_symlinks.sh..."
