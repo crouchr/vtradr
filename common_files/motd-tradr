@@ -8,7 +8,7 @@
  |_____\___\___|_.__/ \___|_|  \__, |
                                 __/ |
                                |___/
- Infrastructure Build v1.0.2
+ Infrastructure Build v1.0.3
  ===========================
  Base OS : CentOS7
 
@@ -36,5 +36,4 @@
  Type 'backup' to backup your TRADR configuration and data
  Type 'restore' to restore your TRADR configuration and data
  Type 'version_tradr' to display version information
-
 
