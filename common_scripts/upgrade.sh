@@ -10,8 +10,8 @@ echo "---------------------------"
 docker pull registry:5000/tradr-cli
 echo ' '
 
-echo "Installing TRADR Stock Scanner"
-echo "------------------------------"
+echo "Installing TRADR Swing Trader Stock Scanner"
+echo "-------------------------------------------"
 docker pull registry:5000/tradr-scanner
 echo ' '
 
