@@ -9,31 +9,46 @@ A similar document exists fro running on Linux (to be written).
 - Vagrant (Community) version v2.4.1 - binary download AMD64
 - Install Xcode to get git installed
 - Install Homebrew
-- reboot
-- install joe editor using :
-  - brew install joe  
-- Set env variables by editing ~/.zshrc
-- export x=y
 
-# Install VBOXES - initial solution prior to boxes being published on Vagrant Cloud
-$ vagrant box add --force --name tradr7 tradr7.box
-$ vagrant box add --force --name tradr7-services tradr7-services.box
-
-
-# First time installation of TRADR
-```bash
-
+```shell
 $ cd ~          # e.g. /Users/crouchr
 $ vagrant plugin install vagrant-hostmanager
+$ reboot
+```
+
+Install 'joe' editor (optional)
+```shell
+$ brew install joe  
+```
+
+Set env variables by editing ~/.zshrc
+```shell
+export x=y
+```
+
+Test environment variables have been set using  
+```shell
+$ env
+```
+
+If on Ermin LAN, ensure that www.tradr.click resolves to 192.168.1.4  
+
+```shell
+$ ping www.tradr.click
+```
+
+# First time installation of TRADR - done first as it creates the SQL tables
+Install the first of the two TRADR VMs, the 'Iceberg' VM
+```bash
 $ git clone --depth 1 https://github.com/crouchr/vtradr.git
 $ cd vtradr
 $ cd env_production
-$ vagrant up
+$ ./update_tradr_boxes.sh
 ```
 
 Now SSH onto the Iceberg VM
 ```bash
-$ vagrant ssh prd_iceberg
+$ vagrant ssh prd_services
 ```
 
 Now run the TRADR CLI, and access Admin mode
