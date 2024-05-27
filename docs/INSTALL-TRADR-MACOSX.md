@@ -60,13 +60,12 @@ $ cd /admin_cli
 Now run the 'install_tradr' script to create and populate the SQL databases from the TRADR CLI   
 This step is required even if you want to restore a previously-saved database. 
 ```bash
-$ ./install_tradr 
+$ ./install_tradr.sh 
 ```
 
 
 Now populate the watchlists SQL tables - this will take about 10 minutes to populate
 ```bash
-cd ..
 python add_watchlist_trades_to_db.py
 exit
 ```
@@ -77,7 +76,13 @@ Run up the various TRADR 'grabber' applications (Docker containers) :
 $ run_tradr_daemons
 ```
 
-In another t
+In another terminal
+```bash
+vagrant ssh prd_iceberg
+```
+
+
+
 
 # Upgrade on Linux
 $ cd ~
