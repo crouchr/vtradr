@@ -29,8 +29,7 @@
  Instructions
  ============
  [1] Iceberg Commands :
- Type 'run_tradr_daemons' : Run the various stock information grabbers
- Type 'run_swing_trader'  : Run the Swing Tradr application daemon
+ Type 'run_tradr_daemons' : Run the various stock information grabbers and the Swing Trader daemon
  Type 'help_tradr'        : Display instructions
  Type 'upgrade'           : Upgrade the TRADR applications
  Type 'backup'            : Backup your TRADR configuration and data
