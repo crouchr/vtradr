@@ -2,7 +2,7 @@
 
 This document describes how install TRADR from scratch.  
 This document has been tested on an Intel MacBook running Ventura 13.6.6  
-A similar document exists fro running on Linux (to be written).  
+A similar document exists for running on Linux (to be written).  
 
 # Install the following pre-requisites
 - VirtualBox v7 - go to virtualbox.org
@@ -37,7 +37,7 @@ If on Ermin LAN, ensure that www.tradr.click resolves to 192.168.1.4
 $ ping www.tradr.click
 ```
 
-# First time installation of TRADR - done first as it creates the SQL tables
+# First time installation of TRADR 
 Install the first of the two TRADR VMs, the 'Iceberg' VM
 ```bash
 $ git clone --depth 1 https://github.com/crouchr/vtradr.git
@@ -48,7 +48,7 @@ $ ./update_tradr_boxes.sh
 
 Now SSH onto the Iceberg VM
 ```bash
-$ vagrant ssh prd_services
+$ vagrant ssh prd_iceberg
 ```
 
 Now run the TRADR CLI, and access Admin mode
@@ -56,24 +56,28 @@ Now run the TRADR CLI, and access Admin mode
 $ cli
 $ cd /admin_cli
 ````
-Now run the script to create and populate the SQL databases from the TRADR CLI
+
+Now run the 'install_tradr' script to create and populate the SQL databases from the TRADR CLI   
+This step is required even if you want to restore a previously-saved database. 
 ```bash
 $ ./install_tradr 
 ```
 
-Now populate the watchlists SQL tables
+
+Now populate the watchlists SQL tables - this will take about 10 minutes to populate
 ```bash
-cd ...
-python watch.py
+cd ..
+python add_watchlist_trades_to_db.py
 exit
 ```
 
-```bash
-
+You will now be at the Iceberg prompt (i.e. not within a Docker container) 
+Run up the various TRADR 'grabber' applications (Docker containers) :   
+```shell
+$ run_tradr_daemons
 ```
 
-
-
+In another t
 
 # Upgrade on Linux
 $ cd ~

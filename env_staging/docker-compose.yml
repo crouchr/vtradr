@@ -113,7 +113,7 @@ services:
       driver: "syslog"
       options:
         syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-teppen-indicators"
+        tag: "tradr-tepper-indicators"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
