@@ -55,7 +55,7 @@ Now run the TRADR CLI, and access Admin mode
 ```bash
 $ cli
 $ cd /admin_cli
-````
+```
 
 Now run the 'install_tradr' script to create and populate the SQL databases from the TRADR CLI   
 This step is required even if you want to restore a previously-saved database. 
@@ -76,12 +76,7 @@ Run up the various TRADR 'grabber' applications (Docker containers) :
 $ run_tradr_daemons
 ```
 
-In another terminal
-```bash
-vagrant ssh prd_iceberg
-```
-
-
+Now refer to SWING_TRADER_USER_GUIDE.md for how to use the Swing Trader Application.
 
 
 # Upgrade on Linux
