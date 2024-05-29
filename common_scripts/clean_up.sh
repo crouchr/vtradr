@@ -6,4 +6,7 @@ sudo rm -rf installer
 sudo rm -f *.exp
 sudo rm -f jython-installer.jar
 
+# Fix X over SSH niggles
+sudo rm ~/.Xaut*
+
 
