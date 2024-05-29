@@ -1,13 +1,15 @@
 #!/bin/bash
 # Run by user from /home/vagrant to bring up tradr cli docker container
 # Run as root to get mariadb to work
+# Run as privileged to get sound to work
 docker pull registry:5000/tradr-cli
-docker run -u root --quiet \
+docker run -u root --quiet --privileged \
 --network host \
 --log-driver=json-file \
 --log-opt max-size=10m \
 --log-opt max-file=10 \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
+-d /dev/snd:/dev/snd \
 --env "SQL_DB_HOSTNAME=$SQL_DB_HOSTNAME" \
 --env "FMP_FREE_API_KEY=$FMP_FREE_API_KEY" \
 --env "VONAGE_API_SECRET=$VONAGE_API_SECRET" \
