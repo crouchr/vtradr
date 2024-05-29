@@ -151,6 +151,7 @@ services:
   swing_trader:
     container_name: tradr-scanner
     image: registry:5000/tradr-scanner
+    privileged: true
     logging:
       driver: "syslog"
       options:
