@@ -50,4 +50,9 @@ echo "-----------------------------------"
 docker pull registry:5000/tradr-core-ratios
 echo ' '
 
+echo "Installing latest TRADR Assets Tracker"
+echo "--------------------------------------"
+docker pull registry:5000/tradr-assets-tracker
+echo ' '
+
 logger 'exited upgrade.sh'
