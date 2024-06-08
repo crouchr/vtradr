@@ -55,4 +55,9 @@ echo "--------------------------------------"
 docker pull registry:5000/tradr-assets-tracker
 echo ' '
 
+echo "Installing latest TRADR Exchange Rate Service"
+echo "---------------------------------------------"
+docker pull registry:5000/tradr-exchange-rate-service
+echo ' '
+
 logger 'exited upgrade.sh'
