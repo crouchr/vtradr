@@ -60,4 +60,9 @@ echo "---------------------------------------------"
 docker pull registry:5000/tradr-exchange-rate-service
 echo ' '
 
+echo "Installing latest TRADR SP500 Buy Signals (Weinstein) Monitor"
+echo "-------------------------------------------------------------"
+docker pull registry:5000/tradr-sp500-monitor-buy-signals
+echo ' '
+
 logger 'exited upgrade.sh'
