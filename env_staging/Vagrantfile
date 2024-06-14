@@ -86,11 +86,11 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "shell", path:  "../common_scripts/fix_hosts_local_system.sh"
       iceberg.vm.provision "shell", env: {
                                         'SQL_DB_HOSTNAME' => '127.0.0.1',
-                                        'PROTONMAIL_BRIDGE_HOSTNAME' => '192.168.1.4',
-                                        'PROTONMAIL_BRIDGE_PORT' => '1025',
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
                                         'FMP_FREE_API_KEY' => ENV['FMP_FREE_API_KEY'],
+                                        'PROTONMAIL_BRIDGE_HOSTNAME'=> ENV['PROTONMAIL_BRIDGE_HOSTNAME'],
+                                        'PROTONMAIL_BRIDGE_PORT' => ENV['PROTONMAIL_BRIDGE_PORT'],
                                         'PROTONMAIL_PLUS_BRIDGE_KEY' => ENV['PROTONMAIL_PLUS_BRIDGE_KEY'],
                                         'ALPHAVANTAGE_BASIC_API_KEY' => ENV['ALPHAVANTAGE_BASIC_API_KEY'],
                                         'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY']
