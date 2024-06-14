@@ -89,8 +89,8 @@ Vagrant.configure("2") do |config|
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
                                         'FMP_FREE_API_KEY' => ENV['FMP_FREE_API_KEY'],
-                                        'PROTONMAIL_BRIDGE_HOSTNAME'=> ENV['PROTONMAIL_BRIDGE_HOSTNAME'],
-                                        'PROTONMAIL_BRIDGE_PORT' => ENV['PROTONMAIL_BRIDGE_PORT'],
+                                        'PROTONMAIL_PLUS_BRIDGE_HOSTNAME'=> ENV['PROTONMAIL_PLUS_BRIDGE_HOSTNAME'],
+                                        'PROTONMAIL_PLUS_BRIDGE_PORT' => ENV['PROTONMAIL_PLUS_BRIDGE_PORT'],
                                         'PROTONMAIL_PLUS_BRIDGE_KEY' => ENV['PROTONMAIL_PLUS_BRIDGE_KEY'],
                                         'ALPHAVANTAGE_BASIC_API_KEY' => ENV['ALPHAVANTAGE_BASIC_API_KEY'],
                                         'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY']
