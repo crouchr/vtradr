@@ -37,33 +37,51 @@ Vagrant.configure("2") do |config|
   # Docker, Jython etc.
   config.vm.define "iceberg" do |iceberg|
     iceberg.vm.box = "tradr7"
-  #  # tradr0.vm.box_check_update = true
-    iceberg.vm.hostname = "prd-iceberg"
-    iceberg.vm.network :public_network, ip: "192.168.1.55", bridge: "en0"
+    iceberg.vm.box_url = "http://www.tradr.click/boxes/tradr7/tradr7-metadata.json"
+    iceberg.vm.box_check_update = true
+    iceberg.vm.hostname = "itg-iceberg"
+    iceberg.vm.network :public_network, ip: "192.168.1.55", bridge: "eth0"
+    iceberg.vm.synced_folder "dbase_backups/", "/home/vagrant/dbase_backups"
     iceberg.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
         vb0.memory = "4096"
     end
       iceberg.vm.provision "file", source: "../common_scripts/configure.sh", destination: "configure.sh"
       iceberg.vm.provision "file", source: "../common_scripts/clean_up.sh", destination: "clean_up.sh"
-      iceberg.vm.provision "file", source: "../common_scripts/start_stocks_scanner.sh", destination: "start_stocks_scanner.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_tradr_daemons.sh", destination: "run_tradr_daemons.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_swing_trader.sh", destination: "run_swing_trader.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_bitcoin_grabber.sh", destination: "run_bitcoin_grabber.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_ibit_grabber.sh", destination: "run_ibit_grabber.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_indices_grabber.sh", destination: "run_indices_grabber.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_treasuries_grabber.sh", destination: "run_treasuries_grabber.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_commodities_grabber.sh", destination: "run_commodities_grabber.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_core_ratios.sh", destination: "run_core_ratios.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_tepper_indicators.sh", destination: "run_tepper_indicators.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/run_stocks_scanner.sh", destination: "run_stocks_scanner.sh"
       iceberg.vm.provision "file", source: "../common_scripts/disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
-      iceberg.vm.provision "shell", path:  "../common_scripts/disable_firewall_patch.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/start_filebeat_patch.sh", destination: "start_filebeat_patch.sh"
+
       iceberg.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
       iceberg.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
+
+      iceberg.vm.provision "shell", path:  "../common_scripts/disable_firewall_patch.sh"
+      iceberg.vm.provision "shell", path:  "../common_scripts/fix_hosts_local_system.sh"
       iceberg.vm.provision "shell", env: {
                                         'SQL_DB_HOSTNAME' => '127.0.0.1',
-                                        'PROTONMAIL_BRIDGE_HOSTNAME' => '192.168.1.4',
-                                        'PROTONMAIL_BRIDGE_PORT' => '1025',
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
                                         'VONAGE_API_KEY' => ENV['VONAGE_API_KEY'],
-                                        'FMP_FREE_API_KEY' => ENV[ 'FMP_FREE_API_KEY'],
+                                        'FMP_FREE_API_KEY' => ENV['FMP_FREE_API_KEY'],
+                                        'PROTONMAIL_PLUS_BRIDGE_HOSTNAME'=> ENV['PROTONMAIL_PLUS_BRIDGE_HOSTNAME'],
+                                        'PROTONMAIL_PLUS_BRIDGE_PORT' => ENV['PROTONMAIL_PLUS_BRIDGE_PORT'],
                                         'PROTONMAIL_PLUS_BRIDGE_KEY' => ENV['PROTONMAIL_PLUS_BRIDGE_KEY'],
                                         'ALPHAVANTAGE_BASIC_API_KEY' => ENV['ALPHAVANTAGE_BASIC_API_KEY'],
                                         'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY']
                                          },
                                          path: '../common_scripts/setup_env_vars.sh'
+
+    iceberg.vm.provision "shell", path:  "../common_scripts/start_filebeat_patch.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/set_symlinks.sh"
+    iceberg.vm.provision "shell", path:  "../common_scripts/upgrade.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
   end       # of iceberg
 
