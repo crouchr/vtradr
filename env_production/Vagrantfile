@@ -1,52 +1,44 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# PRODUCTION (MacBook) in Ermin setup
+# PRODUCTION (j1900) in Ermin setup
 
 # smarter way to do multi-machine is here : https://manski.net/articles/vagrant/multi-machine-tutorial
 
 Vagrant.configure("2") do |config|
-
-  # Services VBOX
-  # =============
-  # Start first as it is the logging server node
-  config.vm.define "iceberg_services" do |prd_services|
-    prd_services.vm.box = "tradr7-services"
-    prd_services.vm.hostname = "prd-services"
-    prd_services.vm.network :public_network, ip: "192.168.1.56", bridge: "en0"
-
-    prd_services.vm.provider "virtualbox" do |vb0|
-        vb0.gui = true
-        vb0.memory = "3072"
-    end
-    prd_services.vm.provision "file", source: "../common_scripts/disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
-    prd_services.vm.provision "file", source: "../common_scripts/start_elasticsearch_patch.sh", destination: "start_elasticsearch_patch.sh"
-    prd_services.vm.provision "file", source: "../common_scripts/start_filebeat_patch.sh", destination: "start_filebeat_patch.sh"
-    prd_services.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
-    prd_services.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
-    prd_services.vm.provision "shell", path:  "../common_scripts/disable_firewall_patch.sh"
-    prd_services.vm.provision "shell", path:  "../common_scripts/start_elasticsearch_patch.sh"
-    prd_services.vm.provision "shell", path:  "../common_scripts/start_filebeat_patch.sh"
-    prd_services.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
-  end       # of prd_services
 
   # Application VBOX
   # ================
   # All my TRADR application code is on here - node subject to lots of change
   # This is the node the user interacts with - the 'iceberg' terminal
   # Docker, Jython etc.
-  config.vm.define "iceberg" do |iceberg|
+  config.vm.define "prd_iceberg" do |iceberg|
     iceberg.vm.box = "tradr7"
     iceberg.vm.box_url = "http://www.tradr.click/boxes/tradr7/tradr7-metadata.json"
     iceberg.vm.box_check_update = true
-    iceberg.vm.hostname = "itg-iceberg"
+    iceberg.vm.hostname = "prd-iceberg"
     iceberg.vm.network :public_network, ip: "192.168.1.55", bridge: "eth0"
     iceberg.vm.synced_folder "dbase_backups/", "/home/vagrant/dbase_backups"
     iceberg.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
         vb0.memory = "4096"
     end
-      iceberg.vm.provision "file", source: "../common_scripts/configure.sh", destination: "configure.sh"
+      # start : use these versions during rapid development and then copy to Packer
+      #iceberg.vm.provision "file", source: "../common_files/wazuh.conf", destination: "/tmp/wazuh.conf"
+      #iceberg.vm.provision "file", source: "../common_files/motd-tradr", destination: "/tmp/etc/motd"
+      #iceberg.vm.provision "file", source: "../common_files/syslog-ng.conf", destination: "/tmp/syslog-ng.conf"
+      #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/wazuh.conf /var/ossec/etc/wazuh.conf"
+      #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/etc/motd /etc/motd"
+      #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf"
+      # end : use these versions during rapid development and then copy to Packer
+      iceberg.vm.provision "file", source: "docker-compose.yml", destination: "docker-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/fix_hosts_local_system.sh", destination: "fix_hosts_local_system.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/cli.sh", destination: "cli.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/upgrade.sh", destination: "upgrade.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/backup_database.sh", destination: "backup_database.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/restore_database.sh", destination: "restore_database.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/help_tradr.sh", destination: "help_tradr.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/version_tradr.sh", destination: "version_tradr.sh"
       iceberg.vm.provision "file", source: "../common_scripts/clean_up.sh", destination: "clean_up.sh"
       iceberg.vm.provision "file", source: "../common_scripts/run_tradr_daemons.sh", destination: "run_tradr_daemons.sh"
       iceberg.vm.provision "file", source: "../common_scripts/run_swing_trader.sh", destination: "run_swing_trader.sh"
@@ -82,6 +74,10 @@ Vagrant.configure("2") do |config|
     iceberg.vm.provision "shell", path:  "../common_scripts/start_filebeat_patch.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/set_symlinks.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/upgrade.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_bitcoin_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_ibit_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_indices_grabber.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/run_treasuries_grabber.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
   end       # of iceberg
 

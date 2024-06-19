@@ -44,6 +44,7 @@ $ git clone --depth 1 https://github.com/crouchr/vtradr.git
 $ cd vtradr
 $ cd env_production
 $ ./update_tradr_boxes.sh
+$ mkdir dbase_backups
 ```
 
 Now SSH onto the Iceberg VM
