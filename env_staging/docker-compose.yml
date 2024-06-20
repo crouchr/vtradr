@@ -217,13 +217,13 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
     environment:
       - SA_ITERATION=1
-      - SA_ADHOC_WATCHLIST="'AEHR', 'CARG', 'DKS', 'DOCS', 'FOUR', 'LBTYA', 'MBLY', 'NXT', 'ODD', 'ORCL', 'RXT', 'RYAM', 'TIGR', 'TSLA', 'YOU'"
-      - SA_ALERTS_EMAIL_LIST="'richard.crouch100@gmail.com','richard.crouch@protonmail.com'"
+      - SA_ADHOC_WATCHLIST=AEHR,CARG,DKS,DOCS,FOUR,LBTYA,MBLY,NXT,ODD,ORCL,RXT,RYAM,TIGR,TSLA,YOU
+      - SA_ALERTS_EMAIL_LIST=richard.crouch100@gmail.com,richard.crouch@protonmail.com
       - SA_SCAN_SP500=False
       - SA_SCAN_NASDAQ=False
-      - SA_VOLUME_K_FACTOR=1.7
-      - SA_MRP_MIN_THRESHOLD=1.1
-      - SA_WAKEUP_HOUR=9
+      - SA_VOLUME_K_FACTOR=1.71
+      - SA_MRP_MIN_THRESHOLD=1.11
+      - SA_WAKEUP_HOUR=7
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
