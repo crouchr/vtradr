@@ -25,7 +25,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
     environment:
       - SA_ITERATION=1
-      - SA_ADHOC_WATCHLIST="'AEHR', 'CARG', 'DKS', 'DOCS', 'FOUR', 'LBTYA', 'MBLY', 'NXT', 'ODD', 'ORCL', 'RXT', 'RYAM', 'TIGR', 'TSLA', 'YOU'"
+      - SA_ADHOC_WATCHLIST=AEHR,CARG,DKS,DOCS,FOUR,LBTYA,MBLY,NXT,ODD,ORCL,RXT,RYAM,TIGR,TSLA,YOU
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
