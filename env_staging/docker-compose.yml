@@ -217,14 +217,40 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
     environment:
       - SA_ITERATION=1
-      - SA_ADHOC_WATCHLIST=AEHR,CARG,DKS,DOCS,FOUR,LBTYA,MBLY,NXT,ODD,ORCL,RXT,RYAM,TIGR,TSLA,YOU
-      - SA_ALERTS_EMAIL_LIST=richard.crouch100@gmail.com,richard.crouch@protonmail.com
+      - SA_WAKEUP_HOUR=3
+      - SA_ADHOC_WATCHLIST=AA,AEM,AMRC,AMZN,APLD,BTDR,CEF,CMRE,EAT,GE,GLD,GOOGL,GSL,HUT,ICE,NEM,NU,SILV,TOST,ZIM
+      - SA_ALERTS_EMAIL_LIST=richard.crouch100@gmail.com
       - SA_SCAN_FTSE=True
       - SA_SCAN_SP500=False
       - SA_SCAN_NASDAQ=False
       - SA_VOLUME_K_FACTOR=1.701
       - SA_MRP_MIN_THRESHOLD=1.01
-      - SA_WAKEUP_HOUR=7
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  tradr-daily-report:
+    container_name: tradr-daily-report
+    image: registry:5000/tradr-daily-report
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-daily-report"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+    environment:
+      - DAILY_REPORT_ITERATION=1
+      - DAILY_REPORT_HOUR=8
+      - DAILY_REPORT_ADHOC_WATCHLIST=AA,AEM,AMRC,AMZN,APLD,BTDR,CEF,CMRE,EAT,GE,GLD,GOOGL,GSL,HUT,ICE,NEM,NU,SILV,TOST,ZIM
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
