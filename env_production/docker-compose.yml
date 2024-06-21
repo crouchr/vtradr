@@ -52,7 +52,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
     environment:
       - DAILY_REPORT_ITERATION=2
-      - DAILY_REPORT_HOUR=10
+      - DAILY_REPORT_HOUR=8
       - DAILY_REPORT_EMAIL_LIST=richard.crouch100@gmail.com,elliot.crouch@icloud.com,adrian.white361@outlook.com
       - DAILY_REPORT_ADHOC_WATCHLIST=AA,AEM,AMRC,AMZN,APLD,BTDR,CEF,CMRE,EAT,GE,GLD,GOOGL,GSL,HUT,ICE,NEM,NU,SILV,TOST,ZIM
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
