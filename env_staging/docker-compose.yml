@@ -204,14 +204,14 @@ services:
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
 
-  tradr-sp500-monitor-buy-signals:
-    container_name: tradr-sp500-monitor-buy-signals
-    image: registry:5000/tradr-sp500-monitor-buy-signals
+  tradr-all-stocks-stage-classifier:
+    container_name: tradr-all-stocks-stage-classifier
+    image: registry:5000/tradr-all-stocks-stage-classifier
     logging:
       driver: "syslog"
       options:
         syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-sp500-monitor-buy-signals"
+        tag: "tradr-all-stocks-stage-classifier"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock

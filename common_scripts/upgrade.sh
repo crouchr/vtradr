@@ -60,9 +60,9 @@ echo "---------------------------------------------"
 docker pull registry:5000/tradr-exchange-rate-service
 echo ' '
 
-echo "Installing latest TRADR SP500/NASDAQ/FTSE Buy Signals (Weinstein) Monitor"
-echo "-------------------------------------------------------------------------"
-docker pull registry:5000/tradr-sp500-monitor-buy-signals
+echo "Installing latest TRADR All Stocks Stage Classifier (spot Weinstein)"
+echo "--------------------------------------------------------------------"
+docker pull registry:5000/tradr-all-stocks-stage-classifier
 echo ' '
 
 echo "Installing latest TRADR Stage Analysis Daily Report"
