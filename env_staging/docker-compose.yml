@@ -216,7 +216,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
     environment:
-      - SA_ITERATION=2
+      - SA_ITERATION=1
       - SA_WAKEUP_HOUR=3
       - SA_ADHOC_WATCHLIST=AA,AEM,AMRC,AMZN,APLD,BTDR,CEF,CMRE,EAT,GE,GLD,GOOGL,GSL,HUT,ICE,NEM,NU,SILV,TOST,ZIM
       - SA_ALERTS_EMAIL_LIST=richard.crouch100@gmail.com
