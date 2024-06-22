@@ -23,9 +23,17 @@ sudo mv /home/vagrant/backup_database.sh /usr/local/bin/backup_database.sh
 sudo chmod +x /usr/local/bin/backup_database.sh
 ln -sf /usr/local/bin/backup_database.sh /usr/local/bin/backup
 
+sudo mv /home/vagrant/backup_lts_database.sh /usr/local/bin/backup_lts_database.sh
+sudo chmod +x /usr/local/bin/backup_lts_database.sh
+ln -sf /usr/local/bin/backup_lts_database.sh /usr/local/bin/backup-lts
+
 sudo mv /home/vagrant/restore_database.sh /usr/local/bin/restore_database.sh
 sudo chmod +x /usr/local/bin/restore_database.sh
 ln -sf /usr/local/bin/restore_database.sh /usr/local/bin/restore
+
+sudo mv /home/vagrant/restore_lts_database.sh /usr/local/bin/restore_lts_database.sh
+sudo chmod +x /usr/local/bin/restore_lts_database.sh
+ln -sf /usr/local/bin/restore_lts_database.sh /usr/local/bin/restore-lts
 
 sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh
