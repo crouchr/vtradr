@@ -12,198 +12,198 @@ services:
         tag: "tradr-exchange-rate-service"
     network_mode: "host"
 
-  indices_grabber:
-    container_name: tradr-indices-grabber
-    image: registry:5000/tradr-indices-grabber
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-indices-grabber"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  bitcoin_grabber:
-    container_name: tradr-bitcoin-grabber
-    image: registry:5000/tradr-bitcoin-grabber
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-bitcoin-grabber"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  ibit_grabber:
-    container_name: tradr-ibit-grabber
-    image: registry:5000/tradr-ibit-grabber
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-ibit-grabber"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  commodities_grabber:
-    container_name: tradr-commodities-grabber
-    image: registry:5000/tradr-commodities-grabber
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-commodities-grabber"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  treasuries_grabber:
-    container_name: tradr-treasuries-grabber
-    image: registry:5000/tradr-treasuries-grabber
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-treasuries-grabber"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  tepper_indicators:
-    container_name: tradr-tepper-indicators
-    image: registry:5000/tradr-tepper-indicators
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-tepper-indicators"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  core_ratios:
-    container_name: tradr-core-ratios
-    image: registry:5000/tradr-core-ratios
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-core-ratios"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  swing_trader:
-    container_name: tradr-scanner
-    image: registry:5000/tradr-scanner
-    privileged: true
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-scanner"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    devices:
-      - /dev/snd:/dev/snd
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
-  assets_tracker:
-    container_name: tradr-assets-tracker
-    image: registry:5000/tradr-assets-tracker
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-assets-tracker"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
+#  indices_grabber:
+#    container_name: tradr-indices-grabber
+#    image: registry:5000/tradr-indices-grabber
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-indices-grabber"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  bitcoin_grabber:
+#    container_name: tradr-bitcoin-grabber
+#    image: registry:5000/tradr-bitcoin-grabber
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-bitcoin-grabber"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  ibit_grabber:
+#    container_name: tradr-ibit-grabber
+#    image: registry:5000/tradr-ibit-grabber
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-ibit-grabber"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  commodities_grabber:
+#    container_name: tradr-commodities-grabber
+#    image: registry:5000/tradr-commodities-grabber
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-commodities-grabber"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  treasuries_grabber:
+#    container_name: tradr-treasuries-grabber
+#    image: registry:5000/tradr-treasuries-grabber
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-treasuries-grabber"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  tepper_indicators:
+#    container_name: tradr-tepper-indicators
+#    image: registry:5000/tradr-tepper-indicators
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-tepper-indicators"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  core_ratios:
+#    container_name: tradr-core-ratios
+#    image: registry:5000/tradr-core-ratios
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-core-ratios"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  swing_trader:
+#    container_name: tradr-scanner
+#    image: registry:5000/tradr-scanner
+#    privileged: true
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-scanner"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    devices:
+#      - /dev/snd:/dev/snd
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
+#  assets_tracker:
+#    container_name: tradr-assets-tracker
+#    image: registry:5000/tradr-assets-tracker
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "tradr-assets-tracker"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#
   tradr-all-stocks-stage-classifier:
     container_name: tradr-all-stocks-stage-classifier
     image: registry:5000/tradr-all-stocks-stage-classifier
@@ -236,28 +236,28 @@ services:
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
 
-  tradr-daily-report:
-    container_name: tradr-daily-report
-    image: registry:5000/tradr-daily-report
-    logging:
-      driver: "syslog"
-      options:
-        syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-daily-report"
-    network_mode: "host"
-    volumes:
-      - /var/lib/mysql/mysql.sock:/mysql.sock
-    environment:
-      - DAILY_REPORT_ITERATION=1
-      - DAILY_REPORT_HOUR=7
-      - DAILY_REPORT_ADHOC_WATCHLIST=ADBE,AI,ALAR,APG,AU,AXON,CARG,CCJ,CDE,CDNA,CFLT,CHKP,CNK,CRDO,CYBR,ESTC,HACK,HMY,MSTR,PLTR,RIVN,RPAY,VRNS,ZS
-      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
-      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
-      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
-      - VONAGE_API_KEY=${VONAGE_API_KEY}
-      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
-      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
-      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
-      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
-      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
-      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+#  stage-change-alerter:
+#    container_name: stage-change-alerter
+#    image: registry:5000/stage-change-alerter
+#    logging:
+#      driver: "syslog"
+#      options:
+#        syslog-address: "udp://127.0.0.1:514"
+#        tag: "stage-change-alerter"
+#    network_mode: "host"
+#    volumes:
+#      - /var/lib/mysql/mysql.sock:/mysql.sock
+#    environment:
+#      - DAILY_REPORT_ITERATION=1
+#      - DAILY_REPORT_HOUR=7
+#      - DAILY_REPORT_ADHOC_WATCHLIST=ADBE,AI,ALAR,APG,AU,AXON,CARG,CCJ,CDE,CDNA,CFLT,CHKP,CNK,CRDO,CYBR,ESTC,HACK,HMY,MSTR,PLTR,RIVN,RPAY,VRNS,ZS
+#      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+#      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+#      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+#      - VONAGE_API_KEY=${VONAGE_API_KEY}
+#      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+#      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+#      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+#      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+#      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+#      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
