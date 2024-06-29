@@ -5,8 +5,8 @@
 logger 'entered upgrade.sh'
 
 echo ' '
-echo "Installing latest TRADR CLI"
-echo "---------------------------"
+echo "#1 Installing latest TRADR CLI"
+echo "------------------------------"
 docker pull registry:5000/tradr-cli
 echo ' '
 
@@ -55,19 +55,19 @@ echo ' '
 # docker pull registry:5000/tradr-assets-tracker
 # echo ' '
 
-echo "Installing latest TRADR Exchange Rate Service"
-echo "---------------------------------------------"
+echo "#2 Installing latest TRADR Exchange Rate Service"
+echo "------------------------------------------------"
 docker pull registry:5000/tradr-exchange-rate-service
 echo ' '
 
-echo "Installing latest TRADR All Stocks Stage Classifier (spot Weinstein)"
-echo "--------------------------------------------------------------------"
+echo "#3 Installing latest TRADR All Stocks Stage Classifier (spot Weinstein)"
+echo "-----------------------------------------------------------------------"
 docker pull registry:5000/tradr-all-stocks-stage-classifier
 echo ' '
 
-echo "Installing latest TRADR Stage Analysis Daily Report"
-echo "---------------------------------------------------"
-docker pull registry:5000/tradr-daily-report
+echo "#4 Installing latest TRADR Stage Change Alerter"
+echo "-----------------------------------------------"
+docker pull registry:5000/tradr-stage-change-alerter
 echo ' '
 
 logger 'exited upgrade.sh'
