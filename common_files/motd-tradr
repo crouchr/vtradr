@@ -8,7 +8,7 @@
  |_____\___\___|_.__/ \___|_|  \__, |
                                 __/ |
                                |___/
- Infrastructure Build v1.0.4
+ Infrastructure Build v1.0.5
  ===========================
  Base OS : CentOS7
 
@@ -16,7 +16,7 @@
  - Docker
  - Filebeat
  - Syslog NG
- - MariaDB Server
+ - MariaDB SQL Server
  - Wazuh HIDS
  - TRADR Application (Dockerised)
 
@@ -33,9 +33,20 @@
  Type 'run_swing_trader'  : Run the Swing Tradr application daemon
  Type 'help_tradr'        : Display instructions
  Type 'upgrade'           : Upgrade the TRADR (Dockerised) applications
- Type 'backup'            : Backup your TRADR SQL configuration and data
- Type 'restore'           : Restore your TRADR SQL configuration and data
+ Type 'backup'            : Backup the TRADR SQL Database
+ Type 'restore'           : Restore the TRADR SQL Database
+ Type 'backup-lts'        : Backup the TRADR LTS SQL Database
+ Type 'restore-lts'       : Restore the TRADR LTS SQL Database
 
  Type 'cli' to access the TRADR command-line interface (admin_cli and user_cli modes)
  [2] admin_cli and user_cli commands:
  install_tradr.sh         : Install the complete TRADR Application
+
+ Remember to backup the TRADR SQL Database AND the TRADR LTS SQL Database before destroying the TRADR VirtualBox.
+
+ Access log files using :
+ $ sudo su -
+ # cd /var/log
+ # tail -f <logfile_name>
+
+
