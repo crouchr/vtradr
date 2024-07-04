@@ -1,0 +1,13 @@
+version: '3'
+
+# Run REST services first
+services:
+  tradr_exchange_rate_service:
+    container_name: tradr-exchange-rate-service
+    image: registry:5000/tradr-exchange-rate-service
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-exchange-rate-service"
+    network_mode: "host"

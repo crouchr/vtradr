@@ -1,0 +1,9 @@
+#/bin/bash
+
+logger "rc.local started"
+
+logger "Run the exchange-rate-service container as a single shot..."
+docker compose -f /home/vagrant/exchange-rate-service-compose.yml up
+
+logger "rc.local finished"
+
