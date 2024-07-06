@@ -1,7 +1,7 @@
 # Run Containers
 # Note : No need to run it in background using &
 # Need to provide the vagrant user env variables - see https://unix.stackexchange.com/questions/27289/how-can-i-run-a-cron-command-with-existing-environmental-variables
-# */5 * * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
-# */5 * * * * source /home/vagrant/.bashrc;  /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
+# 0 3 * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
+# 0 4 * * * source /home/vagrant/.bashrc;  /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
 0 15 * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 30 15 * * * source /home/vagrant/.bashrc;  /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
