@@ -34,6 +34,8 @@ Vagrant.configure("2") do |config|
       #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/etc/motd /etc/motd"
       #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf"
       # end : use these versions during rapid development and then copy to Packer
+
+      # see https://unix.stackexchange.com/questions/309614/how-do-i-set-the-correct-time-on-centos-7
       iceberg.vm.provision "shell", run:  "always", inline: 'timedatectl set-timezone "Europe/London"'
 
       # copy files to /home/vagrant on the VBOX if destination is just a filename
