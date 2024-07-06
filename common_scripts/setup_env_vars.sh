@@ -1,6 +1,7 @@
 #!/bin/bash
+# note : This does NOT set ENV vars for root user
 
-echo "Entered setup-profile.sh..."
+echo "Entered setup-profile.sh to set ENV vars for vagrant user..."
 
 function set_in_profile() {
   echo "$1" >> /home/vagrant/.bashrc

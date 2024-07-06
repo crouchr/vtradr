@@ -1,0 +1,2 @@
+# Run Stocks Classifier at 2 am each day
+0 2 * * * vagrant /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up

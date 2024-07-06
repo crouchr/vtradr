@@ -1,0 +1,2 @@
+# Run Stage Change Alerter at 3 am each day
+0 3 * * * vagrant /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
