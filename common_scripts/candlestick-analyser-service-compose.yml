@@ -1,0 +1,13 @@
+version: '3'
+
+# Run REST services first
+services:
+  tradr_candlestick_analyser_service:
+    container_name: tradr-candlestick-analyser
+    image: registry:5000/tradr-candlestick-analyser
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-candlestick-analyser"
+    network_mode: "host"
