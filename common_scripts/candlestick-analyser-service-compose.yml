@@ -11,3 +11,16 @@ services:
         syslog-address: "udp://127.0.0.1:514"
         tag: "tradr-candlestick-analyser"
     network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
