@@ -70,6 +70,7 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "file", source: "../common_scripts/run_stocks_scanner.sh", destination: "run_stocks_scanner.sh"
       iceberg.vm.provision "file", source: "../common_scripts/disable_firewall_patch.sh", destination: "disable_firewall_patch.sh"
       iceberg.vm.provision "file", source: "../common_scripts/start_filebeat_patch.sh", destination: "start_filebeat_patch.sh"
+      #iceberg.vm.provision "file", source: "../common_scripts/setup_systemd.sh", destination: "setup_systemd.sh"
 
       iceberg.vm.provision "shell", run:  "always", inline: "ip route del 0/0"
       iceberg.vm.provision "shell", run:  "always", inline: "route add default gw 192.168.1.1"
@@ -95,6 +96,7 @@ Vagrant.configure("2") do |config|
                                          },
                                          path: '../common_scripts/setup_env_vars.sh'
 
+    # These scripts are automatically copied from host machine and then executed on the guest
     iceberg.vm.provision "shell", path:  "../common_scripts/start_filebeat_patch.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/set_symlinks.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/upgrade.sh"
@@ -103,7 +105,7 @@ Vagrant.configure("2") do |config|
     # iceberg.vm.provision "shell", path:  "../common_scripts/run_ibit_grabber.sh"
     # iceberg.vm.provision "shell", path:  "../common_scripts/run_indices_grabber.sh"
     # iceberg.vm.provision "shell", path:  "../common_scripts/run_treasuries_grabber.sh"
-    iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
+    #iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
   end       # of iceberg
 
 end
