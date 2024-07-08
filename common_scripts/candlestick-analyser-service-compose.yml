@@ -11,8 +11,6 @@ services:
         syslog-address: "udp://127.0.0.1:514"
         tag: "tradr-candlestick-analyser"
     network_mode: "host"
-    ports:
-      - "5001:5001"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
     environment:
