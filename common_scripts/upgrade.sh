@@ -75,4 +75,9 @@ echo "-----------------------------------------------"
 docker pull registry:5000/tradr-candlestick-analyser
 echo ' '
 
+echo "#6 Installing latest TRADR Generate All Tickers"
+echo "-----------------------------------------------"
+docker pull registry:5000/tradr-generate-all-tickers
+echo ' '
+
 logger 'exited upgrade.sh'
