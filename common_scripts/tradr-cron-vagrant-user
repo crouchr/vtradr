@@ -3,6 +3,7 @@
 # Need to provide the vagrant user env variables - see https://unix.stackexchange.com/questions/27289/how-can-i-run-a-cron-command-with-existing-environmental-variables
 0 16 * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 0 23 * * * source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
-0 3  * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
+0  2  * * * curl -X GET http://127.0.0.1:5001/refresh
+30 2  * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 0 4  * * * source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
 
