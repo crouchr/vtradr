@@ -80,4 +80,9 @@ echo "-----------------------------------------------"
 docker pull registry:5000/tradr-generate-all-tickers
 echo ' '
 
+echo "#7 Installing latest TRADR Realtime Monitor"
+echo "-------------------------------------------"
+docker pull registry:5000/tradr-realtime-monitor
+echo ' '
+
 logger 'exited upgrade.sh'
