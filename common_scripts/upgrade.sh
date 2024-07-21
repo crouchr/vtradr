@@ -85,4 +85,9 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-realtime-monitor
 echo ' '
 
+echo "#8 Installing latest TRADR Open Trades Monitor"
+echo "----------------------------------------------"
+docker pull registry:5000/tradr-open-trades-monitor
+echo ' '
+
 logger 'exited upgrade.sh'

@@ -11,4 +11,7 @@ systemctl start candlestick-analyser-service.service
 systemctl enable realtime-monitor.service
 systemctl start realtime-monitor.service
 
+systemctl enable open-trades-monitor.service
+systemctl start open-trades-monitor.service
+
 echo "Exited set_systemd.sh..."
