@@ -1,14 +1,14 @@
 # Reference : https://askubuntu.com/questions/1459175/how-to-run-a-docker-compose-as-a-systemd-service
 # https://ma.ttias.be/auto-restart-crashed-service-systemd/
-
+# Note: if you change your systemd unit file, make sure to run 'systemctl daemon-reload' to reload the changes.
 [Unit]
 Description=Exchange Rate Service
 After=docker.service
 Requires=docker.service
 
 [Service]
-Type=oneshot
-RemainAfterExit=yes
+# Type=oneshot
+# RemainAfterExit=yes
 ExecStart=/bin/bash -c "docker compose -f /home/vagrant/exchange-rate-service-compose.yml up --detach"
 ExecStop=/bin/bash -c "docker compose -f /home/vagrant/exchange-rate-service-compose.yml stop"
 Restart=on-failure

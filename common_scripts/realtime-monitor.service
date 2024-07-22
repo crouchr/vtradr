@@ -1,12 +1,14 @@
 # Reference : https://askubuntu.com/questions/1459175/how-to-run-a-docker-compose-as-a-systemd-service
+# https://ma.ttias.be/auto-restart-crashed-service-systemd/
+# Note: if you change your systemd unit file, make sure to run 'systemctl daemon-reload' to reload the changes.
 [Unit]
 Description=Realtime Monitor
 After=docker.service
 Requires=docker.service
 
 [Service]
-Type=oneshot
-RemainAfterExit=yes
+# Type=oneshot
+# RemainAfterExit=yes
 ExecStart=/bin/bash -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/realtime-monitor-compose.yml up --detach"
 ExecStop=/bin/bash  -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/realtime-monitor-compose.yml stop"
 Restart=on-failure
