@@ -93,6 +93,7 @@ echo ' '
 echo "#9 Installing latest TRADR RSI Buy Sniper"
 echo "-----------------------------------------"
 docker pull registry:5000/tradr-rsi-buy-sniper
+echo ' '
 
 echo "#10 Installing latest TRADR RSI Sell Sniper"
 echo "-------------------------------------------"
