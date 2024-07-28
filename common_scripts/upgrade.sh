@@ -90,4 +90,13 @@ echo "----------------------------------------------"
 docker pull registry:5000/tradr-open-trades-monitor
 echo ' '
 
+echo "#9 Installing latest TRADR RSI Buy Sniper"
+echo "-----------------------------------------"
+docker pull registry:5000/tradr-rsi-buy-sniper
+
+echo "#10 Installing latest TRADR RSI Sell Sniper"
+echo "-------------------------------------------"
+docker pull registry:5000/tradr-rsi-sell-sniper
+
+echo ' '
 logger 'exited upgrade.sh'
