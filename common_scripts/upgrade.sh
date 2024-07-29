@@ -98,6 +98,11 @@ echo ' '
 echo "#10 Installing latest TRADR RSI Sell Sniper"
 echo "-------------------------------------------"
 docker pull registry:5000/tradr-rsi-sell-sniper
-
 echo ' '
+
+echo "#11 Installing latest TRADR Vonage API Test Script"
+echo "--------------------------------------------------"
+docker pull registry:5000/tradr-vonage-api-test-script
+echo ' '
+
 logger 'exited upgrade.sh'
