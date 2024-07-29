@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
     iceberg.vm.synced_folder "dbase_backups/", "/home/vagrant/dbase_backups"
     iceberg.vm.synced_folder "watchlists/", "/home/vagrant/watchlists"
     iceberg.vm.synced_folder "reports/", "/home/vagrant/reports"
+    iceberg.vm.synced_folder "keys/", "/home/vagrant/keys"
     iceberg.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
         vb0.memory = "4096"
