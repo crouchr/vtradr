@@ -105,4 +105,9 @@ echo "--------------------------------------------------"
 docker pull registry:5000/tradr-vonage-api-test-script
 echo ' '
 
+echo "#12 Installing latest TRADR Ops Monitor"
+echo "---------------------------------------"
+docker pull registry:5000/tradr-ops-monitor
+echo ' '
+
 logger 'exited upgrade.sh'

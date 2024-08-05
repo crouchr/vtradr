@@ -242,3 +242,147 @@ services:
       - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  buy-sniper-10:
+    image: registry:5000/tradr-rsi-buy-sniper
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-rsi-buy-sniper"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - INSTANCE=10
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  buy-sniper-11:
+    image: registry:5000/tradr-rsi-buy-sniper
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-rsi-buy-sniper"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - INSTANCE=11
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  buy-sniper-12:
+    image: registry:5000/tradr-rsi-buy-sniper
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-rsi-buy-sniper"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - INSTANCE=12
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  buy-sniper-13:
+    image: registry:5000/tradr-rsi-buy-sniper
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-rsi-buy-sniper"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - INSTANCE=13
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  buy-sniper-14:
+    image: registry:5000/tradr-rsi-buy-sniper
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-rsi-buy-sniper"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - INSTANCE=14
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  buy-sniper-15:
+    image: registry:5000/tradr-rsi-buy-sniper
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-rsi-buy-sniper"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - INSTANCE=15
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
