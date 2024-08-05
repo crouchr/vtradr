@@ -9,7 +9,7 @@ Requires=docker.service
 [Service]
 # Type=oneshot
 # RemainAfterExit=yes
-ExecStart=/bin/bash -c "docker compose -f /home/vagrant/exchange-rate-service-compose.yml up --detach"
+ExecStart=/bin/bash -c "docker compose -f /home/vagrant/exchange-rate-service-compose.yml up"
 ExecStop=/bin/bash -c "docker compose -f /home/vagrant/exchange-rate-service-compose.yml stop"
 Restart=on-failure
 RestartSec=30s

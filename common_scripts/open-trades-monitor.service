@@ -9,7 +9,7 @@ Requires=docker.service
 [Service]
 # Type=oneshot
 # RemainAfterExit=yes
-ExecStart=/bin/bash -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/open-trades-monitor-compose.yml up --detach"
+ExecStart=/bin/bash -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/open-trades-monitor-compose.yml up"
 ExecStop=/bin/bash  -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/open-trades-monitor-compose.yml stop"
 Restart=on-failure
 RestartSec=30s
