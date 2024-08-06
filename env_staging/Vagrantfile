@@ -47,11 +47,13 @@ Vagrant.configure("2") do |config|
     iceberg.vm.synced_folder "dbase_backups/", "/home/vagrant/dbase_backups"
     iceberg.vm.synced_folder "watchlists/", "/home/vagrant/watchlists"
     iceberg.vm.synced_folder "reports/", "/home/vagrant/reports"
+    iceberg.vm.synced_folder "keys/", "/home/vagrant/keys"
     iceberg.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
         vb0.memory = "8192"
     end
       # start : use these versions during rapid development and then copy to Packer
+
       #iceberg.vm.provision "file", source: "../common_files/wazuh.conf", destination: "/tmp/wazuh.conf"
       #iceberg.vm.provision "file", source: "../common_files/motd-tradr", destination: "/tmp/etc/motd"
       #iceberg.vm.provision "file", source: "../common_files/syslog-ng.conf", destination: "/tmp/syslog-ng.conf"
@@ -59,7 +61,31 @@ Vagrant.configure("2") do |config|
       #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/etc/motd /etc/motd"
       #iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf"
       # end : use these versions during rapid development and then copy to Packer
-      iceberg.vm.provision "file", source: "docker-compose.yml", destination: "docker-compose.yml"
+
+      # see https://unix.stackexchange.com/questions/309614/how-do-i-set-the-correct-time-on-centos-7
+      iceberg.vm.provision "shell", run:  "always", inline: 'timedatectl set-timezone "Europe/London"'
+
+      # copy files to /home/vagrant on the VBOX if destination is just a filename
+      # this is just needed for debugging - you can run the scripts using 'shell' without this
+      iceberg.vm.provision "file", source: "../common_scripts/tradr-cron-vagrant-user", destination: "/tmp/tradr-cron-vagrant-user"
+      iceberg.vm.provision "file", source: "../common_scripts/exchange-rate-service.service", destination: "/tmp/exchange-rate-service.service"
+      iceberg.vm.provision "file", source: "../common_scripts/exchange-rate-service-compose.yml", destination: "exchange-rate-service-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/candlestick-analyser-service.service", destination: "/tmp/candlestick-analyser-service.service"
+      iceberg.vm.provision "file", source: "../common_scripts/candlestick-analyser-service-compose.yml", destination: "candlestick-analyser-service-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/realtime-monitor.service", destination: "/tmp/realtime-monitor.service"
+      iceberg.vm.provision "file", source: "../common_scripts/realtime-monitor-compose.yml", destination: "realtime-monitor-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/open-trades-monitor.service", destination: "/tmp/open-trades-monitor.service"
+      iceberg.vm.provision "file", source: "../common_scripts/open-trades-monitor-compose.yml", destination: "open-trades-monitor-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/rsi-buy-sniper.service", destination: "/tmp/rsi-buy-sniper.service"
+      iceberg.vm.provision "file", source: "../common_scripts/rsi-buy-sniper-compose.yml", destination: "rsi-buy-sniper-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/rsi-sell-sniper.service", destination: "/tmp/rsi-sell-sniper.service"
+      iceberg.vm.provision "file", source: "../common_scripts/rsi-sell-sniper-compose.yml", destination: "rsi-sell-sniper-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/ops-monitor.service", destination: "/tmp/ops-monitor.service"
+      iceberg.vm.provision "file", source: "../common_scripts/ops-monitor-compose.yml", destination: "ops-monitor-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/vonage-api-test-script-compose.yml", destination: "vonage-api-test-script-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/all-stocks-classifier-compose.yml", destination: "all-stocks-classifier-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/stage-change-alerter-compose.yml", destination: "stage-change-alerter-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/generate-all-tickers-compose.yml", destination: "generate-all-tickers-compose.yml"
       iceberg.vm.provision "file", source: "../common_scripts/fix_hosts_local_system.sh", destination: "fix_hosts_local_system.sh"
       iceberg.vm.provision "file", source: "../common_scripts/cli.sh", destination: "cli.sh"
       iceberg.vm.provision "file", source: "../common_scripts/upgrade.sh", destination: "upgrade.sh"
@@ -88,6 +114,17 @@ Vagrant.configure("2") do |config|
 
       iceberg.vm.provision "shell", path:  "../common_scripts/disable_firewall_patch.sh"
       iceberg.vm.provision "shell", path:  "../common_scripts/fix_hosts_local_system.sh"
+
+      # Have to copy files in two stages if needs root permissions in destination
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/exchange-rate-service.service /etc/systemd/system/exchange-rate-service.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/candlestick-analyser-service.service /etc/systemd/system/candlestick-analyser-service.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/realtime-monitor.service /etc/systemd/system/realtime-monitor.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/open-trades-monitor.service /etc/systemd/system/open-trades-monitor.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/rsi-buy-sniper.service /etc/systemd/system/rsi-buy-sniper.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/rsi-sell-sniper.service /etc/systemd/system/rsi-sell-sniper.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ops-monitor.service /etc/systemd/system/ops-monitor.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/tradr-cron-vagrant-user /var/spool/cron/vagrant"
+
       iceberg.vm.provision "shell", env: {
                                         'SQL_DB_HOSTNAME' => '127.0.0.1',
                                         'VONAGE_API_SECRET' => ENV['VONAGE_API_SECRET'],
@@ -101,14 +138,12 @@ Vagrant.configure("2") do |config|
                                          },
                                          path: '../common_scripts/setup_env_vars.sh'
 
+    # These scripts are automatically copied from host machine and then executed on the guest
     iceberg.vm.provision "shell", path:  "../common_scripts/start_filebeat_patch.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/set_symlinks.sh"
     iceberg.vm.provision "shell", path:  "../common_scripts/upgrade.sh"
-    # iceberg.vm.provision "shell", path:  "../common_scripts/run_bitcoin_grabber.sh"
-    # iceberg.vm.provision "shell", path:  "../common_scripts/run_ibit_grabber.sh"
-    # iceberg.vm.provision "shell", path:  "../common_scripts/run_indices_grabber.sh"
-    # iceberg.vm.provision "shell", path:  "../common_scripts/run_treasuries_grabber.sh"
-    iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
+    iceberg.vm.provision "shell", path:  "../common_scripts/setup_systemd.sh"
+    # iceberg.vm.provision "shell", path:  "../common_scripts/clean_up.sh"
   end       # of iceberg
 
 end
