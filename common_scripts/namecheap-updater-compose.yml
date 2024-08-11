@@ -1,13 +1,16 @@
+# This runs on the Docker Host
+
 version: '3'
 
-# Run REST services first
 services:
-
-  ops-monitor:
+  namecheap-updater:
+    container_name: namecheap-updater
     image: registry:5000/namecheap-updater
     logging:
-      driver: "syslog"
+      driver: syslog
       options:
-        syslog-address: "udp://127.0.0.1:514"
         tag: "namecheap-updater"
-    network_mode: "host"
+    environment:
+      NAMECHEAP_DNS_PASSWORD: 369897823b7640a5838f1d2d746121dc
+      NAMECHEAP_DNS_UPDATE_MINUTES: 15
+
