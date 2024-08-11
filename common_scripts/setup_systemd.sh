@@ -23,4 +23,7 @@ systemctl start rsi-sell-sniper.service
 systemctl enable ops-monitor.service
 systemctl start ops-monitor.service
 
+systemctl enable namecheap-updater.service
+systemctl start namecheap-updater.service
+
 echo "Exited set_systemd.sh..."

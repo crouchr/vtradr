@@ -110,4 +110,9 @@ echo "---------------------------------------"
 docker pull registry:5000/tradr-ops-monitor
 echo ' '
 
+echo "#13 Installing latest NameCheap Updater"
+echo "---------------------------------------"
+docker pull registry:5000/namecheap-updater
+echo ' '
+
 logger 'exited upgrade.sh'

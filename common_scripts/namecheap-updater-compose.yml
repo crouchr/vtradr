@@ -1,0 +1,13 @@
+version: '3'
+
+# Run REST services first
+services:
+
+  ops-monitor:
+    image: registry:5000/namecheap-updater
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "namecheap-updater"
+    network_mode: "host"
