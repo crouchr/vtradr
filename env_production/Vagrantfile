@@ -99,6 +99,7 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/rsi-buy-sniper.service /etc/systemd/system/rsi-buy-sniper.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/rsi-sell-sniper.service /etc/systemd/system/rsi-sell-sniper.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ops-monitor.service /etc/systemd/system/ops-monitor.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/namecheap-updater.service /etc/systemd/system/namecheap-updater.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/tradr-cron-vagrant-user /var/spool/cron/vagrant"
 
       iceberg.vm.provision "shell", env: {
