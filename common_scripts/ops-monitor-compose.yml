@@ -2,8 +2,8 @@ version: '3'
 
 # Run REST services first
 services:
-
-  ops-monitor:
+  tradr_ops_monitor:
+    container_name: tradr-ops-monitor
     image: registry:5000/tradr-ops-monitor
     logging:
       driver: "syslog"
