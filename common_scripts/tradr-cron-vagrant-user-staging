@@ -3,7 +3,7 @@
 # Note : No need to run it in background using &
 # Monday = 1, Tuesday = 2, Friday = 5, Saturday = 6
 # Need to provide the vagrant user env variables - see https://unix.stackexchange.com/questions/27289/how-can-i-run-a-cron-command-with-existing-environmental-variables
-0 16 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
+0 21 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 0 23 * * 1-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
 0  2 * * 1-5 curl -X GET http://127.0.0.1:5001/refresh
 # 30 2 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
