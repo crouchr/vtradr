@@ -100,17 +100,17 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-rsi-sell-sniper
 echo ' '
 
-echo "#11 Installing latest TRADR Vonage API Test Script"
-echo "--------------------------------------------------"
-docker pull registry:5000/tradr-vonage-api-test-script
-echo ' '
+# echo "#11 Installing latest TRADR Vonage API Test Script"
+# echo "--------------------------------------------------"
+# docker pull registry:5000/tradr-vonage-api-test-script
+# echo ' '
 
-echo "#12 Installing latest TRADR Ops Monitor"
+echo "#11 Installing latest TRADR Ops Monitor"
 echo "---------------------------------------"
 docker pull registry:5000/tradr-ops-monitor
 echo ' '
 
-echo "#13 Installing latest NameCheap Updater"
+echo "#12 Installing latest NameCheap Updater"
 echo "---------------------------------------"
 docker pull registry:5000/namecheap-updater
 echo ' '
