@@ -115,4 +115,9 @@ echo "---------------------------------------"
 docker pull registry:5000/namecheap-updater
 echo ' '
 
+echo "#13 Installing latest Ex Div Bot"
+echo "--------------------------------"
+docker pull registry:5000/ex-div-bot
+echo ' '
+
 logger 'exited upgrade.sh'
