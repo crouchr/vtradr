@@ -117,7 +117,7 @@ echo ' '
 
 echo "#13 Installing latest Ex Div Bot"
 echo "--------------------------------"
-docker pull registry:5000/ex-div-bot
+docker pull registry:5000/tradr-exdivbot
 echo ' '
 
 logger 'exited upgrade.sh'
