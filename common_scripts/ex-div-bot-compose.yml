@@ -2,14 +2,14 @@ version: '3'
 
 # Run REST services first
 services:
-  tradr_ex_div_bot:
-    container_name: tradr-ex-div-bot
-    image: registry:5000/tradr-ex-div-bot
+  tradr_exdivbot:
+    container_name: tradr-exdivbot
+    image: registry:5000/tradr-exdivbot
     logging:
       driver: "syslog"
       options:
         syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-ex-div-bot"
+        tag: "tradr-exdivbot"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
@@ -25,4 +25,3 @@ services:
       - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
-
