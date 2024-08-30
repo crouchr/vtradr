@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# These are commands you run purely in the Vagrant Box and not inside the 'cli' or 'admin_cli' containers
 echo "Entered set_symlinks.sh..."
 
 sudo mv /home/vagrant/cli.sh /usr/local/bin/cli.sh
