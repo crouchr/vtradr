@@ -120,4 +120,9 @@ echo "--------------------------------"
 docker pull registry:5000/tradr-exdivbot
 echo ' '
 
+echo "#14 Installing latest Find Hard Asset Stocks"
+echo "--------------------------------------------"
+docker pull registry:5000/tradr-find-hard-asset-stocks
+echo ' '
+
 logger 'exited upgrade.sh'
