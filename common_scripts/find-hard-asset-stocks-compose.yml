@@ -3,8 +3,8 @@ version: '3'
 # Run REST services first
 services:
   tradr_find_hard_asset_stocks:
-    container_name: tradr_find_hard_asset_stocks
-    image: registry:5000/tradr_find_hard_asset_stocks
+    container_name: tradr-find-hard-asset-stocks
+    image: registry:5000/tradr-find-hard-asset-stocks
     logging:
       driver: "syslog"
       options:
