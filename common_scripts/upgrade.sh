@@ -125,4 +125,14 @@ echo "--------------------------------------------"
 docker pull registry:5000/tradr-find-hard-asset-stocks
 echo ' '
 
+echo "#15 Installing latest Micropython/TRADR code"
+echo "--------------------------------------------"
+docker pull registry:5000/micropython
+echo ' '
+
+echo "#16 Installing latest Patternz Data Grabber"
+echo "-------------------------------------------"
+docker pull registry:5000/tradr-patternz-data-grabber
+echo ' '
+
 logger 'exited upgrade.sh'
