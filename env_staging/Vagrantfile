@@ -48,6 +48,7 @@ Vagrant.configure("2") do |config|
     iceberg.vm.synced_folder "watchlists/", "/home/vagrant/watchlists"
     iceberg.vm.synced_folder "reports/", "/home/vagrant/reports"
     iceberg.vm.synced_folder "keys/", "/home/vagrant/keys"
+    iceberg.vm.synced_folder "yahoo_fin_historical_data/", "/home/vagrant/yahoo_fin_historical_data"
     iceberg.vm.provider "virtualbox" do |vb0|
         vb0.gui = true
         vb0.memory = "8192"
