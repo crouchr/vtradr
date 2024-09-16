@@ -13,4 +13,4 @@
 30 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
 #
 10 1 * * 2-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
-10 2 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
+40 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
