@@ -14,10 +14,9 @@ sudo mv /home/vagrant/help_tradr.sh /usr/local/bin/help_tradr.sh
 sudo chmod +x /usr/local/bin/help_tradr.sh
 ln -sf /usr/local/bin/help_tradr.sh /usr/local/bin/help_tradr
 
-# not needed
-# sudo mv /home/vagrant/run_tradr.sh /usr/local/bin/run_tradr.sh
-# sudo chmod +x /usr/local/bin/run_tradr.sh
-# ln -sf /usr/local/bin/run_tradr.sh /usr/local/bin/run_tradr
+sudo mv /home/vagrant/micropython.sh /usr/local/bin/micropython.sh
+sudo chmod +x /usr/local/bin/micropython.sh
+ln -sf /usr/local/bin/micropython.sh /usr/local/bin/micropython
 
 sudo mv /home/vagrant/backup_database.sh /usr/local/bin/backup_database.sh
 sudo chmod +x /usr/local/bin/backup_database.sh
