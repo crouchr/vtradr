@@ -11,6 +11,11 @@
 10 23 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
 20 23 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 30 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
-#
-10 1 * * 2-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
-40 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
+
+# The real values below
+# 10 1 * * 2-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
+# 40 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
+
+# Until running 100% crash free then run every day
+10 1 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
+40 1 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
