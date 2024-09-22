@@ -135,4 +135,9 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-patternz-data-grabber
 echo ' '
 
+echo "#17 Installing latest OHLC MQTT Writer"
+echo "--------------------------------------"
+docker pull registry:5000/tradr-ohlc-mqtt-writer
+echo ' '
+
 logger 'exited upgrade.sh'

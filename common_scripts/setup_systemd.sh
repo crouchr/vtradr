@@ -2,6 +2,9 @@
 
 echo "Entered set_systemd.sh..."
 
+systemctl enable namecheap-updater.service
+systemctl start namecheap-updater.service
+
 systemctl enable exchange-rate-service.service
 systemctl start exchange-rate-service.service
 
@@ -23,7 +26,7 @@ systemctl start rsi-sell-sniper.service
 systemctl enable ops-monitor.service
 systemctl start ops-monitor.service
 
-systemctl enable namecheap-updater.service
-systemctl start namecheap-updater.service
+systemctl enable ohlc-mqtt-writer.service
+systemctl start ohlc-mqtt-writer.service
 
 echo "Exited set_systemd.sh..."
