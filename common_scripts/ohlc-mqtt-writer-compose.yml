@@ -16,7 +16,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
     environment:
-      - API_TICKER='BTC-USD'
+      - API_TICKER=BTC-USD
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
@@ -41,7 +41,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
     environment:
-      - API_TICKER='SPY'
+      - API_TICKER=SPY
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
@@ -66,7 +66,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
     environment:
-      - API_TICKER='MSTR'
+      - API_TICKER=MSTR
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
@@ -91,7 +91,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
     environment:
-      - API_TICKER='CLSK'
+      - API_TICKER=CLSK
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
@@ -116,7 +116,7 @@ services:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
     environment:
-      - API_TICKER='MARA'
+      - API_TICKER=MARA
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
       - VONAGE_API_SECRET=${VONAGE_API_SECRET}
