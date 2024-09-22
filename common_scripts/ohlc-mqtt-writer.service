@@ -9,8 +9,8 @@ Requires=docker.service
 [Service]
 # Type=oneshot
 # RemainAfterExit=yes
-ExecStart=/bin/bash -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/ohlc-mqtt-writer.yml up"
-ExecStop=/bin/bash  -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/ohlc-mqtt-writer.yml stop"
+ExecStart=/bin/bash -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/ohlc-mqtt-writer-compose.yml up"
+ExecStop=/bin/bash  -c "source /home/vagrant/.bashrc; docker compose -f /home/vagrant/ohlc-mqtt-writer-compose.yml stop"
 Restart=on-failure
 RestartSec=30s
 
