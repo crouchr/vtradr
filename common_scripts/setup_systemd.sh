@@ -29,4 +29,7 @@ systemctl start ops-monitor.service
 systemctl enable ohlc-mqtt-writer.service
 systemctl start ohlc-mqtt-writer.service
 
+systemctl enable ohlc-mqtt-candle-alerter.service
+systemctl start ohlc-mqtt-candle-alerter.service
+
 echo "Exited set_systemd.sh..."

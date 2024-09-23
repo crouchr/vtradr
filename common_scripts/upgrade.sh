@@ -140,4 +140,9 @@ echo "--------------------------------------"
 docker pull registry:5000/tradr-ohlc-mqtt-writer
 echo ' '
 
+echo "#18 Installing latest OHLC MQTT Candle Alerter"
+echo "----------------------------------------------"
+docker pull registry:5000/tradr-ohlc-mqtt-candle-alerter
+echo ' '
+
 logger 'exited upgrade.sh'

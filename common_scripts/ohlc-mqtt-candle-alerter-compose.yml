@@ -1,0 +1,159 @@
+version: '3'
+# FIXME : not all these environment variables are needed - prune them at some point
+# Run REST services first
+services:
+  # Core trade during Bitcoin Bull Run 2024...
+  ohlc_mqtt_candle_alerter_bitcoin:
+    container_name: tradr-ohlc-mqtt-candle-alerter-bitcoin
+    image: registry:5000/tradr-ohlc-mqtt-candle-alerter
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-candle-alerter-bitcoin"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=BTC-USD
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  # Always worth tracking SP500
+  ohlc_mqtt_candle_alerter_spy:
+    container_name: tradr-ohlc-mqtt-candle-alerter-spy
+    image: registry:5000/tradr-ohlc-mqtt-candle-alerter
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-candle-alerter-spy"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=SPY
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  # Core trade during Bitcoin Bull Run 2024...
+  ohlc_mqtt_candle_alerter_mstr:
+    container_name: tradr-ohlc-mqtt-candle-alerter-mstr
+    image: registry:5000/tradr-ohlc-mqtt-candle-alerter
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-candle-alerter-mstr"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=MSTR
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  # Core trade during Bitcoin Bull Run 2024...
+  ohlc_mqtt_candle_alerter_clsk:
+    container_name: tradr-ohlc-mqtt-candle-alerter-clsk
+    image: registry:5000/tradr-ohlc-mqtt-candle-alerter
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-candle-alerter-clsk"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=CLSK
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  # Core trade during Bitcoin Bull Run 2024...
+  ohlc_mqtt_candle_alerter_mara:
+    container_name: tradr-ohlc-mqtt-candle-alerter-mara
+    image: registry:5000/tradr-ohlc-mqtt-candle-alerter
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-candle-alerter-mara"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=MARA
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  # The current' day/swing trade
+  ohlc_mqtt_candle_alerter_current:
+    container_name: tradr-ohlc-mqtt-candle-alerter-current
+    image: registry:5000/tradr-ohlc-mqtt-candle-alerter
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-candle-alerter-current"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=GATO
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
