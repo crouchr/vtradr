@@ -127,3 +127,29 @@ services:
       - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
       - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
       - YAHOO_FREE_API_KEY='NONE_REQUIRED'
+
+  # Set for the 'current 'day/swing' trade
+  ohlc_mqtt_writer_current:
+    container_name: tradr-ohlc-mqtt-writer-current
+    image: registry:5000/tradr-ohlc-mqtt-writer
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-ohlc-mqtt-writer-current"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - API_TICKER=GATO
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
+      - VONAGE_API_SECRET=${VONAGE_API_SECRET}
+      - VONAGE_API_KEY=${VONAGE_API_KEY}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+      - ALPHAVANTAGE_BASIC_API_KEY=${ALPHAVANTAGE_BASIC_API_KEY}
+      - ALPHAVANTAGE_FREE_API_KEY=${ALPHAVANTAGE_FREE_API_KEY}
+      - YAHOO_FREE_API_KEY='NONE_REQUIRED'
