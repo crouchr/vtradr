@@ -15,6 +15,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
+      - ./temp_data:/app/temp_data
     environment:
       - API_TICKER=BTC-USD
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
@@ -40,6 +41,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
+      - ./temp_data:/app/temp_data
     environment:
       - API_TICKER=SPY
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
@@ -65,6 +67,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
+      - ./temp_data:/app/temp_data
     environment:
       - API_TICKER=MSTR
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
@@ -90,6 +93,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
+      - ./temp_data:/app/temp_data
     environment:
       - API_TICKER=CLSK
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
@@ -115,6 +119,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
+      - ./temp_data:/app/temp_data
     environment:
       - API_TICKER=MARA
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
@@ -141,6 +146,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./keys:/app/keys
+      - ./temp_data:/app/temp_data
     environment:
       - API_TICKER=GATO
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
