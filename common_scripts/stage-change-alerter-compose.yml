@@ -12,6 +12,7 @@ services:
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./reports:/reports
     environment:
       - STAGE_CHANGE_ITERATION=2
       - STAGE_CHANGE_REPORT_HOUR=3
