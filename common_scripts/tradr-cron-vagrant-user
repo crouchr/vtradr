@@ -7,15 +7,17 @@
 #
 10 18 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 10 19 * * 1-7 curl -X GET http://127.0.0.1:5001/refresh
-10 22 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-compose.yml up
-10 23 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
-20 23 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
+
+40 21 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-compose.yml up
+10 23 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
+20 23 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 30 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
+05  1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # The real values below
 # 10 1 * * 2-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 # 40 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
 
 # Until running 100% crash free then run every day
-10 1 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
+15 1 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 40 1 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
