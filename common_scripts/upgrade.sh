@@ -145,4 +145,9 @@ echo "----------------------------------------------"
 docker pull registry:5000/tradr-ohlc-mqtt-candle-alerter
 echo ' '
 
+echo "#19 Installing latest Monitor Disk Space"
+echo "----------------------------------------"
+docker pull registry:5000/tradr-monitor-disk-space
+echo ' '
+
 logger 'exited upgrade.sh'

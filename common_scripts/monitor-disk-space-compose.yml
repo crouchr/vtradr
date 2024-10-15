@@ -1,0 +1,23 @@
+version: '3'
+
+# Run REST services first
+services:
+  tradr_monitor_disk_space:
+    container_name: tradr-monitor-disk-space
+    image: registry:5000/tradr-monitor-disk-space
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-monitor-disk-space"
+    network_mode: "host"
+    volumes:
+      - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./keys:/app/keys
+    environment:
+      - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
+      - PROTONMAIL_PLUS_BRIDGE_PORT=${PROTONMAIL_PLUS_BRIDGE_PORT}
+      - PROTONMAIL_PLUS_BRIDGE_KEY=${PROTONMAIL_PLUS_BRIDGE_KEY}
+
+
