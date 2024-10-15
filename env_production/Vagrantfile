@@ -113,6 +113,7 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ohlc-mqtt-writer.service /etc/systemd/system/ohlc-mqtt-writer.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ohlc-mqtt-candle-alerter.service /etc/systemd/system/ohlc-mqtt-candle-alerter.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ops-monitor.service /etc/systemd/system/ops-monitor.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/monitor-disk-space.service /etc/systemd/system/monitor-disk-space.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/namecheap-updater.service /etc/systemd/system/namecheap-updater.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/tradr-cron-vagrant-user /var/spool/cron/vagrant"
 
