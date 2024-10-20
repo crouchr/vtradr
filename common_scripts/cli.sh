@@ -10,6 +10,7 @@ docker run -u root --quiet --privileged \
 --log-opt max-file=10 \
 -v /var/lib/mysql/mysql.sock:/mysql.sock \
 -v ./reports:/reports \
+-v ./yahoo_fin_historical_data:/yahoo_fin_historical_data \
 --env "SQL_DB_HOSTNAME=$SQL_DB_HOSTNAME" \
 --env "FMP_FREE_API_KEY=$FMP_FREE_API_KEY" \
 --env "VONAGE_API_SECRET=$VONAGE_API_SECRET" \
