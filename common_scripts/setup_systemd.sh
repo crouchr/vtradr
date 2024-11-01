@@ -33,10 +33,12 @@ systemctl start rsi-sell-sniper.service
 systemctl enable ops-monitor.service
 systemctl start ops-monitor.service
 
-systemctl enable ohlc-mqtt-writer.service
-systemctl start ohlc-mqtt-writer.service
+# disable until SCA is 100% reliable
+#systemctl enable ohlc-mqtt-writer.service
+#systemctl start ohlc-mqtt-writer.service
 
-systemctl enable ohlc-mqtt-candle-alerter.service
-systemctl start ohlc-mqtt-candle-alerter.service
+# disable until SCA is 100% reliable
+#systemctl enable ohlc-mqtt-candle-alerter.service
+#systemctl start ohlc-mqtt-candle-alerter.service
 
 echo "Exited set_systemd.sh..."
