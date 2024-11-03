@@ -150,4 +150,9 @@ echo "----------------------------------------"
 docker pull registry:5000/tradr-monitor-disk-space
 echo ' '
 
+echo "#20 Installing Parse Patternz Trades File"
+echo "-----------------------------------------"
+docker pull registry:5000/tradr-parse-patternz-trades-file
+echo ' '
+
 logger 'exited upgrade.sh'
