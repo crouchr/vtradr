@@ -135,22 +135,27 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-patternz-data-grabber
 echo ' '
 
-echo "#17 Installing latest OHLC MQTT Writer"
+echo "#17 Installing latest Patternz Data Grabber Tickers"
+echo "---------------------------------------------------"
+docker pull registry:5000/tradr-patternz-data-grabber-tickers
+echo ' '
+
+echo "#18 Installing latest OHLC MQTT Writer"
 echo "--------------------------------------"
 docker pull registry:5000/tradr-ohlc-mqtt-writer
 echo ' '
 
-echo "#18 Installing latest OHLC MQTT Candle Alerter"
+echo "#19 Installing latest OHLC MQTT Candle Alerter"
 echo "----------------------------------------------"
 docker pull registry:5000/tradr-ohlc-mqtt-candle-alerter
 echo ' '
 
-echo "#19 Installing latest Monitor Disk Space"
+echo "#20 Installing latest Monitor Disk Space"
 echo "----------------------------------------"
 docker pull registry:5000/tradr-monitor-disk-space
 echo ' '
 
-echo "#20 Installing Parse Patternz Trades File"
+echo "#21 Installing Parse Patternz Trades File"
 echo "-----------------------------------------"
 docker pull registry:5000/tradr-parse-patternz-trades-file
 echo ' '
