@@ -17,6 +17,9 @@
 00 20 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 30 20 * * 1-7 curl -X GET http://127.0.0.1:5001/refresh
 
+# I haven't worked out optimal time of day for this yet
+03 11 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/bitcoin-dca-alerter-compose.yml up
+
 #20 22 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-compose.yml up
 25 22 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
 50 22 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up

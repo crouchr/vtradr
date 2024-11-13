@@ -160,4 +160,9 @@ echo "-----------------------------------------"
 docker pull registry:5000/tradr-parse-patternz-trades-file
 echo ' '
 
+echo "#22 Installing Bitcoin DCA Alerter"
+echo "----------------------------------"
+docker pull registry:5000/tradr-bitcoin-dca-alerter
+echo ' '
+
 logger 'exited upgrade.sh'
