@@ -14,7 +14,7 @@
 05 2 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 25 2 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
 
-45 09 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
+05 11 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
 00 20 * * 7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 30 20 * * 1-7 curl -X GET http://127.0.0.1:5001/refresh
 
