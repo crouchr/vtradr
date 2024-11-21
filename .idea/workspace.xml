@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fa3c118-da4d-4868-a7f0-a0f11f9234f8" name="Changes" comment="Moved Grafana dashboards into vtradr">
-      <change afterPath="$PROJECT_DIR$/common_scripts/backup_database.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_scripts/fix_hosts_local_system.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_scripts/restore_database.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_scripts/run_usdxy_grabber.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common_scripts/version_tradr.sh" afterDir="false" />
+    <list default="true" id="4fa3c118-da4d-4868-a7f0-a0f11f9234f8" name="Changes" comment="Just run generate_tickers on a Sunday early morning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common_scripts/help.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/help_tradr.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common_scripts/run_tradr.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/run_tradr.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common_scripts/set_symlinks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/set_symlinks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common_scripts/upgrade.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/upgrade.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env_staging/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/env_staging/Vagrantfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiments/staging/start_stocks_scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common_scripts/run_ibit_grabber.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staging/start_stocks_scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/staging/start_stocks_scanner.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,24 +38,27 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/crouchr/PycharmProjects/vtradr/vtradr/env_development/grafana&quot;
+    &quot;Shell Script.run_all_stocks_stage_classifier.sh.executor&quot;: &quot;Run&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/crouchr/PycharmProjects/vtradr/vtradr/common_scripts&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/env_development/grafana" />
+      <recent name="$PROJECT_DIR$/common_scripts" />
+      <recent name="$PROJECT_DIR$/env_production" />
+      <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/env_staging/grafana" />
-      <recent name="$PROJECT_DIR$/staging" />
-      <recent name="$PROJECT_DIR$/experiments" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/env_development/grafana" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/experiments" />
+      <recent name="$PROJECT_DIR$/common_scripts" />
+      <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/experiments/simple" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Shell Script.run_all_stocks_stage_classifier.sh">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="vtradr" />
       <option name="ENV_FILES" value="" />
@@ -91,11 +81,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run_all_stocks_stage_classifier.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/env_production/run_all_stocks_stage_classifier.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/env_production" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Shell Script.run_all_stocks_stage_classifier.sh" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
       </set>
     </attachedChunks>
   </component>
@@ -108,46 +118,427 @@
       <option name="presentableId" value="Default" />
       <updated>1711718729860</updated>
     </task>
-    <task id="LOCAL-00001" summary="Initial version">
+    <task id="LOCAL-00005" summary="Split Dashboards">
       <option name="closed" value="true" />
-      <created>1711719740419</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
+      <created>1716624224119</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1711719740419</updated>
+      <updated>1716624224119</updated>
     </task>
-    <task id="LOCAL-00002" summary="Modified to three box solution">
+    <task id="LOCAL-00006" summary="Updated install docs">
       <option name="closed" value="true" />
-      <created>1712122658918</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
+      <created>1716739344304</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1712122658918</updated>
+      <updated>1716739344304</updated>
     </task>
-    <task id="LOCAL-00003" summary="Modified to three box solution">
+    <task id="LOCAL-00007" summary="Updated install docs">
       <option name="closed" value="true" />
-      <created>1712122697616</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+      <created>1716819486554</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1712122697616</updated>
+      <updated>1716819486554</updated>
     </task>
-    <task id="LOCAL-00004" summary="Moved Grafana dashboards into vtradr">
+    <task id="LOCAL-00008" summary="Updated install docs">
       <option name="closed" value="true" />
-      <created>1715460125976</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+      <created>1716822208442</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1715460125976</updated>
+      <updated>1716822208442</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00009" summary="Updated install docs">
+      <option name="closed" value="true" />
+      <created>1716961396970</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716961396970</updated>
+    </task>
+    <task id="LOCAL-00010" summary="XAuth fix">
+      <option name="closed" value="true" />
+      <created>1716975318310</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716975318310</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated Stage Analysis watchlist">
+      <option name="closed" value="true" />
+      <created>1719576521446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719576521446</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed task starts times">
+      <option name="closed" value="true" />
+      <created>1719776620461</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719776620461</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changed task starts times">
+      <option name="closed" value="true" />
+      <created>1719777109286</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719777109286</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changed task starts times">
+      <option name="closed" value="true" />
+      <created>1719834795928</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1719834795929</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changed task starts times">
+      <option name="closed" value="true" />
+      <created>1719913167487</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1719913167487</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Changed task starts times">
+      <option name="closed" value="true" />
+      <created>1720118537391</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720118537391</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added Candlestick Analyser">
+      <option name="closed" value="true" />
+      <created>1720301323632</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720301323632</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added Generate All Tickers calling scripts">
+      <option name="closed" value="true" />
+      <created>1720431537393</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1720431537393</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Exposed ports on candlestick analyser">
+      <option name="closed" value="true" />
+      <created>1720440749143</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1720440749143</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added candlestick refresh cron job">
+      <option name="closed" value="true" />
+      <created>1720764161633</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1720764161633</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added realtime-monitor">
+      <option name="closed" value="true" />
+      <created>1721079564950</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1721079564950</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added environment support for multiple sniper instances">
+      <option name="closed" value="true" />
+      <created>1722492187561</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1722492187561</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Modified cron to run tasks on Tuesday to Saturday">
+      <option name="closed" value="true" />
+      <created>1722492497305</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1722492497305</updated>
+    </task>
+    <task id="LOCAL-00024" summary="set environment for 10 sniper instances (buy and sell)">
+      <option name="closed" value="true" />
+      <created>1722498441107</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1722498441107</updated>
+    </task>
+    <task id="LOCAL-00025" summary="set environment for 15 sniper instances (buy and sell) and added ops_monitor">
+      <option name="closed" value="true" />
+      <created>1722884554985</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1722884554985</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fixed bug in .service scripts">
+      <option name="closed" value="true" />
+      <created>1722887371295</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1722887371295</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added namecheap-updater">
+      <option name="closed" value="true" />
+      <created>1723373354191</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1723373354191</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Updated container names for ops-monitor and snipers">
+      <option name="closed" value="true" />
+      <created>1723448164525</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1723448164525</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Do not run all cron tasks in staging version to avoid 429 rate-limiting">
+      <option name="closed" value="true" />
+      <created>1723786877850</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1723786877850</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Modify cron">
+      <option name="closed" value="true" />
+      <created>1724092826854</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1724092826854</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added ex-div-bot">
+      <option name="closed" value="true" />
+      <created>1724704060217</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1724704060217</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added ex-div-bot">
+      <option name="closed" value="true" />
+      <created>1724742115314</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1724742115314</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Added ex-div-bot">
+      <option name="closed" value="true" />
+      <created>1724742173765</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1724742173765</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Changed cron times">
+      <option name="closed" value="true" />
+      <created>1724851566810</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1724851566810</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added find-hard-asset-stocks">
+      <option name="closed" value="true" />
+      <created>1725229132418</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1725229132418</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added find-hard-asset-stocks">
+      <option name="closed" value="true" />
+      <created>1725229239865</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1725229239865</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Production Mon-Fri, itg Sat/Sun">
+      <option name="closed" value="true" />
+      <created>1726124204687</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1726124204687</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added Patternz Data Grabber">
+      <option name="closed" value="true" />
+      <created>1726424624474</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1726424624474</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Added yahoo_fin_historical_data">
+      <option name="closed" value="true" />
+      <created>1726430013412</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1726430013412</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Set certain tasks to run every day">
+      <option name="closed" value="true" />
+      <created>1726470169504</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1726470169504</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Set certain tasks to run every day">
+      <option name="closed" value="true" />
+      <created>1726478479866</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1726478479866</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Modified cron tasks">
+      <option name="closed" value="true" />
+      <created>1726478598558</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1726478598558</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added ohlc-mqtt-candle-alerter environment">
+      <option name="closed" value="true" />
+      <created>1727091685422</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1727091685422</updated>
+    </task>
+    <task id="LOCAL-00044" summary="temp_data bug fix">
+      <option name="closed" value="true" />
+      <created>1727198693075</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1727198693075</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Added monitor-disk-space daemon">
+      <option name="closed" value="true" />
+      <created>1728976564743</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1728976564743</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Added monitor-disk-space daemon">
+      <option name="closed" value="true" />
+      <created>1728978096456</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1728978096456</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Added monitor-disk-space daemon">
+      <option name="closed" value="true" />
+      <created>1728979443703</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1728979443703</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Bug fix in cli.sh">
+      <option name="closed" value="true" />
+      <created>1729028477737</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1729028477737</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Modified cron for more reliability">
+      <option name="closed" value="true" />
+      <created>1730461753002</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1730461753002</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Added scripts for parse-patternz-trades-file">
+      <option name="closed" value="true" />
+      <created>1730631204498</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1730631204498</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Added scripts for parse-patternz-trades-file">
+      <option name="closed" value="true" />
+      <created>1730969670296</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1730969670297</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Added scripts for bitcoin-dca-alerter">
+      <option name="closed" value="true" />
+      <created>1731502562057</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1731502562057</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Just run generate_tickers on a Sunday early morning">
+      <option name="closed" value="true" />
+      <created>1731838566068</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1731838566068</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial version" />
-    <MESSAGE value="Modified to three box solution" />
-    <MESSAGE value="Changes relating to cleaner installation" />
-    <MESSAGE value="Moved Grafana dashboards into vtradr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved Grafana dashboards into vtradr" />
+    <MESSAGE value="Added environment support for multiple sniper instances" />
+    <MESSAGE value="Modified cron to run tasks on Tuesday to Saturday" />
+    <MESSAGE value="set environment for 10 sniper instances (buy and sell)" />
+    <MESSAGE value="set environment for 15 sniper instances (buy and sell) and added ops_monitor" />
+    <MESSAGE value="Fixed bug in .service scripts" />
+    <MESSAGE value="Added namecheap-updater" />
+    <MESSAGE value="Updated container names for ops-monitor and snipers" />
+    <MESSAGE value="Do not run all cron tasks in staging version to avoid 429 rate-limiting" />
+    <MESSAGE value="Modify cron" />
+    <MESSAGE value="Added ex-div-bot" />
+    <MESSAGE value="Changed cron times" />
+    <MESSAGE value="Added find-hard-asset-stocks" />
+    <MESSAGE value="Production Mon-Fri, itg Sat/Sun" />
+    <MESSAGE value="Added Patternz Data Grabber" />
+    <MESSAGE value="Added yahoo_fin_historical_data" />
+    <MESSAGE value="Set certain tasks to run every day" />
+    <MESSAGE value="Modified cron tasks" />
+    <MESSAGE value="Added ohlc-mqtt-candle-alerter environment" />
+    <MESSAGE value="temp_data bug fix" />
+    <MESSAGE value="Added monitor-disk-space daemon" />
+    <MESSAGE value="Bug fix in cli.sh" />
+    <MESSAGE value="Modified cron for more reliability" />
+    <MESSAGE value="Added scripts for parse-patternz-trades-file" />
+    <MESSAGE value="Added scripts for bitcoin-dca-alerter" />
+    <MESSAGE value="Just run generate_tickers on a Sunday early morning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Just run generate_tickers on a Sunday early morning" />
   </component>
 </project>
