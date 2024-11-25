@@ -165,4 +165,9 @@ echo "----------------------------------"
 docker pull registry:5000/tradr-bitcoin-dca-alerter
 echo ' '
 
+echo "#23 Installing MSTR DCA Alerter"
+echo "-------------------------------"
+docker pull registry:5000/tradr-mstr-dca-alerter
+echo ' '
+
 logger 'exited upgrade.sh'
