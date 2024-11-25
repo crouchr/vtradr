@@ -24,4 +24,7 @@
 
 25 22 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
 50 22 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
-55 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
+
+# Backup the two databases
+40 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
+45 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup
