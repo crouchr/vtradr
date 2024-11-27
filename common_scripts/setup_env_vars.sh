@@ -1,12 +1,21 @@
 #!/bin/bash
 # Note : This does NOT set ENV vars for root user
 
-echo "Entered setup_env_vars.sh to set ENV vars for all users..."
+echo "Entered setup_env_vars.sh to set ENV vars for users..."
+
+rm -rf /home/richard/.tradrrc
+rm -rf /home/adrian/.tradrrc
+
+touch /home/richard/.tradrrc
+touch /home/adrian/.tradrrc
+
+chmod 777 /home/richard/.tradrrc
+chmod 777 /home/adrian/.tradrrc
 
 function set_in_profile() {
   echo "$1" >> /home/vagrant/.bashrc
-  echo "$1" >> /home/richard/.bashrc
-  echo "$1" >> /home/adrian/.bashrc
+  echo "$1" >> /home/richard/.tradrrc
+  echo "$1" >> /home/adrian/.tradrrc
 }
 
 set_in_profile "export VONAGE_API_SECRET=$VONAGE_API_SECRET"
