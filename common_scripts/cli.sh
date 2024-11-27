@@ -1,7 +1,7 @@
 #!/bin/bash
 # Run by user from /home/vagrant to bring up tradr cli docker container
 # Run as root to get mariadb to work
-# Run as privileged to get sound to work
+# Run as privileged to get sound to work - it doesn't work at the moment
 docker pull registry:5000/tradr-cli
 docker run -u root --quiet --privileged \
 --network host \
