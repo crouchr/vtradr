@@ -1,10 +1,12 @@
 #!/bin/bash
 # Note : This does NOT set ENV vars for root user
 
-echo "Entered setup-profile.sh to set ENV vars for vagrant user..."
+echo "Entered setup_env_vars.sh to set ENV vars for all users..."
 
 function set_in_profile() {
   echo "$1" >> /home/vagrant/.bashrc
+  echo "$1" >> /home/richard/.bashrc
+  echo "$1" >> /home/adrian/.bashrc
 }
 
 set_in_profile "export VONAGE_API_SECRET=$VONAGE_API_SECRET"
@@ -21,6 +23,6 @@ set_in_profile "export NAMECHEAP_DNS_PASSWORD=$NAMECHEAP_DNS_PASSWORD"
 # stop error message
 touch /home/vagrant/.Xauthority
 
-echo "Exited setup-profile.sh..."
+echo "Exited setup_env_vars.sh..."
 echo ""
 echo "VBox has now booted, use 'vagrant ssh' to SSH into it."
