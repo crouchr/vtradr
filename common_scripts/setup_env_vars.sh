@@ -3,19 +3,39 @@
 
 echo "Entered setup_env_vars.sh to set ENV vars for users..."
 
+rm -rf /home/johnnybench/.tradrrc
 rm -rf /home/richard/.tradrrc
+rm -rf /home/elliot/.tradrrc
+rm -rf /home/amelia/.tradrrc
+rm -rf /home/simon/.tradrrc
 rm -rf /home/adrian/.tradrrc
+rm -rf /home/oscar/.tradrrc
 
+touch /home/johnnybench/.tradrrc
 touch /home/richard/.tradrrc
+touch /home/elliot/.tradrrc
+touch /home/amelia/.tradrrc
+touch /home/simon/.tradrrc
 touch /home/adrian/.tradrrc
+touch /home/oscar/.tradrrc
 
+chmod 777 /home/johnnybench/.tradrrc
 chmod 777 /home/richard/.tradrrc
+chmod 777 /home/elliot/.tradrrc
+chmod 777 /home/amelia/.tradrrc
+chmod 777 /home/simon/.tradrrc
 chmod 777 /home/adrian/.tradrrc
+chmod 777 /home/oscar/.tradrrc
 
 function set_in_profile() {
   echo "$1" >> /home/vagrant/.bashrc
+  echo "$1" >> /home/johnnybench/.tradrrc
   echo "$1" >> /home/richard/.tradrrc
+  echo "$1" >> /home/elliot/.tradrrc
+  echo "$1" >> /home/amelia/.tradrrc
+  echo "$1" >> /home/simon/.tradrrc
   echo "$1" >> /home/adrian/.tradrrc
+  echo "$1" >> /home/oscar/.tradrrc
 }
 
 set_in_profile "export VONAGE_API_SECRET=$VONAGE_API_SECRET"
