@@ -32,7 +32,7 @@ chmod 777 /home/oscar/.tradrrc
 
 function set_in_profile() {
   echo "$1" >> /home/vagrant/.bashrc
-  echo "$1" >> /home/admin/.bashrc
+  echo "$1" >> /home/admin/.tradrrc
   echo "$1" >> /home/johnnybench/.tradrrc
   echo "$1" >> /home/richard/.tradrrc
   echo "$1" >> /home/elliot/.tradrrc
