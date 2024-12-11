@@ -10,7 +10,8 @@
 # 02 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Until running 100% crash free then run every day
-05 1 * * 7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
+# generate-all-tickers.py has whole of Saturday evening and Sunday to run
+05 19 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 05 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 30 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
 10 5 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
