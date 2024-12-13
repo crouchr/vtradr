@@ -13,6 +13,7 @@ services:
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
       - ./reports:/reports
+      - ./yahoo_fin_historical_data:/yahoo_fin_historical_data
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - FMP_FREE_API_KEY=${FMP_FREE_API_KEY}
