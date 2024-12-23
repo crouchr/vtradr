@@ -170,4 +170,9 @@ echo "-------------------------------"
 docker pull registry:5000/tradr-mstr-dca-alerter
 echo ' '
 
+echo "#24 Installing Insider Trades Grabber"
+echo "-------------------------------------"
+docker pull registry:5000/tradr-grab-suspected-insider-trades
+echo ' '
+
 logger 'exited upgrade.sh'
