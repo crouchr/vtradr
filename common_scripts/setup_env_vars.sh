@@ -7,7 +7,7 @@ rm -rf /home/admin/.tradrrc
 rm -rf /home/johnnybench/.tradrrc
 rm -rf /home/sector/.tradrrc
 rm -rf /home/bitcoin/.tradrrc
-rm -rf /home/watching/.tradrrc
+rm -rf /home/watcher/.tradrrc
 rm -rf /home/tester/.tradrrc
 rm -rf /home/richard/.tradrrc
 rm -rf /home/elliot/.tradrrc
@@ -20,7 +20,7 @@ touch /home/admin/.tradrrc
 touch /home/johnnybench/.tradrrc
 touch /home/sector/.tradrrc
 touch /home/bitcoin/.tradrrc
-touch /home/watching/.tradrrc
+touch /home/watcher/.tradrrc
 touch /home/tester/.tradrrc
 touch /home/richard/.tradrrc
 touch /home/elliot/.tradrrc
@@ -33,7 +33,7 @@ chmod 777 /home/admin/.tradrrc
 chmod 777 /home/johnnybench/.tradrrc
 chmod 777 /home/sector/.tradrrc
 chmod 777 /home/bitcoin/.tradrrc
-chmod 777 /home/watching/.tradrrc
+chmod 777 /home/watcher/.tradrrc
 chmod 777 /home/tester/.tradrrc
 chmod 777 /home/richard/.tradrrc
 chmod 777 /home/elliot/.tradrrc
@@ -48,7 +48,7 @@ function set_in_profile() {
   echo "$1" >> /home/johnnybench/.tradrrc
   echo "$1" >> /home/sector/.tradrrc
   echo "$1" >> /home/bitcoin/.tradrrc
-  echo "$1" >> /home/watching/.tradrrc
+  echo "$1" >> /home/watcher/.tradrrc
   echo "$1" >> /home/tester/.tradrrc
   echo "$1" >> /home/richard/.tradrrc
   echo "$1" >> /home/elliot/.tradrrc
