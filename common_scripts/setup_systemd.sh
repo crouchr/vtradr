@@ -3,6 +3,10 @@
 
 echo "Entered set_systemd.sh..."
 
+# Base services start first
+systemctl enable tradr-apache.service
+sudo systemctl start tradr-apache.service
+
 # Platform services start first
 systemctl enable namecheap-updater.service
 systemctl start namecheap-updater.service

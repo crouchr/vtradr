@@ -175,4 +175,9 @@ echo "-------------------------------------"
 docker pull registry:5000/tradr-grab-suspected-insider-trades
 echo ' '
 
+echo "#25 Installing TRADR WebServer"
+echo "------------------------------"
+docker pull registry:5000/tradr-apache
+echo ' '
+
 logger 'exited upgrade.sh'

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  tradr-apache:
+    container_name: tradr-apache
+    image: registry:5000/tradr-apache
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-apache"
+    network_mode: "host"
+    volumes:
+      - ./html:/html
+

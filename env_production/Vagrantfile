@@ -28,8 +28,8 @@ Vagrant.configure("2") do |config|
         vb0.gui = true
         vb0.memory = "4096"
     end
-      # start : use these versions during rapid development and then copy to Packer
 
+      # start : use these versions during rapid development and then copy to Packer
       #iceberg.vm.provision "file", source: "../common_files/wazuh.conf", destination: "/tmp/wazuh.conf"
       #iceberg.vm.provision "file", source: "../common_files/motd-tradr", destination: "/tmp/etc/motd"
       #iceberg.vm.provision "file", source: "../common_files/syslog-ng.conf", destination: "/tmp/syslog-ng.conf"
@@ -62,6 +62,8 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "file", source: "../common_scripts/ohlc-mqtt-candle-alerter-compose.yml", destination: "ohlc-mqtt-candle-alerter-compose.yml"
       iceberg.vm.provision "file", source: "../common_scripts/ops-monitor.service", destination: "/tmp/ops-monitor.service"
       iceberg.vm.provision "file", source: "../common_scripts/ops-monitor-compose.yml", destination: "ops-monitor-compose.yml"
+      iceberg.vm.provision "file", source: "../common_scripts/tradr-apache.service", destination: "/tmp/tradr-apache.service"
+      iceberg.vm.provision "file", source: "../common_scripts/apache-compose.yml", destination: "apache-compose.yml"
       iceberg.vm.provision "file", source: "../common_scripts/monitor-disk-space.service", destination: "/tmp/monitor-disk-space.service"
       iceberg.vm.provision "file", source: "../common_scripts/monitor-disk-space-compose.yml", destination: "monitor-disk-space-compose.yml"
 
@@ -123,6 +125,7 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ohlc-mqtt-candle-alerter.service /etc/systemd/system/ohlc-mqtt-candle-alerter.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/ops-monitor.service /etc/systemd/system/ops-monitor.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/monitor-disk-space.service /etc/systemd/system/monitor-disk-space.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/tradr-apache.service /etc/systemd/system/tradr-apache.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/namecheap-updater.service /etc/systemd/system/namecheap-updater.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/tradr-cron-vagrant-user /var/spool/cron/vagrant"
 
