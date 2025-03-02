@@ -12,14 +12,12 @@
 # Until running 100% crash free then run every day
 # generate-all-tickers.py has whole of Sunday to run
 #05 23 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
-
-05 05 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
-45 05 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
-
-00 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
 # 05 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/all-stocks-classifier-compose.yml up
 # 30 1 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/stage-change-alerter-compose.yml up
-30 3 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
+05 04 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
+45 04 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
+00 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
+00 6 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
 00 11 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
 55 * * * * docker system prune --force
 30 20 * * 1-7 curl -X GET http://127.0.0.1:5001/refresh

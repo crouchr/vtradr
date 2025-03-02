@@ -28,11 +28,13 @@ systemctl start realtime-monitor.service
 systemctl enable open-trades-monitor.service
 systemctl start open-trades-monitor.service
 
-systemctl enable rsi-buy-sniper.service
-systemctl start rsi-buy-sniper.service
+# Disable until FMP API working again
+#systemctl enable rsi-buy-sniper.service
+#systemctl start rsi-buy-sniper.service
 
-systemctl enable rsi-sell-sniper.service
-systemctl start rsi-sell-sniper.service
+# Disable until FMP API working again
+#systemctl enable rsi-sell-sniper.service
+#systemctl start rsi-sell-sniper.service
 
 systemctl enable ops-monitor.service
 systemctl start ops-monitor.service
