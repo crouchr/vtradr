@@ -180,4 +180,18 @@ echo "------------------------------"
 docker pull registry:5000/tradr-apache
 echo ' '
 
+echo "#26 Installing TRADR Generate Weekly Table"
+echo "------------------------------------------"
+docker pull registry:5000/tradr-generate-weekly-tickers
+echo ' '
+
+echo "#27 Installing TRADR Generate Daily Table"
+echo "-----------------------------------------"
+docker pull registry:5000/tradr-generate-daily-tickers
+echo ' '
+
+
+
+
+
 logger 'exited upgrade.sh'
