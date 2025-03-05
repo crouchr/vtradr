@@ -21,6 +21,7 @@ rm -rf /home/elliot/.tradrrc
 rm -rf /home/amelia/.tradrrc
 rm -rf /home/simon/.tradrrc
 rm -rf /home/adrian/.tradrrc
+rm -rf /home/adriantesting/.tradrrc
 rm -rf /home/oscar/.tradrrc
 
 touch /home/admin/.tradrrc
@@ -41,6 +42,7 @@ touch /home/elliot/.tradrrc
 touch /home/amelia/.tradrrc
 touch /home/simon/.tradrrc
 touch /home/adrian/.tradrrc
+touch /home/adriantesting/.tradrrc
 touch /home/oscar/.tradrrc
 
 chmod 777 /home/admin/.tradrrc
@@ -61,6 +63,7 @@ chmod 777 /home/elliot/.tradrrc
 chmod 777 /home/amelia/.tradrrc
 chmod 777 /home/simon/.tradrrc
 chmod 777 /home/adrian/.tradrrc
+chmod 777 /home/adriantesting/.tradrrc
 chmod 777 /home/oscar/.tradrrc
 
 function set_in_profile() {
@@ -83,6 +86,7 @@ function set_in_profile() {
   echo "$1" >> /home/amelia/.tradrrc
   echo "$1" >> /home/simon/.tradrrc
   echo "$1" >> /home/adrian/.tradrrc
+  echo "$1" >> /home/adriantesting/.tradrrc
   echo "$1" >> /home/oscar/.tradrrc
 }
 
