@@ -10,9 +10,10 @@
 # 02 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Until running 100% crash free then run every day
-# generate-all-tickers.py has whole of Sunday to run
+# generate-all-tickers.py (populate the 'company' table has whole of Sunday to run
+# Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
 05 03 * * 7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
-05 04 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
+05 04 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
 45 04 * * 1-6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
 00 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
 00 06 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
