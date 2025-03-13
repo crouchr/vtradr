@@ -10,7 +10,6 @@ sudo mv /home/vagrant/man.sh /usr/local/bin/man.sh
 sudo chmod +x /usr/local/bin/man.sh
 ln -sf /usr/local/bin/man.sh /usr/local/bin/man
 
-ln -sf /usr/local/bin/cli.sh /usr/local/bin/cli
 sudo mv /home/vagrant/upgrade.sh /usr/local/bin/upgrade.sh
 sudo chmod +x /usr/local/bin/upgrade.sh
 ln -sf /usr/local/bin/upgrade.sh /usr/local/bin/upgrade
