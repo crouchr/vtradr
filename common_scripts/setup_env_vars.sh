@@ -20,6 +20,7 @@ rm -rf /home/bollinger/.tradrrc
 rm -rf /home/candlestick/.tradrrc
 rm -rf /home/dividend/.tradrrc
 rm -rf /home/precious/.tradrrc
+rm -rf /home/miners/.tradrrc
 rm -rf /home/richard/.tradrrc
 rm -rf /home/elliot/.tradrrc
 rm -rf /home/amelia/.tradrrc
@@ -45,6 +46,7 @@ touch /home/bollinger/.tradrrc
 touch /home/candlestick/.tradrrc
 touch /home/dividend/.tradrrc
 touch /home/precious/.tradrrc
+touch /home/miners/.tradrrc
 touch /home/richard/.tradrrc
 touch /home/elliot/.tradrrc
 touch /home/amelia/.tradrrc
@@ -70,6 +72,7 @@ chmod 777 /home/bollinger/.tradrrc
 chmod 777 /home/candlestick/.tradrrc
 chmod 777 /home/dividend/.tradrrc
 chmod 777 /home/precious/.tradrrc
+chmod 777 /home/miners/.tradrrc
 chmod 777 /home/richard/.tradrrc
 chmod 777 /home/elliot/.tradrrc
 chmod 777 /home/amelia/.tradrrc
@@ -97,6 +100,7 @@ function set_in_profile() {
   echo "$1" >> /home/candlestick/.tradrrc
   echo "$1" >> /home/dividend/.tradrrc
   echo "$1" >> /home/precious/.tradrrc
+  echo "$1" >> /home/miners/.tradrrc
   echo "$1" >> /home/richard/.tradrrc
   echo "$1" >> /home/elliot/.tradrrc
   echo "$1" >> /home/amelia/.tradrrc
