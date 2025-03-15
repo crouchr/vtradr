@@ -14,6 +14,7 @@ rm -rf /home/revesting3/.tradrrc
 rm -rf /home/revesting4/.tradrrc
 rm -rf /home/shorts/.tradrrc
 rm -rf /home/bitcoin/.tradrrc
+rm -rf /home/currency/.tradrrc
 rm -rf /home/watcher/.tradrrc
 rm -rf /home/tester/.tradrrc
 rm -rf /home/bollinger/.tradrrc
@@ -40,6 +41,7 @@ touch /home/revesting3/.tradrrc
 touch /home/revesting4/.tradrrc
 touch /home/shorts/.tradrrc
 touch /home/bitcoin/.tradrrc
+touch /home/currency/.tradrrc
 touch /home/watcher/.tradrrc
 touch /home/tester/.tradrrc
 touch /home/bollinger/.tradrrc
@@ -66,6 +68,7 @@ chmod 777 /home/revesting3/.tradrrc
 chmod 777 /home/revesting4/.tradrrc
 chmod 777 /home/shorts/.tradrrc
 chmod 777 /home/bitcoin/.tradrrc
+chmod 777 /home/currency/.tradrrc
 chmod 777 /home/watcher/.tradrrc
 chmod 777 /home/tester/.tradrrc
 chmod 777 /home/bollinger/.tradrrc
@@ -94,6 +97,7 @@ function set_in_profile() {
   echo "$1" >> /home/revesting4/.tradrrc
   echo "$1" >> /home/shorts/.tradrrc
   echo "$1" >> /home/bitcoin/.tradrrc
+  echo "$1" >> /home/currency/.tradrrc
   echo "$1" >> /home/watcher/.tradrrc
   echo "$1" >> /home/tester/.tradrrc
   echo "$1" >> /home/bollinger/.tradrrc
@@ -110,9 +114,6 @@ function set_in_profile() {
   echo "$1" >> /home/oscar/.tradrrc
 }
 
-# set_in_profile "export VONAGE_API_SECRET=$VONAGE_API_SECRET"
-# set_in_profile "export VONAGE_API_KEY=$VONAGE_API_KEY"
-# set_in_profile "export FMP_FREE_API_KEY=$FMP_FREE_API_KEY"
 set_in_profile "export ALPHAVANTAGE_BASIC_API_KEY=$ALPHAVANTAGE_BASIC_API_KEY"
 set_in_profile "export ALPHAVANTAGE_FREE_API_KEY=$ALPHAVANTAGE_FREE_API_KEY"
 set_in_profile "export SQL_DB_HOSTNAME=$SQL_DB_HOSTNAME"
