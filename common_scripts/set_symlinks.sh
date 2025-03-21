@@ -62,6 +62,16 @@ sudo mv /home/vagrant/restore_patternz_stage_table.sh /usr/local/bin/restore_pat
 sudo chmod +x /usr/local/bin/restore_patternz_stage_table.sh
 ln -sf /usr/local/bin/restore_patternz_stage_table.sh /usr/local/bin/restore-patternz-stage-table
 
+# Backup 'company' table
+sudo mv /home/vagrant/backup_company_table.sh /usr/local/bin/backup_company_table.sh
+sudo chmod +x /usr/local/bin/backup_company_table.sh
+ln -sf /usr/local/bin/backup_company_table.sh /usr/local/bin/backup-company-table
+
+# Restore 'company' table
+sudo mv /home/vagrant/restore_company_table.sh /usr/local/bin/restore_company_table.sh
+sudo chmod +x /usr/local/bin/restore_company_table.sh
+ln -sf /usr/local/bin/restore_company_table.sh /usr/local/bin/restore-company-table
+
 sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh
 ln -sf /usr/local/bin/version_tradr.sh /usr/local/bin/version
