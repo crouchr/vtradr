@@ -7,17 +7,19 @@
 #
 
 # Disable until sca is 100% reliable
-# 02 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
+05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Until running 100% crash free then run every day
-# generate-all-tickers.py (populate the 'company' table has whole of Sunday to run
 # Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
-05 05 * * 1   source /home/vagrant/.bashrc; /bin/docker-compose   -f /home/vagrant/generate-all-tickers-compose.yml up
-05 06 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
-05 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
-05 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
-05 09 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
+# 05 05 * * 1   source /home/vagrant/.bashrc; /bin/docker-compose   -f /home/vagrant/generate-all-tickers-compose.yml up
+
+05 04 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
+05 06 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
+00 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
+30 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
+
 00 11 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
+
 55 * * * * docker system prune --force
 30 20 * * 1-7 curl -X GET http://127.0.0.1:5001/refresh
 
@@ -25,9 +27,12 @@
 05 19 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/bitcoin-dca-alerter-compose.yml up
 10 19 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/mstr-dca-alerter-compose.yml up
 
-25 22 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
-50 22 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
+25 21 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
+50 21 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
+
+# Generate 'company' table - this is when StageAnalysis grabs their data - i.e. in the evening when YF API is up
+05 22 * * 1-5   source /home/vagrant/.bashrc; /bin/docker-compose   -f /home/vagrant/generate-all-tickers-compose.yml up
 
 # Backup the two databases
-40 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
-45 23 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup
+40 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
+45 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup
