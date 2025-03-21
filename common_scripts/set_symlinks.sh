@@ -22,21 +22,35 @@ sudo mv /home/vagrant/micropython.sh /usr/local/bin/micropython.sh
 sudo chmod +x /usr/local/bin/micropython.sh
 ln -sf /usr/local/bin/micropython.sh /usr/local/bin/micropython
 
+# Backup normal database
 sudo mv /home/vagrant/backup_database.sh /usr/local/bin/backup_database.sh
 sudo chmod +x /usr/local/bin/backup_database.sh
 ln -sf /usr/local/bin/backup_database.sh /usr/local/bin/backup
 
+# Backup LTS database
 sudo mv /home/vagrant/backup_lts_database.sh /usr/local/bin/backup_lts_database.sh
 sudo chmod +x /usr/local/bin/backup_lts_database.sh
 ln -sf /usr/local/bin/backup_lts_database.sh /usr/local/bin/backup-lts
 
+# Restore normal database
 sudo mv /home/vagrant/restore_database.sh /usr/local/bin/restore_database.sh
 sudo chmod +x /usr/local/bin/restore_database.sh
 ln -sf /usr/local/bin/restore_database.sh /usr/local/bin/restore
 
+# Restore LTS database
 sudo mv /home/vagrant/restore_lts_database.sh /usr/local/bin/restore_lts_database.sh
 sudo chmod +x /usr/local/bin/restore_lts_database.sh
 ln -sf /usr/local/bin/restore_lts_database.sh /usr/local/bin/restore-lts
+
+# Backup 'trades' table
+sudo mv /home/vagrant/backup_trades_table.sh /usr/local/bin/backup_trades_table.sh
+sudo chmod +x /usr/local/bin/backup_trades_table.sh
+ln -sf /usr/local/bin/backup_trades_table.sh /usr/local/bin/backup_trades_table
+
+# Restore 'trades' table
+sudo mv /home/vagrant/restore_trades_table.sh /usr/local/bin/restore_trades_table.sh
+sudo chmod +x /usr/local/bin/restore_trades_table.sh
+ln -sf /usr/local/bin/restore_trades_table.sh /usr/local/bin/restore_trades_table
 
 sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh
