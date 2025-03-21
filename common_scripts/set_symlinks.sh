@@ -45,12 +45,22 @@ ln -sf /usr/local/bin/restore_lts_database.sh /usr/local/bin/restore-lts
 # Backup 'trades' table
 sudo mv /home/vagrant/backup_trades_table.sh /usr/local/bin/backup_trades_table.sh
 sudo chmod +x /usr/local/bin/backup_trades_table.sh
-ln -sf /usr/local/bin/backup_trades_table.sh /usr/local/bin/backup_trades_table
+ln -sf /usr/local/bin/backup_trades_table.sh /usr/local/bin/backup-trades-table
 
 # Restore 'trades' table
 sudo mv /home/vagrant/restore_trades_table.sh /usr/local/bin/restore_trades_table.sh
 sudo chmod +x /usr/local/bin/restore_trades_table.sh
-ln -sf /usr/local/bin/restore_trades_table.sh /usr/local/bin/restore_trades_table
+ln -sf /usr/local/bin/restore_trades_table.sh /usr/local/bin/restore-trades-table
+
+# Backup 'patternz_stage' table
+sudo mv /home/vagrant/backup_patternz_stage_table.sh /usr/local/bin/backup_patternz_stage_table.sh
+sudo chmod +x /usr/local/bin/backup_patternz_stage_table.sh
+ln -sf /usr/local/bin/backup_patternz_stage_table.sh /usr/local/bin/backup-patternz-stage-table
+
+# Restore 'patternz_stage' table
+sudo mv /home/vagrant/restore_patternz_stage_table.sh /usr/local/bin/restore_patternz_stage_table.sh
+sudo chmod +x /usr/local/bin/restore_patternz_stage_table.sh
+ln -sf /usr/local/bin/restore_patternz_stage_table.sh /usr/local/bin/restore-patternz-stage-table
 
 sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh

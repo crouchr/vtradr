@@ -36,3 +36,7 @@
 # Backup the two databases
 40 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
 45 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup
+
+# Backup any tables that need to persist between re-installations
+50 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-trades-table
+55 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-patternz-stage-table
