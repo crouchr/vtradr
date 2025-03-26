@@ -9,13 +9,14 @@
 # Disable until sca is 100% reliable
 05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
-# Until running 100% crash free then run every day
-# Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
-# 05 05 * * 1   source /home/vagrant/.bashrc; /bin/docker-compose   -f /home/vagrant/generate-all-tickers-compose.yml up
+# Run on a Friday night
+05 22 * * 5   source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 
+# Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
 05 04 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
+
 05 06 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
-00 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
+00 07 * * 1,3,5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
 30 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
 
 00 11 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
@@ -27,8 +28,8 @@
 05 19 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/bitcoin-dca-alerter-compose.yml up
 10 19 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/mstr-dca-alerter-compose.yml up
 
-25 21 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
-50 21 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
+25 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
+50 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 
 # Generate 'company' table - this is when StageAnalysis grabs their data - i.e. in the evening when YF API is up
 05 22 * * 1-5   source /home/vagrant/.bashrc; /bin/docker-compose   -f /home/vagrant/generate-all-tickers-compose.yml up
