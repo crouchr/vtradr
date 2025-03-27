@@ -52,6 +52,16 @@ sudo mv /home/vagrant/restore_trades_table.sh /usr/local/bin/restore_trades_tabl
 sudo chmod +x /usr/local/bin/restore_trades_table.sh
 ln -sf /usr/local/bin/restore_trades_table.sh /usr/local/bin/restore-trades-table
 
+# Backup 'insider_trades' table
+sudo mv /home/vagrant/backup_insider_trades_table.sh /usr/local/bin/backup_insider_trades_table.sh
+sudo chmod +x /usr/local/bin/backup_insider_trades_table.sh
+ln -sf /usr/local/bin/backup_insider_trades_table.sh /usr/local/bin/backup-insider-trades-table
+
+# Restore 'insider_trades' table
+sudo mv /home/vagrant/restore_insider_trades_table.sh /usr/local/bin/restore_insider_trades_table.sh
+sudo chmod +x /usr/local/bin/restore_insider_trades_table.sh
+ln -sf /usr/local/bin/restore_insider_trades_table.sh /usr/local/bin/restore-insider-trades-table
+
 # Backup 'patternz_stage' table
 sudo mv /home/vagrant/backup_patternz_stage_table.sh /usr/local/bin/backup_patternz_stage_table.sh
 sudo chmod +x /usr/local/bin/backup_patternz_stage_table.sh
