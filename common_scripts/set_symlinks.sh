@@ -82,6 +82,16 @@ sudo mv /home/vagrant/restore_company_table.sh /usr/local/bin/restore_company_ta
 sudo chmod +x /usr/local/bin/restore_company_table.sh
 ln -sf /usr/local/bin/restore_company_table.sh /usr/local/bin/restore-company-table
 
+# Backup 'users' table
+sudo mv /home/vagrant/backup_users_table.sh /usr/local/bin/backup_users_table.sh
+sudo chmod +x /usr/local/bin/backup_users_table.sh
+ln -sf /usr/local/bin/backup_users_table.sh /usr/local/bin/backup-users-table
+
+# Restore 'users' table
+sudo mv /home/vagrant/restore_users_table.sh /usr/local/bin/restore_users_table.sh
+sudo chmod +x /usr/local/bin/restore_users_table.sh
+ln -sf /usr/local/bin/restore_users_table.sh /usr/local/bin/restore-users-table
+
 sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh
 ln -sf /usr/local/bin/version_tradr.sh /usr/local/bin/version
