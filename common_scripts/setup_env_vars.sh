@@ -20,6 +20,7 @@ rm -rf /home/miners/.tradrrc
 rm -rf /home/mrp/.tradrrc
 rm -rf /home/oscar/.tradrrc
 rm -rf /home/precious/.tradrrc
+rm -rf /home/reits/.tradrrc
 rm -rf /home/revesting/.tradrrc
 rm -rf /home/revesting2/.tradrrc
 rm -rf /home/revesting3/.tradrrc
@@ -52,6 +53,7 @@ touch /home/miners/.tradrrc
 touch /home/mrp/.tradrrc
 touch /home/oscar/.tradrrc
 touch /home/precious/.tradrrc
+touch /home/reits/.tradrrc
 touch /home/revesting/.tradrrc
 touch /home/revesting2/.tradrrc
 touch /home/revesting3/.tradrrc
@@ -84,6 +86,7 @@ chmod 777 /home/miners/.tradrrc
 chmod 777 /home/mrp/.tradrrc
 chmod 777 /home/oscar/.tradrrc
 chmod 777 /home/precious/.tradrrc
+chmod 777 /home/reits/.tradrrc
 chmod 777 /home/revesting/.tradrrc
 chmod 777 /home/revesting2/.tradrrc
 chmod 777 /home/revesting3/.tradrrc
@@ -119,6 +122,7 @@ echo "$1" >> /home/miners/.tradrrc
 echo "$1" >> /home/mrp/.tradrrc
 echo "$1" >> /home/oscar/.tradrrc
 echo "$1" >> /home/precious/.tradrrc
+echo "$1" >> /home/reits/.tradrrc
 echo "$1" >> /home/revesting/.tradrrc
 echo "$1" >> /home/revesting2/.tradrrc
 echo "$1" >> /home/revesting3/.tradrrc
