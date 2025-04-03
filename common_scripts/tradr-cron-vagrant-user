@@ -6,10 +6,9 @@
 # Need to provide the vagrant user env variables - see https://unix.stackexchange.com/questions/27289/how-can-i-run-a-cron-command-with-existing-environmental-variables
 #
 
-# Disable until sca is 100% reliable
 05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
-# Run on a Friday night
+# Run ONCE on a Friday night - same time that Stage Analysis state their data is valid
 05 22 * * 5   source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 
 # Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
@@ -31,14 +30,14 @@
 25 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
 50 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 
-# Generate 'company' table - this is when StageAnalysis grabs their data - i.e. in the evening when YF API is up
-05 22 * * 1-5   source /home/vagrant/.bashrc; /bin/docker-compose   -f /home/vagrant/generate-all-tickers-compose.yml up
-
 # Backup the two databases
-40 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
-42 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup
+# Only do during week when system is supposed to be 'working 100%'
+40 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
+42 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup
 
 # Backup any tables that need to persist between re-installations
-44 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-trades-table
-46 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-patternz-stage-table
-48 02 * * 1-7 source /home/vagrant/.bashrc; /usr/local/bin/backup-company-table
+# Only do during week when system is supposed to be 'working 100%'
+44 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-trades-table
+46 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-patternz-stage-table
+48 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-company-table
+50 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-users-table
