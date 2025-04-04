@@ -22,6 +22,10 @@ sudo mv /home/vagrant/micropython.sh /usr/local/bin/micropython.sh
 sudo chmod +x /usr/local/bin/micropython.sh
 ln -sf /usr/local/bin/micropython.sh /usr/local/bin/micropython
 
+sudo mv /home/vagrant/data_collection.sh /usr/local/bin/data_collection.sh
+sudo chmod +x /usr/local/bin/data_collection.sh
+ln -sf /usr/local/bin/data_collection.sh /usr/local/bin/data-collection
+
 # Backup normal database
 sudo mv /home/vagrant/backup_database.sh /usr/local/bin/backup_database.sh
 sudo chmod +x /usr/local/bin/backup_database.sh
