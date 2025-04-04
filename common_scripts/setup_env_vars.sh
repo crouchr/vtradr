@@ -14,6 +14,7 @@ rm -rf /home/correlation/.tradrrc
 rm -rf /home/currency/.tradrrc
 rm -rf /home/dividend/.tradrrc
 rm -rf /home/elliot/.tradrrc
+rm -rf /home/energy/.tradrrc
 rm -rf /home/insider/.tradrrc
 rm -rf /home/johnnybench/.tradrrc
 rm -rf /home/miners/.tradrrc
@@ -47,6 +48,7 @@ touch /home/correlation/.tradrrc
 touch /home/currency/.tradrrc
 touch /home/dividend/.tradrrc
 touch /home/elliot/.tradrrc
+touch /home/energy/.tradrrc
 touch /home/insider/.tradrrc
 touch /home/johnnybench/.tradrrc
 touch /home/miners/.tradrrc
@@ -80,6 +82,7 @@ chmod 777 /home/correlation/.tradrrc
 chmod 777 /home/currency/.tradrrc
 chmod 777 /home/dividend/.tradrrc
 chmod 777 /home/elliot/.tradrrc
+chmod 777 /home/energy/.tradrrc
 chmod 777 /home/insider/.tradrrc
 chmod 777 /home/johnnybench/.tradrrc
 chmod 777 /home/miners/.tradrrc
@@ -116,6 +119,7 @@ echo "$1" >> /home/correlation/.tradrrc
 echo "$1" >> /home/currency/.tradrrc
 echo "$1" >> /home/dividend/.tradrrc
 echo "$1" >> /home/elliot/.tradrrc
+echo "$1" >> /home/energy/.tradrrc
 echo "$1" >> /home/insider/.tradrrc
 echo "$1" >> /home/johnnybench/.tradrrc
 echo "$1" >> /home/miners/.tradrrc
