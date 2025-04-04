@@ -95,6 +95,8 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "file", source: "../common_scripts/upgrade.sh", destination: "upgrade.sh"
       iceberg.vm.provision "file", source: "../common_scripts/data_collection.sh", destination: "data_collection.sh"
       iceberg.vm.provision "file", source: "../common_scripts/micropython.sh", destination: "micropython.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/backup_critical_tables.sh", destination: "backup_critical_tables.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/restore_critical_tables.sh", destination: "restore_critical_tables.sh"
       iceberg.vm.provision "file", source: "../common_scripts/backup_database.sh", destination: "backup_database.sh"
       iceberg.vm.provision "file", source: "../common_scripts/restore_database.sh", destination: "restore_database.sh"
       iceberg.vm.provision "file", source: "../common_scripts/backup_lts_database.sh", destination: "backup_lts_database.sh"

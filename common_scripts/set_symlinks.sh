@@ -26,6 +26,14 @@ sudo mv /home/vagrant/data_collection.sh /usr/local/bin/data_collection.sh
 sudo chmod +x /usr/local/bin/data_collection.sh
 ln -sf /usr/local/bin/data_collection.sh /usr/local/bin/data-collection
 
+sudo mv /home/vagrant/backup_critical_tables.sh /usr/local/bin/backup_critical_tables.sh
+sudo chmod +x /usr/local/bin/backup_critical_tables.sh
+ln -sf /usr/local/bin/backup_critical_tables.sh /usr/local/bin/backup-critical-tables
+
+sudo mv /home/vagrant/restore_critical_tables.sh /usr/local/bin/restore_critical_tables.sh
+sudo chmod +x /usr/local/bin/restore_critical_tables.sh
+ln -sf /usr/local/bin/restore_critical_tables.sh /usr/local/bin/restore-critical-tables
+
 # Backup normal database
 sudo mv /home/vagrant/backup_database.sh /usr/local/bin/backup_database.sh
 sudo chmod +x /usr/local/bin/backup_database.sh
