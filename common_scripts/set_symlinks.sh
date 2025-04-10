@@ -109,8 +109,9 @@ sudo chmod +x /usr/local/bin/version_tradr.sh
 ln -sf /usr/local/bin/version_tradr.sh /usr/local/bin/version
 
 # Run the stock grabbers
-sudo mv /home/vagrant/run_tradr_daemons.sh /usr/local/bin/run_tradr_daemons.sh
-sudo chmod +x /usr/local/bin/run_tradr_daemons.sh
-ln -sf /usr/local/bin/run_tradr_daemons.sh /usr/local/bin/run_tradr_daemons
+# FIXME - this is obsolete ?
+#sudo mv /home/vagrant/run_tradr_daemons.sh /usr/local/bin/run_tradr_daemons.sh
+#sudo chmod +x /usr/local/bin/run_tradr_daemons.sh
+#ln -sf /usr/local/bin/run_tradr_daemons.sh /usr/local/bin/run_tradr_daemons
 
 echo "Exited set_symlinks.sh..."

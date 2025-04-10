@@ -1,6 +1,7 @@
 #!/bin/bash -eu
 # Pull latest TRADR docker images
 # Move to a per-environment basis
+# some are commented out as they are not in current development/use at the moment
 
 logger 'entered upgrade.sh'
 
@@ -60,15 +61,17 @@ echo "------------------------------------------------"
 docker pull registry:5000/tradr-exchange-rate-service
 echo ' '
 
-echo "#3 Installing latest TRADR All Stocks Stage Classifier (spot Weinstein)"
-echo "-----------------------------------------------------------------------"
-docker pull registry:5000/tradr-all-stocks-stage-classifier
-echo ' '
+# can be permanently deleted
+#echo "#3 Installing latest TRADR All Stocks Stage Classifier (spot Weinstein)"
+#echo "-----------------------------------------------------------------------"
+#docker pull registry:5000/tradr-all-stocks-stage-classifier
+#echo ' '
 
-echo "#4 Installing latest TRADR Stage Change Alerter"
-echo "-----------------------------------------------"
-docker pull registry:5000/tradr-stage-change-alerter
-echo ' '
+# can be permanently deleted
+#echo "#4 Installing latest TRADR Stage Change Alerter"
+#echo "-----------------------------------------------"
+#docker pull registry:5000/tradr-stage-change-alerter
+#echo ' '
 
 echo "#5 Installing latest TRADR Candlestick Analyser"
 echo "-----------------------------------------------"
@@ -120,15 +123,17 @@ echo "--------------------------------"
 docker pull registry:5000/tradr-exdivbot
 echo ' '
 
-echo "#14 Installing latest Find Hard Asset Stocks"
-echo "--------------------------------------------"
-docker pull registry:5000/tradr-find-hard-asset-stocks
-echo ' '
+# can be permanently deleted
+#echo "#14 Installing latest Find Hard Asset Stocks"
+#echo "--------------------------------------------"
+#docker pull registry:5000/tradr-find-hard-asset-stocks
+#echo ' '
 
-echo "#15 Installing latest Micropython/TRADR code"
-echo "--------------------------------------------"
-docker pull registry:5000/micropython
-echo ' '
+# not currently in active use so comment out for now
+#echo "#15 Installing latest Micropython/TRADR code"
+#echo "--------------------------------------------"
+#docker pull registry:5000/micropython
+#echo ' '
 
 echo "#16 Installing latest Patternz Data Grabber"
 echo "-------------------------------------------"
@@ -140,15 +145,17 @@ echo "---------------------------------------------------"
 docker pull registry:5000/tradr-patternz-data-grabber-tickers
 echo ' '
 
-echo "#18 Installing latest OHLC MQTT Writer"
-echo "--------------------------------------"
-docker pull registry:5000/tradr-ohlc-mqtt-writer
-echo ' '
+# not currently in active use so comment out for now
+#echo "#18 Installing latest OHLC MQTT Writer"
+#echo "--------------------------------------"
+#docker pull registry:5000/tradr-ohlc-mqtt-writer
+#echo ' '
 
-echo "#19 Installing latest OHLC MQTT Candle Alerter"
-echo "----------------------------------------------"
-docker pull registry:5000/tradr-ohlc-mqtt-candle-alerter
-echo ' '
+# not currently in active use so comment out for now
+#echo "#19 Installing latest OHLC MQTT Candle Alerter"
+#echo "----------------------------------------------"
+#docker pull registry:5000/tradr-ohlc-mqtt-candle-alerter
+#echo ' '
 
 echo "#20 Installing latest Monitor Disk Space"
 echo "----------------------------------------"
@@ -189,9 +196,5 @@ echo "#27 Installing TRADR Generate Daily Table"
 echo "-----------------------------------------"
 docker pull registry:5000/tradr-generate-daily-tickers
 echo ' '
-
-
-
-
 
 logger 'exited upgrade.sh'
