@@ -27,7 +27,7 @@
 05 19 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/bitcoin-dca-alerter-compose.yml up
 10 19 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/mstr-dca-alerter-compose.yml up
 
-25 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
+# 25 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
 50 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 
 # Backup the two databases
