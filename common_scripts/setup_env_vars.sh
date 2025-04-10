@@ -25,6 +25,7 @@ rm -rf /home/insider/.tradrrc
 rm -rf /home/johnnybench/.tradrrc
 rm -rf /home/miners/.tradrrc
 rm -rf /home/mrp/.tradrrc
+rm -rf /home/oil/.tradrrc
 rm -rf /home/oscar/.tradrrc
 rm -rf /home/reits/.tradrrc
 rm -rf /home/revesting/.tradrrc
@@ -42,6 +43,7 @@ rm -rf /home/staples/.tradrrc
 rm -rf /home/tester/.tradrrc
 rm -rf /home/volume/.tradrrc
 rm -rf /home/watcher/.tradrrc
+rm -rf /home/water/.tradrrc
 rm -rf /home/weinstein/.tradrrc
 
 ####
@@ -66,6 +68,7 @@ touch /home/insider/.tradrrc
 touch /home/johnnybench/.tradrrc
 touch /home/miners/.tradrrc
 touch /home/mrp/.tradrrc
+touch /home/oil/.tradrrc
 touch /home/oscar/.tradrrc
 touch /home/reits/.tradrrc
 touch /home/revesting/.tradrrc
@@ -83,6 +86,7 @@ touch /home/staples/.tradrrc
 touch /home/tester/.tradrrc
 touch /home/volume/.tradrrc
 touch /home/watcher/.tradrrc
+touch /home/water/.tradrrc
 touch /home/weinstein/.tradrrc
 
 ####
@@ -107,6 +111,7 @@ chmod 777 /home/insider/.tradrrc
 chmod 777 /home/johnnybench/.tradrrc
 chmod 777 /home/miners/.tradrrc
 chmod 777 /home/mrp/.tradrrc
+chmod 777 /home/oil/.tradrrc
 chmod 777 /home/oscar/.tradrrc
 chmod 777 /home/reits/.tradrrc
 chmod 777 /home/revesting/.tradrrc
@@ -124,6 +129,7 @@ chmod 777 /home/staples/.tradrrc
 chmod 777 /home/tester/.tradrrc
 chmod 777 /home/volume/.tradrrc
 chmod 777 /home/watcher/.tradrrc
+chmod 777 /home/water/.tradrrc
 chmod 777 /home/weinstein/.tradrrc
 
 
@@ -151,6 +157,7 @@ echo "$1" >> /home/insider/.tradrrc
 echo "$1" >> /home/johnnybench/.tradrrc
 echo "$1" >> /home/miners/.tradrrc
 echo "$1" >> /home/mrp/.tradrrc
+echo "$1" >> /home/oil/.tradrrc
 echo "$1" >> /home/oscar/.tradrrc
 echo "$1" >> /home/reits/.tradrrc
 echo "$1" >> /home/revesting/.tradrrc
@@ -168,6 +175,7 @@ echo "$1" >> /home/staples/.tradrrc
 echo "$1" >> /home/tester/.tradrrc
 echo "$1" >> /home/volume/.tradrrc
 echo "$1" >> /home/watcher/.tradrrc
+echo "$1" >> /home/water/.tradrrc
 echo "$1" >> /home/weinstein/.tradrrc
 }
 
