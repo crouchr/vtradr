@@ -17,6 +17,7 @@ rm -rf /home/currency/.tradrrc
 rm -rf /home/dividend/.tradrrc
 rm -rf /home/elliot/.tradrrc
 rm -rf /home/energy/.tradrrc
+rm -rf /home/futures/.tradrrc
 rm -rf /home/global/.tradrrc
 rm -rf /home/gold/.tradrrc
 rm -rf /home/heathcare/.tradrrc
@@ -60,6 +61,7 @@ touch /home/currency/.tradrrc
 touch /home/dividend/.tradrrc
 touch /home/elliot/.tradrrc
 touch /home/energy/.tradrrc
+touch /home/futures/.tradrrc
 touch /home/global/.tradrrc
 touch /home/gold/.tradrrc
 touch /home/healthcare/.tradrrc
@@ -103,6 +105,7 @@ chmod 777 /home/currency/.tradrrc
 chmod 777 /home/dividend/.tradrrc
 chmod 777 /home/elliot/.tradrrc
 chmod 777 /home/energy/.tradrrc
+chmod 777 /home/futures/.tradrrc
 chmod 777 /home/global/.tradrrc
 chmod 777 /home/gold/.tradrrc
 chmod 777 /home/healthcare/.tradrrc
@@ -148,6 +151,7 @@ echo "$1" >> /home/correlation/.tradrrc
 echo "$1" >> /home/currency/.tradrrc
 echo "$1" >> /home/dividend/.tradrrc
 echo "$1" >> /home/elliot/.tradrrc
+echo "$1" >> /home/futures/.tradrrc
 echo "$1" >> /home/energy/.tradrrc
 echo "$1" >> /home/global/.tradrrc
 echo "$1" >> /home/gold/.tradrrc

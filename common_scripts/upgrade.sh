@@ -197,4 +197,9 @@ echo "-----------------------------------------"
 docker pull registry:5000/tradr-generate-daily-tickers
 echo ' '
 
+echo "#28 Installing TRADR Generate Ranking Table"
+echo "-------------------------------------------"
+docker pull registry:5000/tradr-generate-ranking
+echo ' '
+
 logger 'exited upgrade.sh'
