@@ -202,4 +202,9 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-generate-ranking
 echo ' '
 
+echo "#29 Installing TRADR Activity Detector"
+echo "--------------------------------------"
+docker pull registry:5000/tradr-activity-detector
+echo ' '
+
 logger 'exited upgrade.sh'

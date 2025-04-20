@@ -11,6 +11,7 @@ rm -rf /home/banks/.tradrrc
 rm -rf /home/bitcoin/.tradrrc
 rm -rf /home/bollinger/.tradrrc
 rm -rf /home/candlestick/.tradrrc
+rm -rf /home/chris/.tradrrc
 rm -rf /home/commodities/.tradrrc
 rm -rf /home/correlation/.tradrrc
 rm -rf /home/currency/.tradrrc
@@ -55,6 +56,7 @@ touch /home/banks/.tradrrc
 touch /home/bitcoin/.tradrrc
 touch /home/bollinger/.tradrrc
 touch /home/candlestick/.tradrrc
+touch /home/chris/.tradrrc
 touch /home/commodities/.tradrrc
 touch /home/correlation/.tradrrc
 touch /home/currency/.tradrrc
@@ -99,6 +101,7 @@ chmod 777 /home/banks/.tradrrc
 chmod 777 /home/bitcoin/.tradrrc
 chmod 777 /home/bollinger/.tradrrc
 chmod 777 /home/candlestick/.tradrrc
+chmod 777 /home/chris/.tradrrc
 chmod 777 /home/commodities/.tradrrc
 chmod 777 /home/correlation/.tradrrc
 chmod 777 /home/currency/.tradrrc
@@ -146,6 +149,7 @@ echo "$1" >> /home/banks/.tradrrc
 echo "$1" >> /home/bitcoin/.tradrrc
 echo "$1" >> /home/bollinger/.tradrrc
 echo "$1" >> /home/candlestick/.tradrrc
+echo "$1" >> /home/chris/.tradrrc
 echo "$1" >> /home/commodities/.tradrrc
 echo "$1" >> /home/correlation/.tradrrc
 echo "$1" >> /home/currency/.tradrrc

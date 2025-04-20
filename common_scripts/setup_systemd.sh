@@ -17,6 +17,10 @@ systemctl enable monitor-disk-space.service
 systemctl start  monitor-disk-space.service
 sleep 5
 
+systemctl enable activity-detector.service
+systemctl start  activity-detector.service
+sleep 5
+
 # Start services that are dependencies
 systemctl enable exchange-rate-service.service
 systemctl start  exchange-rate-service.service
