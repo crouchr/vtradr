@@ -104,6 +104,11 @@ sudo mv /home/vagrant/restore_users_table.sh /usr/local/bin/restore_users_table.
 sudo chmod +x /usr/local/bin/restore_users_table.sh
 ln -sf /usr/local/bin/restore_users_table.sh /usr/local/bin/restore-users-table
 
+# Regenerate the tickers tables
+sudo mv /home/vagrant/regenerate.sh /usr/local/bin/regenerate.sh
+sudo chmod +x /usr/local/bin/regenerate.sh
+ln -sf /usr/local/bin/regenerate.sh /usr/local/bin/regenerate
+
 sudo mv /home/vagrant/version_tradr.sh /usr/local/bin/version_tradr.sh
 sudo chmod +x /usr/local/bin/version_tradr.sh
 ln -sf /usr/local/bin/version_tradr.sh /usr/local/bin/version

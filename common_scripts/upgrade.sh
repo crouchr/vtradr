@@ -11,6 +11,75 @@ echo "------------------------------"
 docker pull registry:5000/tradr-cli
 echo ' '
 
+echo "#2 Installing latest TRADR Exchange Rate Service"
+echo "------------------------------------------------"
+docker pull registry:5000/tradr-exchange-rate-service
+echo ' '
+
+echo "#3 Installing latest TRADR Candlestick Analyser"
+echo "-----------------------------------------------"
+docker pull registry:5000/tradr-candlestick-analyser
+echo ' '
+
+echo "#4 Installing latest TRADR Generate All Tickers"
+echo "-----------------------------------------------"
+docker pull registry:5000/tradr-generate-all-tickers
+echo ' '
+
+echo "#5 Installing latest TRADR Open Trades Monitor"
+echo "----------------------------------------------"
+docker pull registry:5000/tradr-open-trades-monitor
+echo ' '
+
+echo "#6 Installing latest NameCheap Updater"
+echo "--------------------------------------"
+docker pull registry:5000/namecheap-updater
+echo ' '
+
+echo "#7 Installing latest Patternz Data Grabber"
+echo "------------------------------------------"
+docker pull registry:5000/tradr-patternz-data-grabber
+echo ' '
+
+echo "#8 Installing latest Patternz Data Grabber Tickers"
+echo "--------------------------------------------------"
+docker pull registry:5000/tradr-patternz-data-grabber-tickers
+echo ' '
+
+echo "#9 Installing latest Monitor Disk Space"
+echo "---------------------------------------"
+docker pull registry:5000/tradr-monitor-disk-space
+echo ' '
+
+echo "#10 Installing Parse Patternz Trades File"
+echo "-----------------------------------------"
+docker pull registry:5000/tradr-parse-patternz-trades-file
+echo ' '
+
+echo "#11 Installing Insider Trades Grabber"
+echo "-------------------------------------"
+docker pull registry:5000/tradr-grab-suspected-insider-trades
+echo ' '
+
+echo "#12 Installing TRADR Generate Weekly Table"
+echo "------------------------------------------"
+docker pull registry:5000/tradr-generate-weekly-tickers
+echo ' '
+
+echo "#13 Installing TRADR Generate Daily Table"
+echo "-----------------------------------------"
+docker pull registry:5000/tradr-generate-daily-tickers
+echo ' '
+
+echo "#14 Installing TRADR Generate Ranking Table"
+echo "-------------------------------------------"
+docker pull registry:5000/tradr-generate-ranking
+echo ' '
+
+logger 'exited upgrade.sh'
+
+
+
 # echo "Installing TRADR Swing Trader Stock Scanner"
 # echo "-------------------------------------------"
 # docker pull registry:5000/tradr-scanner
@@ -56,10 +125,11 @@ echo ' '
 # docker pull registry:5000/tradr-assets-tracker
 # echo ' '
 
-echo "#2 Installing latest TRADR Exchange Rate Service"
-echo "------------------------------------------------"
-docker pull registry:5000/tradr-exchange-rate-service
-echo ' '
+#echo "#29 Installing TRADR Activity Detector"
+#echo "--------------------------------------"
+#docker pull registry:5000/tradr-activity-detector
+#echo ' '
+
 
 # can be permanently deleted
 #echo "#3 Installing latest TRADR All Stocks Stage Classifier (spot Weinstein)"
@@ -73,55 +143,36 @@ echo ' '
 #docker pull registry:5000/tradr-stage-change-alerter
 #echo ' '
 
-echo "#5 Installing latest TRADR Candlestick Analyser"
-echo "-----------------------------------------------"
-docker pull registry:5000/tradr-candlestick-analyser
-echo ' '
 
-echo "#6 Installing latest TRADR Generate All Tickers"
-echo "-----------------------------------------------"
-docker pull registry:5000/tradr-generate-all-tickers
-echo ' '
+#echo "#7 Installing latest TRADR Realtime Monitor"
+#echo "-------------------------------------------"
+#docker pull registry:5000/tradr-realtime-monitor
+#echo ' '
 
-echo "#7 Installing latest TRADR Realtime Monitor"
-echo "-------------------------------------------"
-docker pull registry:5000/tradr-realtime-monitor
-echo ' '
+#echo "#9 Installing latest TRADR RSI Buy Sniper"
+#echo "-----------------------------------------"
+#docker pull registry:5000/tradr-rsi-buy-sniper
+#echo ' '
 
-echo "#8 Installing latest TRADR Open Trades Monitor"
-echo "----------------------------------------------"
-docker pull registry:5000/tradr-open-trades-monitor
-echo ' '
-
-echo "#9 Installing latest TRADR RSI Buy Sniper"
-echo "-----------------------------------------"
-docker pull registry:5000/tradr-rsi-buy-sniper
-echo ' '
-
-echo "#10 Installing latest TRADR RSI Sell Sniper"
-echo "-------------------------------------------"
-docker pull registry:5000/tradr-rsi-sell-sniper
-echo ' '
+#echo "#10 Installing latest TRADR RSI Sell Sniper"
+#echo "-------------------------------------------"
+#docker pull registry:5000/tradr-rsi-sell-sniper
+#echo ' '
 
 # echo "#11 Installing latest TRADR Vonage API Test Script"
 # echo "--------------------------------------------------"
 # docker pull registry:5000/tradr-vonage-api-test-script
 # echo ' '
 
-echo "#11 Installing latest TRADR Ops Monitor"
-echo "---------------------------------------"
-docker pull registry:5000/tradr-ops-monitor
-echo ' '
+#echo "#11 Installing latest TRADR Ops Monitor"
+#echo "---------------------------------------"
+#docker pull registry:5000/tradr-ops-monitor
+#echo ' '
 
-echo "#12 Installing latest NameCheap Updater"
-echo "---------------------------------------"
-docker pull registry:5000/namecheap-updater
-echo ' '
-
-echo "#13 Installing latest Ex Div Bot"
-echo "--------------------------------"
-docker pull registry:5000/tradr-exdivbot
-echo ' '
+#echo "#13 Installing latest Ex Div Bot"
+#echo "--------------------------------"
+#docker pull registry:5000/tradr-exdivbot
+#echo ' '
 
 # can be permanently deleted
 #echo "#14 Installing latest Find Hard Asset Stocks"
@@ -134,17 +185,6 @@ echo ' '
 #echo "--------------------------------------------"
 #docker pull registry:5000/micropython
 #echo ' '
-
-echo "#16 Installing latest Patternz Data Grabber"
-echo "-------------------------------------------"
-docker pull registry:5000/tradr-patternz-data-grabber
-echo ' '
-
-echo "#17 Installing latest Patternz Data Grabber Tickers"
-echo "---------------------------------------------------"
-docker pull registry:5000/tradr-patternz-data-grabber-tickers
-echo ' '
-
 # not currently in active use so comment out for now
 #echo "#18 Installing latest OHLC MQTT Writer"
 #echo "--------------------------------------"
@@ -157,54 +197,18 @@ echo ' '
 #docker pull registry:5000/tradr-ohlc-mqtt-candle-alerter
 #echo ' '
 
-echo "#20 Installing latest Monitor Disk Space"
-echo "----------------------------------------"
-docker pull registry:5000/tradr-monitor-disk-space
-echo ' '
+#echo "#22 Installing Bitcoin DCA Alerter"
+#echo "----------------------------------"
+#docker pull registry:5000/tradr-bitcoin-dca-alerter
+#echo ' '
 
-echo "#21 Installing Parse Patternz Trades File"
-echo "-----------------------------------------"
-docker pull registry:5000/tradr-parse-patternz-trades-file
-echo ' '
+#echo "#23 Installing MSTR DCA Alerter"
+#echo "-------------------------------"
+#docker pull registry:5000/tradr-mstr-dca-alerter
+#echo ' '
 
-echo "#22 Installing Bitcoin DCA Alerter"
-echo "----------------------------------"
-docker pull registry:5000/tradr-bitcoin-dca-alerter
-echo ' '
 
-echo "#23 Installing MSTR DCA Alerter"
-echo "-------------------------------"
-docker pull registry:5000/tradr-mstr-dca-alerter
-echo ' '
-
-echo "#24 Installing Insider Trades Grabber"
-echo "-------------------------------------"
-docker pull registry:5000/tradr-grab-suspected-insider-trades
-echo ' '
-
-echo "#25 Installing TRADR WebServer"
-echo "------------------------------"
-docker pull registry:5000/tradr-apache
-echo ' '
-
-echo "#26 Installing TRADR Generate Weekly Table"
-echo "------------------------------------------"
-docker pull registry:5000/tradr-generate-weekly-tickers
-echo ' '
-
-echo "#27 Installing TRADR Generate Daily Table"
-echo "-----------------------------------------"
-docker pull registry:5000/tradr-generate-daily-tickers
-echo ' '
-
-echo "#28 Installing TRADR Generate Ranking Table"
-echo "-------------------------------------------"
-docker pull registry:5000/tradr-generate-ranking
-echo ' '
-
-echo "#29 Installing TRADR Activity Detector"
-echo "--------------------------------------"
-docker pull registry:5000/tradr-activity-detector
-echo ' '
-
-logger 'exited upgrade.sh'
+#echo "#25 Installing TRADR WebServer"
+#echo "------------------------------"
+#docker pull registry:5000/tradr-apache
+#echo ' '

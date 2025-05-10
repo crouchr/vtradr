@@ -16,11 +16,11 @@
 
 15 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
 
-# ranking can only happen when there is a valid daily_tickers table (with daily mrp in it)
+# Ranking can only happen when there is a valid daily_tickers table (with daily MRP in it)
 # Runs on Monday morning
 25 08 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-ranking-compose.yml up
 
-00 08 * * 1,3,5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
+#00 08 * * 1,3,5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
 30 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
 
 00 11 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
@@ -29,11 +29,11 @@
 30 20 * * 1-7 curl -X GET http://127.0.0.1:5001/refresh
 
 # I haven't worked out optimal time of day for this yet - probably best during the US day and after initial market open (volatile)
-05 19 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/bitcoin-dca-alerter-compose.yml up
-10 19 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/mstr-dca-alerter-compose.yml up
+#05 19 * * 1-7 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/bitcoin-dca-alerter-compose.yml up
+#10 19 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/mstr-dca-alerter-compose.yml up
 
 # 25 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
-50 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
+#50 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 
 # Backup the two databases
 # Only do during week when system is supposed to be 'working 100%'

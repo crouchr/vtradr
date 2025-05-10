@@ -114,6 +114,7 @@ Vagrant.configure("2") do |config|
       iceberg.vm.provision "file", source: "../common_scripts/backup_users_table.sh", destination: "backup_users_table.sh"
       iceberg.vm.provision "file", source: "../common_scripts/restore_users_table.sh", destination: "restore_users_table.sh"
       iceberg.vm.provision "file", source: "../common_scripts/help_tradr.sh", destination: "help_tradr.sh"
+      iceberg.vm.provision "file", source: "../common_scripts/regenerate.sh", destination: "regenerate.sh"
       iceberg.vm.provision "file", source: "../common_scripts/version_tradr.sh", destination: "version_tradr.sh"
       iceberg.vm.provision "file", source: "../common_scripts/clean_up.sh", destination: "clean_up.sh"
       iceberg.vm.provision "file", source: "../common_scripts/run_tradr_daemons.sh", destination: "run_tradr_daemons.sh"
@@ -158,7 +159,8 @@ Vagrant.configure("2") do |config|
                                         'PROTONMAIL_PLUS_BRIDGE_PORT' => ENV['PROTONMAIL_PLUS_BRIDGE_PORT'],
                                         'PROTONMAIL_PLUS_BRIDGE_KEY' => ENV['PROTONMAIL_PLUS_BRIDGE_KEY'],
                                         'ALPHAVANTAGE_BASIC_API_KEY' => ENV['ALPHAVANTAGE_BASIC_API_KEY'],
-                                        'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY']
+                                        'ALPHAVANTAGE_FREE_API_KEY' => ENV['ALPHAVANTAGE_FREE_API_KEY'],
+                                        'CHATGPT_API_KEY' => ENV['CHATGPT_API_KEY']
                                          },
                                          path: '../common_scripts/setup_env_vars.sh'
 
