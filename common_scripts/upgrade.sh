@@ -36,42 +36,37 @@ echo "--------------------------------------"
 docker pull registry:5000/namecheap-updater
 echo ' '
 
-echo "#7 Installing latest Patternz Data Grabber"
-echo "------------------------------------------"
-docker pull registry:5000/tradr-patternz-data-grabber
-echo ' '
-
-echo "#8 Installing latest Patternz Data Grabber Tickers"
+echo "#7 Installing latest Patternz Data Grabber Tickers"
 echo "--------------------------------------------------"
 docker pull registry:5000/tradr-patternz-data-grabber-tickers
 echo ' '
 
-echo "#9 Installing latest Monitor Disk Space"
+echo "#8 Installing latest Monitor Disk Space"
 echo "---------------------------------------"
 docker pull registry:5000/tradr-monitor-disk-space
 echo ' '
 
-echo "#10 Installing Parse Patternz Trades File"
-echo "-----------------------------------------"
+echo "#9 Installing Parse Patternz Trades File"
+echo "----------------------------------------"
 docker pull registry:5000/tradr-parse-patternz-trades-file
 echo ' '
 
-echo "#11 Installing Insider Trades Grabber"
+echo "#10 Installing Insider Trades Grabber"
 echo "-------------------------------------"
 docker pull registry:5000/tradr-grab-suspected-insider-trades
 echo ' '
 
-echo "#12 Installing TRADR Generate Weekly Table"
+echo "#11 Installing TRADR Generate Weekly Table"
 echo "------------------------------------------"
 docker pull registry:5000/tradr-generate-weekly-tickers
 echo ' '
 
-echo "#13 Installing TRADR Generate Daily Table"
+echo "#12 Installing TRADR Generate Daily Table"
 echo "-----------------------------------------"
 docker pull registry:5000/tradr-generate-daily-tickers
 echo ' '
 
-echo "#14 Installing TRADR Generate Ranking Table"
+echo "#13 Installing TRADR Generate Ranking Table"
 echo "-------------------------------------------"
 docker pull registry:5000/tradr-generate-ranking
 echo ' '
@@ -207,6 +202,10 @@ logger 'exited upgrade.sh'
 #docker pull registry:5000/tradr-mstr-dca-alerter
 #echo ' '
 
+#echo "#7 Installing latest Patternz Data Grabber"
+#echo "------------------------------------------"
+#docker pull registry:5000/tradr-patternz-data-grabber
+#echo ' '
 
 #echo "#25 Installing TRADR WebServer"
 #echo "------------------------------"
