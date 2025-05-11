@@ -11,8 +11,9 @@
 # Run ONCE on a Friday night - same time that Stage Analysis state their data is valid
 05 22 * * 5   source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 
+# Note : re-write so that weekly return is in the daily tickers table
 # Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
-05 04 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
+05 04 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
 
 15 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
 
