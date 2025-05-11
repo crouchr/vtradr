@@ -13,6 +13,7 @@ services:
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
+      - ./ai_prompts:/app/ai_prompts
     environment:
       - SQL_DB_HOSTNAME=${SQL_DB_HOSTNAME}
       - PROTONMAIL_PLUS_BRIDGE_HOSTNAME=${PROTONMAIL_PLUS_BRIDGE_HOSTNAME}
