@@ -71,6 +71,11 @@ echo "-------------------------------------------"
 docker pull registry:5000/tradr-generate-ranking
 echo ' '
 
+echo "#14 Installing TRADR Activity Detector"
+echo "--------------------------------------"
+docker pull registry:5000/tradr-activity-detector
+echo ' '
+
 logger 'exited upgrade.sh'
 
 
@@ -120,10 +125,7 @@ logger 'exited upgrade.sh'
 # docker pull registry:5000/tradr-assets-tracker
 # echo ' '
 
-#echo "#29 Installing TRADR Activity Detector"
-#echo "--------------------------------------"
-#docker pull registry:5000/tradr-activity-detector
-#echo ' '
+
 
 
 # can be permanently deleted
