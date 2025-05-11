@@ -4,9 +4,9 @@
 echo "Entered set_systemd.sh..."
 
 # Base services start first
-systemctl enable tradr-apache.service
-sudo systemctl start tradr-apache.service
-sleep 5
+#systemctl enable tradr-apache.service
+#sudo systemctl start tradr-apache.service
+#sleep 5
 
 # Platform services start first
 systemctl enable namecheap-updater.service
@@ -17,9 +17,9 @@ systemctl enable monitor-disk-space.service
 systemctl start  monitor-disk-space.service
 sleep 5
 
-systemctl enable activity-detector.service
-systemctl start  activity-detector.service
-sleep 5
+#systemctl enable activity-detector.service
+#systemctl start  activity-detector.service
+#sleep 5
 
 # Start services that are dependencies
 systemctl enable exchange-rate-service.service
@@ -31,18 +31,18 @@ systemctl start  candlestick-analyser-service.service
 sleep 5
 
 # Start the main TRADR daemons
-systemctl enable realtime-monitor.service
-systemctl start  realtime-monitor.service
-sleep 5
+#systemctl enable realtime-monitor.service
+#systemctl start  realtime-monitor.service
+#sleep 5
 
 # Main Dashboard
 systemctl enable open-trades-monitor.service
 systemctl start  open-trades-monitor.service
 sleep 5
 
-systemctl enable ops-monitor.service
-systemctl start  ops-monitor.service
-sleep 5
+#systemctl enable ops-monitor.service
+#systemctl start  ops-monitor.service
+#sleep 5
 
 # Disable until FMP API working again
 #systemctl enable rsi-buy-sniper.service
