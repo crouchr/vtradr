@@ -1,4 +1,7 @@
-#!/bin/bash -eu
+#!/bin/bash
+set -e
+# This gets hung up on permissions accessing SQL ?
+
 # Regenerate the 'ticker' databases
 
 logger 'entered regenerate.sh'
