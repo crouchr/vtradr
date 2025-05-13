@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     iceberg.vm.synced_folder "reports/", "/home/vagrant/reports"
     iceberg.vm.synced_folder "logs/", "/home/vagrant/logs"
     iceberg.vm.synced_folder "keys/", "/home/vagrant/keys"
-    iceberg.vm.synced_folder "ai_prompts/", "/home/vagrant/ai_prompts"
+    iceberg.vm.synced_folder "prompts/", "/home/vagrant/prompts"
     iceberg.vm.synced_folder "yahoo_fin_historical_data/", "/home/vagrant/yahoo_fin_historical_data"
     iceberg.vm.synced_folder "html/", "/home/vagrant/html"
     iceberg.vm.synced_folder "temp_data/", "/home/vagrant/temp_data"
