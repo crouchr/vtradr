@@ -4,12 +4,11 @@
 # Note Staging runs on Saturday and Sunday and production runs Monday to Friday
 # mins hours . . .
 # Need to provide the vagrant user env variables - see https://unix.stackexchange.com/questions/27289/how-can-i-run-a-cron-command-with-existing-environmental-variables
-#
 
 05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Run ONCE on a Friday night - same time that Stage Analysis state their data is valid
-# Takes about 3 hours...
+# Takes about 2 hours...
 05 22 * * 5   source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 
 # Note : re-write so that weekly return is in the daily tickers table
@@ -17,11 +16,11 @@
 # Run ONCE, early Saturday morning
 05 04 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
 
-15 07 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
+05 04 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
 
 # Ranking can only happen when there is a valid daily_tickers table (with daily MRP in it)
 # Runs on Monday morning
-25 08 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-ranking-compose.yml up
+25 07 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-ranking-compose.yml up
 
 00 08 * * 1,3,5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
 30 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
