@@ -8,13 +8,9 @@
 05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Run ONCE on a Friday night - same time that Stage Analysis state their data is valid
-# Takes about 2 hours...
-05 22 * * 5   source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
-
-# Note : re-write so that weekly return is in the daily tickers table
-# Note : The 'weekly_tickers' table is updated daily - so that the 'weekly_return' field is as uptodate as possible
-# Run ONCE, early Saturday morning
-05 04 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
+00 21 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-company-insiders-compose.yml up
+05 22 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
+00 02 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
 
 05 04 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-daily-tickers-compose.yml up
 
@@ -22,7 +18,7 @@
 # Runs on Monday morning
 25 07 * * 1 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-ranking-compose.yml up
 
-00 08 * * 1,3,5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
+00 08 * * 3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/grab-suspected-insider-trades-compose.yml up
 30 08 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/patternz-data-grabber-tickers-compose.yml up
 
 00 11 * * 1-5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/parse-patternz-trades-file-compose.yml up
