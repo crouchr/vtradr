@@ -8,7 +8,7 @@
 05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Run ONCE on a Friday night - same time that Stage Analysis state their data is valid
-00 21 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-company-insiders-compose.yml up
+00 21 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-insider-trades-compose.yml up
 05 22 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 00 02 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
 

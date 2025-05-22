@@ -76,6 +76,11 @@ echo "--------------------------------------"
 docker pull registry:5000/tradr-activity-detector
 echo ' '
 
+echo "#15 Installing TRADR Generate Insider Trades"
+echo "--------------------------------------------"
+docker pull registry:5000/tradr-generate-insider-trades
+echo ' '
+
 logger 'exited upgrade.sh'
 
 
@@ -124,8 +129,6 @@ logger 'exited upgrade.sh'
 # echo "--------------------------------------"
 # docker pull registry:5000/tradr-assets-tracker
 # echo ' '
-
-
 
 
 # can be permanently deleted

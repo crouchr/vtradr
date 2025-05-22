@@ -2,14 +2,14 @@ version: '3'
 
 # Run REST services first
 services:
-  tradr_generate_company_insiders:
-    container_name: tradr-generate-company-insiders
-    image: registry:5000/tradr-generate-company-insiders
+  tradr_generate_insider_trades:
+    container_name: tradr-generate-insider-trades
+    image: registry:5000/tradr-generate-insider-trades
     logging:
       driver: "syslog"
       options:
         syslog-address: "udp://127.0.0.1:514"
-        tag: "tradr-generate-company-insiders"
+        tag: "tradr-generate-insider-trades"
     network_mode: "host"
     volumes:
       - /var/lib/mysql/mysql.sock:/mysql.sock
