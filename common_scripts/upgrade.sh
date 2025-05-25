@@ -81,6 +81,11 @@ echo "--------------------------------------------"
 docker pull registry:5000/tradr-generate-insider-trades
 echo ' '
 
+echo "#16 Installing TRADR Generate Bitcoin Treasuries Table"
+echo "------------------------------------------------------"
+docker pull registry:5000/tradr-generate-bitcoin-treasuries-table
+echo ' '
+
 logger 'exited upgrade.sh'
 
 
