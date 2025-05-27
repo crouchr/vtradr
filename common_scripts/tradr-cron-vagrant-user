@@ -8,6 +8,7 @@
 05 1 * * * /usr/sbin/logrotate /etc/logrotate.conf
 
 # Run on a Friday night - same time that Stage Analysis state their data is valid
+# Is futures data still available at this time ?
 00 21 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-insider-trades-compose.yml up
 05 22 * * 5 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-all-tickers-compose.yml up
 00 02 * * 6 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/generate-weekly-tickers-compose.yml up
@@ -34,7 +35,7 @@
 # 25 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/find-hard-asset-stocks-compose.yml up
 #50 21 * * 1,3 source /home/vagrant/.bashrc; /bin/docker-compose -f /home/vagrant/ex-div-bot-compose.yml up
 
-# Backup the two databases
+# Backup the two critical databases
 # Only do during week when system is supposed to be 'working 100%'
 40 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup-lts
 42 02 * * 2-5 source /home/vagrant/.bashrc; /usr/local/bin/backup
