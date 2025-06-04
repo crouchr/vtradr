@@ -24,9 +24,9 @@ echo "-----------------------------------------------"
 docker pull registry:5000/tradr-candlestick-analyser
 echo ' '
 
-echo "#3 Installing latest TRADR Candlestick Analyser"
-echo "-----------------------------------------------"
-docker pull registry:5000/tradr-candlestick-analyser
+echo "#3 Installing latest TRADR Expert System Service"
+echo "------------------------------------------------"
+docker pull registry:5000/tradr-expert-service
 
 ############
 # THE REST #
