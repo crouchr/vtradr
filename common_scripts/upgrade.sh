@@ -6,21 +6,32 @@
 logger 'entered upgrade.sh'
 
 echo ' '
-echo "#1 Installing latest TRADR CLI"
+echo "#0 Installing latest TRADR CLI"
 echo "------------------------------"
 docker pull registry:5000/tradr-cli
 echo ' '
 
-echo "#2 Installing latest TRADR Exchange Rate Service"
+##################
+# SERVICES FIRST #
+##################
+echo "#1 Installing latest TRADR Exchange Rate Service"
 echo "------------------------------------------------"
 docker pull registry:5000/tradr-exchange-rate-service
+echo ' '
+
+echo "#2 Installing latest TRADR Candlestick Analyser"
+echo "-----------------------------------------------"
+docker pull registry:5000/tradr-candlestick-analyser
 echo ' '
 
 echo "#3 Installing latest TRADR Candlestick Analyser"
 echo "-----------------------------------------------"
 docker pull registry:5000/tradr-candlestick-analyser
-echo ' '
 
+############
+# THE REST #
+############
+echo ' '
 echo "#4 Installing latest TRADR Generate All Tickers"
 echo "-----------------------------------------------"
 docker pull registry:5000/tradr-generate-all-tickers

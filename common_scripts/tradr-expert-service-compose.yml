@@ -1,0 +1,15 @@
+version: '3'
+
+# Run REST services first
+services:
+  tradr_expert_service:
+    container_name: tradr-expert-service
+    image: registry:5000/tradr-expert-service
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://127.0.0.1:514"
+        tag: "tradr-expert-service"
+    network_mode: "host"
+    environment:
+      - PORT=7000  # not currently used

@@ -21,13 +21,19 @@ systemctl enable activity-detector.service
 systemctl start  activity-detector.service
 sleep 5
 
-# Start services that are dependencies
+########################################
+# Start services that are dependencies #
+########################################
 systemctl enable exchange-rate-service.service
 systemctl start  exchange-rate-service.service
 sleep 5
 
 systemctl enable candlestick-analyser-service.service
 systemctl start  candlestick-analyser-service.service
+sleep 5
+
+systemctl enable tradr-expert-service.service
+systemctl start  tradr-expert-service.service
 sleep 5
 
 # Start the main TRADR daemons
