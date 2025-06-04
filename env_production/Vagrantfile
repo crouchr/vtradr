@@ -145,6 +145,7 @@ Vagrant.configure("2") do |config|
       # Have to copy files in two stages if needs root permissions in destination
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/exchange-rate-service.service /etc/systemd/system/exchange-rate-service.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/candlestick-analyser-service.service /etc/systemd/system/candlestick-analyser-service.service"
+      iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/tradr-expert-service.service /etc/systemd/system/tradr-expert-service.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/realtime-monitor.service /etc/systemd/system/realtime-monitor.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/activity-detector.service /etc/systemd/system/activity-detector.service"
       iceberg.vm.provision "shell", run:  "always", inline: "mv /tmp/open-trades-monitor.service /etc/systemd/system/open-trades-monitor.service"
